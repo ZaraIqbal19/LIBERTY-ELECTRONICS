@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>LIBERTY ELECTRONICS</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <!-- DETAILED SECTION OF PRODUCTS -->
+
+         <div class="container">
+            <div class="col-12">
+              <div class="card">
+                  <img src="" class="w-100 mt-4 card-img" id="ProductImage" alt="">  
+                <h3 id="ProductName">Product Name</h3>
+                <p id="ProductDescription">Product Description</p>
+                <p id="Specs">Specifications</p>
+                <p>Price: <b id="ProductPrice"></b> PKR</p>
+                <br>
+               
+                <input type="number" class="w-25 float-end" value="1" id="quantity">
+                <br>
+                <div class="row">
+                    <button onclick="generatebill()" class="btn btn-dark ">Add to Cart</button>
+                    <button class="btn btn-success mt-2" onclick="window.location.href='Add To Cart.html'">Checkout</button>
+                </div>
+           </div>
+            </div>
+        </div>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script>
+            var Info = JSON.parse(localStorage.getItem('Info'))
+            console.log(Info)
+            $('#ProductName').text(Info.ProductName)
+            $('#ProductPrice').text(Info.ProductPrice)
+            $('#ProductDescription').text(Info.ProductDescription)
+            $('#Specs').text(Info.Specifications)
+            $('#ProductImage').attr('src',Info.ProductImage)
+
+            // GENERATION OF BILLING
+            
+            var list = [] ||JSON.parse( localStorage.getItem('WishList'))
+            function generatebill()
+            {
+            var q = $('#quantity').val()
+              if (q < 1 || isNaN(q)) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+            var total = Info.ProductPrice * q;
+
+            var group ={
+                "ProductName":Info.ProductName,
+                "ProductImage":Info.ProductImage,
+                "TotalAmount": total 
+            }
+            list.push(group)
+           alert('Your total amount for this product is ' + total + ' PKR');
+            console.log(list)
+            localStorage.setItem('Wishlist',JSON.stringify(list))
+            }
+            
+        </script>
+    </body>
+</html>
