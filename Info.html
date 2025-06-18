@@ -84,7 +84,6 @@
       transform: scale(1.05);
       opacity: 0.9;
     }
-
     .form-control {
       background-color: #e6e6e6;
       text-align: center;
@@ -103,27 +102,60 @@
       gap: 10px;
       margin-top: 20px;
     }
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: floralwhite;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  text-decoration: none;
+  /* cursor: pointer; */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+.back-button:hover {
+  transform: scale(1.1);
+}
   </style>
 </head>
 
 <body>
 
   <div class="info-card">
+    <!-- ❌ Cross Button -->
+<a href="All Products.html" class="back-button">&times;</a>
+    <!-- Product Image -->
     <img src="" class="product-img mb-4" id="ProductImage" alt="">
-
+<!-- Product Name -->
     <h3 id="ProductName">Product Name</h3>
+    <!-- Product Description -->
     <p id="ProductDescription">Product Description</p>
+    <!-- Specifications -->
     <p id="Specs">Specifications</p>
+    <!-- Product Price -->
     <p>Price: <b id="ProductPrice" class="text-black fw-bold">0</b> PKR</p>
-
+<!-- Qantity -->
     <div class="mb-3">
       <label for="quantity" class="form-label">Quantity</label>
       <input type="number" id="quantity" value="1" class="form-control w-50 mx-auto">
     </div>
-
+<!-- Add To Cart -->
     <div class="button-group">
       <button onclick="generatebill()" class="btn btn-dark">Add to Cart</button>
       <button class="btn btn-dark" onclick="window.location.href='Add To Cart.html'">Check Out</button>
+    </div>
+        <!-- 🛒 Shop More Button -->
+    <div class="text-center mt-3">
+      <button onclick="window.location.href='All Products.html'" class="btn btn-dark w-50">🛒 Shop More</button>
     </div>
   </div>
 
@@ -139,9 +171,8 @@
       $('#ProductImage').attr('src', Info.ProductImage);
       $('#ProductImage').attr('alt', Info.ProductName);
     }
-
     var list = JSON.parse(localStorage.getItem('Wishlist')) || [];
-
+    // Generate Bill
     function generatebill() {
       var q = parseInt($('#quantity').val());
       if (q < 1 || isNaN(q)) {

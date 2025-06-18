@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <style>
+
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <div class="container">
+        <center>
+            <select onchange="filter()" name="" id="selectlist" class="w-100 my-5 p-2">
+                <option value="Haier">Haier</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Kenwood">Kenwood</option>
+            </select>
+        </center>
+        <div class="row">
+            <div class="col-4 Haier">
+                <div class="card " >
+                    <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+                    <div class="card-body">
+                        <h4 class="card-title">Haier</h4>
+                        <p class="card-text">50,000 PKR</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4 Samsung">
+                <div class="card ">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+                    <div class="card-body">
+                        <h4 class="card-title">Samsung</h4>
+                        <p class="card-text">55,000 PKR</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4 ">
+                <div class="card ">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+                    <div class="card-body">
+                        <h4 class="card-title">Kenwood</h4>
+                        <p class="card-text">75,000 PKR</p>
+                    </div>
+                </div>
+
+            </div>
+             <div class="col-4 Haier">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+                    <div class="card-body">
+                        <h4 class="card-title">Haier</h4>
+                        <p class="card-text">50,000 PKR</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4 Samsung">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+                    <div class="card-body">
+                        <h4 class="card-title">Samsung</h4>
+                        <p class="card-text">55,000 PKR</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4 Kenwood">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">75,000 PKR</p>
+                    </div>
+                </div>
+
+            </div> 
+        </div>
+
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script>
+        function filter() {
+            var list = document.getElementById('selectlist').value;
+            var haier = document.getElementsByClassName('Haier')
+            var samsung = document.getElementsByClassName('Samsung')
+            var kenwood = document.getElementsByClassName('Kenwood')
+
+            if(list == 'Haier')
+        {
+            samsung[0].style.display='none'
+            kenwood[0].style.display='none'
+            haier[0].style.display='block'
+        }
+        else if(list == 'Samsung')
+        {
+            haier[0].style.display='none'
+            kenwood[0].style.display='none'
+            samsung[0].style.display='block'
+        }else if(list == 'Kenwood')
+        {
+            samsung[0].style.display='none'
+            haier[0].style.display='none'
+            kenwood[0].style.display='block'
+        }
+        }
+
+    </script>
+</body>
+
+</html>
