@@ -15,7 +15,6 @@
             margin: 0px;
             padding: 0px;
         }
-
         .card {
             transition: transform 0.2s ease-in-out;
             border: none;
@@ -24,13 +23,11 @@
             padding: 5px;
             margin: 10px;
         }
-
         .card:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             transform: translateY(-5px);
             transform: scale(1.1);
         }
-
         .card-img-top {
             height: 150px;
             width: auto;
@@ -42,29 +39,45 @@
             border-top-right-radius: 15px;
             transform: scale(1.1);
         }
+        .InfinixMob, .VivoMob, .XiaomiMob, .SamsungMob, .Iphone, .OppoMob {
+    display: none;
+}
+
     </style>
 </head>
 
 <body>
-    <!-- WE NEED TO SHOW DIFFERENT BRANDS BY SPECIFYING DIFFERENT PRODUCTS -->
-    <!-- SMART PHONES -->
-
+    <!-- FOR SPECIFYING SMART PHONE BRANDS -->
+    
     <!-- for new  -->
     <!-- <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span> -->
 
     <div class="container">
-        <div class="DropDown">
-            <center><select onchange="filtering()" name="List" id="sorting" class="w-75 p-2 my-3">
+        <div class="row">
+            <div class="col-6">
+<div class="DropDown">
+            <center><select onchange="filtering()" name="List" id="sorting" class="w-100 p-2 my-3 form-select">
+                    <option value="">Select Category</option>
                     <option value="All">All</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Oppo">Oppo</option>
+                    <option value="Vivo">Vivo</option>
                     <option value="Infinix">Infinix</option>
                     <option value="Xiaomi">Xiaomi</option>
-                    <option value="Samsung">Samsung</option>
-                    <option value="Vivo">Vivo</option>
-                    <option value="Oppo">Oppo</option>
-                    <option value="Apple">Apple</option>
+                </select></center>
+        </div></div>
+            <div class="col-6">
+<div class="DropDown">
+            <center><select onchange="sortCardsByPrice()" name="List" id="priceFilter" class="w-100 p-2 my-3 form-select">
+                <option selected>Sort by Price</option>
+    <option value="low">Lower to Higher</option>
+    <option value="high">Higher to Lower</option>
                 </select></center>
         </div>
-        <div class="row">
+            </div>
+        </div>
+        <div id="productContainer" class="row">
             <div class="col-4 InfinixMob">
                 <div class="card bg-light text-dark text-center">
                     <img src="FILES/Smart Phones/Infinix-Zero_40.png" class="card-img-top" alt="Zero_40">
@@ -75,7 +88,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Infinix Zero 40',69999,'Technology, AMOLED Capacitive Touchscreen, 1B, Multitouch ; Size, 6.78 Inches ; Resolution, 1080 x 2436 Pixels (~393 PPI) ; Protection, Corning Gorilla Glass 5','FILES/Smart Phones/Infinix-Zero_40.png','Launch Date: September 2024','Dimensions: 164.3 × 74.8 × 7.9 mm','Weight: 195 g','OS: Android 14 with XOS 14.5 (receives 2 major OS upgrades)')">Explore
                         More Specs</button>
-                    <a href="smart phones/infinx/Infinix Zero 40.pdf" download=""
+                    <a href="PDFs/Smart Phones/infinx/Infinix Zero 40.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -89,7 +102,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Xiaomi Redmi 14C',24299,'Display: 6.88″ IPS LCD, HD+ (720×1640), 120 Hz refresh rate; TÜV Rheinland-certified; protected by Gorilla Glass 3','FILES/Smart Phones/Xiaomi_Redmi_14C.png','Processor & RAM: MediaTek Helio G81 Ultra; options for 4 GB, 6 GB, or 8 GB RAM (with extended RAM up to 16 GB)','Storage: 64/128/256 GB, microSD slot ','Battery: 5160 mAh with 18 W fast charging ','Cameras: 50 MP main + depth sensor, 13 MP selfie (HDR, 1080p video)')">Explore
                         More Specs</button>
-                    <a href="smart phones/Xiaomi/Xiaomi Redmi 14C.pdf" download=""
+                    <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Redmi 14C.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -103,7 +116,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Iphone 12',179999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_12.png','Processor: Apple A14 Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">Explore
                         More Specs</button>
-                    <a href="smart phones/iphone/I Phone 12.pdf" download=""
+                    <a href="PDFs/Smart Phones/iphone/I Phone 12.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -117,7 +130,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Oppo A60',54999,'OPPO A60 (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_A60.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">Explore
                         More Specs</button>
-                    <a href="smart phones/oppo/Oppo A60.pdf" download=""
+                    <a href="PDFs/Smart Phones/oppo/Oppo A60.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -131,7 +144,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Samsung Galaxy A06',31999,'Maximize your view with the Galaxy A06 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_A06.png','Camera: Discover the power of the Galaxy A06’s 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: 	Android 14 OS Android 14, up to 2 major Android upgrades  ','Resolution: 	720 x 1600 Pixels (~262 PPI)')">Explore
                         More Specs</button>
-                    <a href="smart phones/Samsung/Samsung Galaxy A06.pdf" download=""
+                    <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy A06.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -145,7 +158,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Vivo S1 Pro',39999,' Vivo S1 Pro has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo S1 Pro is Snapdragon 675. ','FILES/Smart Phones/Vivo_S1_Pro.png','OS:	Android 9.0 (Pie) ','Storage: 128GB Built-in, 8GB RAM ','Battery:  (Li-Po Non removable), 4500 mAh ','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/vivo/Vivo S1 Pro.pdf" download=""
+                    <a href="PDFs/Smart Phones/vivo/Vivo S1 Pro.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -159,7 +172,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Infinix GT 20 Pro',99999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_GT_20_Pro.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm  ','Weight: 194 g','Resolution:1080 x 2436 Pixels (~393 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/infinx/Infinix GT 20 Pro.pdf" download=""
+                    <a href="PDFs/Smart Phones/infinx/Infinix GT 20 Pro.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -173,7 +186,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Xiaomi 14T',175999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_14t.png','Processor:	Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)  ','Storage: 256GB Built-in, 12GB RAM, UFS 4.0 , microSD slot ','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">Explore
                         More Specs</button>
-                    <a href="smart phones/Xiaomi/Xiaomi 14t.pdf" download=""
+                    <a href="PDFs/Smart Phones/Xiaomi/Xiaomi 14t.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -187,7 +200,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Iphone 13 Pro',342999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_13_Pro.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">Explore
                         More Specs</button>
-                    <a href="smart phones/iphone/I Phone 13 PRO.pdf" download=""
+                    <a href="PDFs/Smart Phones/iphone/I Phone 13 PRO.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -201,7 +214,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Oppo F11 Pro',54999,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_F11_Pro.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">Explore
                         More Specs</button>
-                    <a href="smart phones/oppo/Oppo f11 pro.pdf" download=""
+                    <a href="PDFs/Smart Phones/oppo/Oppo f11 pro.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -216,7 +229,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Samsung Galaxy A15',52999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_A15.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades  ','Resolution: 720 x 1600 Pixels (~262 PPI)')">Explore
                         More Specs</button>
-                    <a href="smart phones/Samsung/Samsung Galaxy A15.pdf" download=""
+                    <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy A15.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -230,7 +243,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Vivo V40e',99999,' Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675. ','FILES/Smart Phones/Vivo_V40e.png','OS:	Android 9.0 (Pie) ','Storage: 128GB Built-in, 8GB RAM ','Battery:  (Li-Po Non removable), 4500 mAh ','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/vivo/Vivo 40e.pdf" download=""
+                    <a href="PDFs/Smart Phones/vivo/Vivo 40e.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -244,7 +257,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Infinix Hot 50i',30999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_Hot_50i.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm  ','Weight: 194 g','Resolution:1080 x 2436 Pixels (~393 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/infinx/infinix Hot 50i.pdf" download=""
+                    <a href="PDFs/Smart Phones/infinx/infinix Hot 50i.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -258,7 +271,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Xiaomi Mi 11 Ultra',45999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_Mi_11_Ultra.png','Processor:	Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)  ','Storage: 256GB Built-in, 12GB RAM, UFS 4.0 , microSD slot ','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">Explore
                         More Specs</button>
-                    <a href="smart phones/Xiaomi/Xiaomi Mi11 Ultra.pdf" download=""
+                    <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Mi11 Ultra.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -272,7 +285,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Iphone 15',344999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_13_Pro.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">Explore
                         More Specs</button>
-                    <a href="smart phones/iphone/I Phone 15.pdf" download=""
+                    <a href="PDFs/Smart Phones/iphone/I Phone 15.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -286,7 +299,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Oppo Reno 13 Pro',219999,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_Reno_13_Pro.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">Explore
                         More Specs</button>
-                    <a href="smart phones/oppo/Oppo reno 13 pro.pdf" download=""
+                    <a href="PDFs/Smart Phones/oppo/Oppo reno 13 pro.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -301,7 +314,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Samsung Galaxy Z Flip 3',199999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_Flip_Z3.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades  ','Resolution: 720 x 1600 Pixels (~262 PPI)')">Explore
                         More Specs</button>
-                    <a href="smart phones/Samsung/Samsung Galaxy Flip Z3.pdf" download=""
+                    <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy Flip Z3.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -315,7 +328,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Vivo X200 Pro',329999,' Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675. ','FILES/Smart Phones/Vivo_X200_Pro.png','OS:	Android 9.0 (Pie) ','Storage: 128GB Built-in, 8GB RAM ','Battery:  (Li-Po Non removable), 4500 mAh ','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/vivo/Vivo X200 pro.pdf" download=""
+                    <a href="PDFs/Smart Phones/vivo/Vivo X200 pro.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -329,7 +342,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Infinix Note 12',54999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_Note_12.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm  ','Weight: 194 g','Resolution:1080 x 2436 Pixels (~393 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/infinx/Infinix Note 12.pdf" download=""
+                    <a href="PDFs/Smart Phones/infinx/Infinix Note 12.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -343,7 +356,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Xiaomi Mix Flip',399999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_Mix_Flip.png','Processor:	Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)  ','Storage: 256GB Built-in, 12GB RAM, UFS 4.0 , microSD slot ','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">Explore
                         More Specs</button>
-                    <a href="smart phones/Xiaomi/Xiaomi Mix Flip.pdf" download=""
+                    <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Mix Flip.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -357,7 +370,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Iphone 7 Plus',79999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_7_Plus.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">Explore
                         More Specs</button>
-                    <a href="smart phones/iphone/I Phone 7 Plus.pdf" download=""
+                    <a href="PDFs/Smart Phones/iphone/I Phone 7 Plus.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -371,7 +384,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Oppo Reno 2F',44699,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_Reno_2F.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">Explore
                         More Specs</button>
-                    <a href="smart phones/oppo/Oppo reno 2f.pdf" download=""
+                    <a href="PDFs/Smart Phones/oppo/Oppo reno 2f.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -385,7 +398,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Samsung Galaxy S24',289999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_S24.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades  ','Resolution: 720 x 1600 Pixels (~262 PPI)')">Explore
                         More Specs</button>
-                    <a href="smart phones/Samsung/Samsung Galaxy S24.pdf" download=""
+                    <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy S24.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -399,7 +412,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Vivo Y18s',34999,' Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675. ','FILES/Smart Phones/Vivo_Y18s.png','OS:	Android 9.0 (Pie) ','Storage: 128GB Built-in, 8GB RAM ','Battery:  (Li-Po Non removable), 4500 mAh ','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/vivo/Vivo Y18 S.pdf" download=""
+                    <a href="PDFs/Smart Phones/vivo/Vivo Y18 S.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -414,7 +427,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Infinix Note 50 Pro Plus',119999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_Note_50_Pro_Plus.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm  ','Weight: 194 g','Resolution:1080 x 2436 Pixels (~393 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/infinx/Infinix Note 50 Pro+.pdf" download=""
+                    <a href="PDFs/Smart Phones/infinx/Infinix Note 50 Pro+.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -428,7 +441,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Xiaomi Poco F7 Pro',185999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_Poco_F7_Pro.png','Processor:	Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)  ','Storage: 256GB Built-in, 12GB RAM, UFS 4.0 , microSD slot ','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">Explore
                         More Specs</button>
-                    <a href="smart phones/Xiaomi/Xiaomi Poco F7 Pro.pdf" download=""
+                    <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Poco F7 Pro.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -442,7 +455,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Iphone XS Max',167499,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_xs_max.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">Explore
                         More Specs</button>
-                    <a href="smart phones/iphone/iphone xs max.pdf" download=""
+                    <a href="PDFs/Smart Phones/iphone/iphone xs max.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -456,7 +469,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Oppo Reno 8',84999,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_Reno_8.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">Explore
                         More Specs</button>
-                    <a href="smart phones/oppo/Oppo reno 8.pdf" download=""
+                    <a href="PDFs/Smart Phones/oppo/Oppo reno 8.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -464,13 +477,13 @@
                 <div class="card bg-light text-dark text-center">
                     <img src="FILES/Smart Phones/Samung_S20_Ultra.png" class="card-img-top" alt="Samsung S20 Ultra">
                     <div class="card-body">
-                        <h4 class="card-title">s20 Ultra</h4>
+                        <h4 class="card-title">S20 Ultra</h4>
                         <p class="fw-bold fs-5 text-secondary">Price: <span class="text-dark">226,999</span> PKR</p>
                     </div>
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Samsung s20 Ultra',226999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samung_S20_Ultra.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades  ','Resolution: 720 x 1600 Pixels (~262 PPI)')">Explore
                         More Specs</button>
-                    <a href="smart phones/Samsung/Samsung S 20 ultra.pdf" download=""
+                    <a href="PDFs/Smart Phones/Samsung/Samsung S 20 ultra.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -484,7 +497,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Vivo Y28',44999,' Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675. ','FILES/Smart Phones/Vivo_Y28.png','OS:	Android 9.0 (Pie) ','Storage: 128GB Built-in, 8GB RAM ','Battery:  (Li-Po Non removable), 4500 mAh ','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">Explore
                         More Specs</button>
-                    <a href="smart phones/vivo/Vivo Y28.pdf" download=""
+                    <a href="PDFs/Smart Phones/vivo/Vivo Y28.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -498,7 +511,7 @@
                     <button class="btn btn-dark text-white w-75 mx-auto"
                         onclick="Info('Iphone 16 Pro Max',459499,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_16_Pro_Max.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">Explore
                         More Specs</button>
-                    <a href="smart phones/iphone/I Phone 16 PRO MAX.pdf" download=""
+                    <a href="PDFs/Smart Phones/iphone/I Phone 16 PRO MAX.pdf" download=""
                         class="btn btn-dark text-white w-75 mx-auto mt-4 mb-2">⬇️ Download PDF</a>
                 </div>
             </div>
@@ -533,14 +546,12 @@
         // FOR FILTERING FUNCTIONALITY
         function filtering() {
             var list = document.getElementById('sorting').value;
-
             var InfinixMob = document.getElementsByClassName('InfinixMob');
             var VivoMob = document.getElementsByClassName('VivoMob');
             var XiaomiMob = document.getElementsByClassName('XiaomiMob');
             var SamsungMob = document.getElementsByClassName('SamsungMob');
             var Iphone = document.getElementsByClassName('Iphone');
             var OppoMob = document.getElementsByClassName('OppoMob');
-
             if (list == 'All') {
                 for (let i = 0; i < InfinixMob.length; i++) {
                     InfinixMob[i].style.display = 'block';
@@ -632,9 +643,21 @@
                 }
             }
         }
-
+// FOR SORTING PRICE FUNCTIONALITY
+        function sortCardsByPrice() {
+    const container = document.getElementById("productContainer");
+    const cards = Array.from(container.getElementsByClassName("col-4"));
+    const sortType = document.getElementById("priceFilter").value;
+    cards.sort((a, b) => {
+      const priceA = parseInt(a.querySelector("p span").innerText.replace(/,/g, ""));
+      const priceB = parseInt(b.querySelector("p span").innerText.replace(/,/g, ""));
+      return sortType === "low" ? priceA - priceB : priceB - priceA;
+    });
+    // Clear and re-append cards in sorted order
+    container.innerHTML = "";
+    cards.forEach(card => container.appendChild(card));
+  }    
     </script>
 
 </body>
-
 </html>

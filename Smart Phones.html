@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>LIBERTY ELECTRONICS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="Style.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+        background-color: #0b0c1a; 
+        color: #ffffff;
+    }
+        .footertext {
+            color: #66fcf1;
+        }
+        .footer-link {
+            color: #c5c6c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #09f9e9;
+            font-weight: bold;
+            text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
+        }
+        .footer-link:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 5px #66fcf1;
+        }
+        .social-icon {
+            color: #c5c6c7;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: color 0.3s ease, text-shadow 0.3s;
+        }
+        .social-icon:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+      .personaldetails:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+        .proimg{
+    height: 200px;
+  object-fit: contain;
+  filter: brightness(1.3) drop-shadow(0 0 4px #070909);
+  transition: transform 0.4s ease, filter 0.4s ease;
+  padding: 10px;
+  margin: auto;
+}
+.proimg:hover{
+    transform: scale(1.05);
+  filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
+}
+    .card {
+        background-color: #101426;
+        border: 1px solid #060707;
+        box-shadow: 0 0 5px #0d0e0e;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 25px #00ffe5;
+    }
+    .card-title {
+        color: #00ffe5;
+    }
+    .text-secondary {
+        color: #a6a6a6 !important;
+    }
+    .probtn {
+        background-color: transparent;
+        color: #00ffe5;
+        border: 2px solid #00ffe5;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 5px #101111;
+    }
+    .probtn:hover {
+        background-color: #00ffe5;
+        color: #0b0c1a;
+        box-shadow: 0 0 20px #00ffe5;
+    }
+    .form-select {
+        background-color: #101426;
+        color: #00ffe5;
+        border: 2px solid #00ffe5;
+    }
+    .form-select option {
+        background-color: #101426;
+        color: #00ffe5;
+    }
+    .DropDown select:hover {
+        box-shadow: 0 0 20px #00ffe5;
+    }
+       .colheading{
+color: #00ffff;
+text-shadow: 0 0 10px #0b0c0c;
+}
+.colpara{
+    color: #00ffff;
+}
+    </style>
+</head>
+
+<body>
+    <!-- FOR SPECIFYING SMART PHONE BRANDS -->
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <div class="container py-2">
+            <!-- LIVE TIME & VISITOR COUNTER -->
+            <div class="row text-center align-items-center">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <p id="livetime" class="fs-2 mb-0">00:00:00</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
+                </div>
+            </div>
+        </div>
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About Us.html">BLOG</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i
+                                    class="fas fa-shopping-cart"></i>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- BODY SECTION -->
+<div class="container py-5">
+<div class="row">
+    <h4 class="text-center mb-2 colheading p-3 fs-3">📱 Explore the World of Smartphones at Liberty Electronics</h4>
+<p class="text-center mb-5 colpara p-1 fs-6">Discover the latest smartphones at Liberty Electronics — from budget-friendly picks to premium flagships, all packed with performance, style, and value.
+Compare features and find the perfect phone to match your lifestyle, all in one place.
+</p>
+</div>
+    <!-- DROPDOWN OPTIONS -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="DropDown text-center">
+                <select onchange="filtering()" id="sorting" class="form-select w-75 mx-auto">
+                    <option value="">Select Category</option>
+                    <option value="All">All</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Oppo">Oppo</option>
+                    <option value="Vivo">Vivo</option>
+                    <option value="Infinix">Infinix</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="DropDown text-center">
+                <select onchange="sortCardsByPrice()" id="priceFilter" class="form-select w-75 mx-auto">
+                    <option selected>Sort by Price</option>
+                    <option value="low">Lower to Higher</option>
+                    <option value="high">Higher to Lower</option>
+                </select>
+            </div>
+        </div>
+    </div>
+<!-- PRODUCT SECTION -->
+    <div id="productContainer" class="row g-4">
+        <div class="col-4 InfinixMob">
+            <div class="card text-center rounded-4">
+                <img src="FILES/Smart Phones/Infinix-Zero_40.png" class="card-img-top p-3 proimg" alt="Zero_40">
+                <div class="card-body">
+                    <h4 class="card-title">Zero 40</h4>
+                    <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">69,999</span> PKR</p>
+                    <button class="btn probtn w-75 mb-3"
+                        onclick="Info('Infinix Zero 40',69999,'Technology, AMOLED Capacitive Touchscreen, 1B, Multitouch ; Size, 6.78 Inches ; Resolution, 1080 x 2436 Pixels (~393 PPI) ; Protection, Corning Gorilla Glass 5','FILES/Smart Phones/Infinix-Zero_40.png','Launch Date: September 2024','Dimensions: 164.3 × 74.8 × 7.9 mm','Weight: 195 g','OS: Android 14 with XOS 14.5 (receives 2 major OS upgrades)')">
+                        ✨ Explore More Specs
+                    </button>
+                    <a href="PDFs/Smart Phones/infinx/Infinix Zero 40.pdf" download class="btn probtn w-75">
+                        ⬇️ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+<div class="col-4 XiaomiMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Xiaomi_Redmi_14C.png" class="card-img-top p-3 proimg" alt="Xiaomi_Redmi_14C">
+        <div class="card-body">
+            <h4 class="card-title">Redmi 14C</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">24,299</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Xiaomi Redmi 14C',24299,'Display: 6.88″ IPS LCD, HD+ (720×1640), 120 Hz refresh rate; TÜV Rheinland-certified; protected by Gorilla Glass 3','FILES/Smart Phones/Xiaomi_Redmi_14C.png','Processor & RAM: MediaTek Helio G81 Ultra; options for 4 GB, 6 GB, or 8 GB RAM (with extended RAM up to 16 GB)','Storage: 64/128/256 GB, microSD slot ','Battery: 5160 mAh with 18 W fast charging ','Cameras: 50 MP main + depth sensor, 13 MP selfie (HDR, 1080p video)')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Redmi 14C.pdf" download class="btn probtn w-75">⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 Iphone">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Iphone_12.png" class="card-img-top p-3 proimg" alt="Iphone_12">
+        <div class="card-body">
+            <h4 class="card-title">Iphone 12</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">179,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Iphone 12',179999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_12.png','Processor: Apple A14 Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/iphone/I Phone 12.pdf" download class="btn probtn w-75">⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 OppoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Oppo_A60.png" class="card-img-top p-3 proimg" alt="Oppo_A60">
+        <div class="card-body">
+            <h4 class="card-title">Oppo A60</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">54,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Oppo A60',54999,'OPPO A60 (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_A60.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/oppo/Oppo A60.pdf" download class="btn probtn w-75">⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 SamsungMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Samsung_Galaxy_A06.png" class="card-img-top p-3 proimg" alt="Samsung Galaxy A06">
+        <div class="card-body">
+            <h4 class="card-title">Galaxy A06</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">31,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Samsung Galaxy A06',31999,'Maximize your view with the Galaxy A06 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_A06.png','Camera: Discover the power of the Galaxy A06’s 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: 	Android 14 OS Android 14, up to 2 major Android upgrades  ','Resolution: 	720 x 1600 Pixels (~262 PPI)')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy A06.pdf" download class="btn probtn w-75">⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 VivoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Vivo_S1_Pro.png" class="card-img-top p-3 proimg" alt="Vivo S1 Pro">
+        <div class="card-body">
+            <h4 class="card-title">S1 Pro</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">39,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Vivo S1 Pro',39999,' Vivo S1 Pro has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo S1 Pro is Snapdragon 675. ','FILES/Smart Phones/Vivo_S1_Pro.png','OS:	Android 9.0 (Pie) ','Storage: 128GB Built-in, 8GB RAM ','Battery:  (Li-Po Non removable), 4500 mAh ','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/vivo/Vivo S1 Pro.pdf" download class="btn probtn w-75">⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 InfinixMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Infinix_GT_20_Pro.png" class="card-img-top p-3 proimg" alt="GT 20 Pro">
+        <div class="card-body">
+            <h4 class="card-title">GT 20 Pro</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">99,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Infinix GT 20 Pro',99999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_GT_20_Pro.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm  ','Weight: 194 g','Resolution:1080 x 2436 Pixels (~393 PPI) ')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/infinx/Infinix GT 20 Pro.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 XiaomiMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Xiaomi_14t.png" class="card-img-top p-3 proimg" alt="Xiaomi_Redmi_14C">
+        <div class="card-body">
+            <h4 class="card-title">Xiaomi 14T</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">175,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Xiaomi 14T',175999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_14t.png','Processor: Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)','Storage: 256GB Built-in, 12GB RAM, UFS 4.0 , microSD slot','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/Xiaomi/Xiaomi 14t.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 Iphone">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Iphone_13_Pro.png" class="card-img-top p-3 proimg" alt="Iphone 13 Pro">
+        <div class="card-body">
+            <h4 class="card-title">Iphone 13 Pro</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">342,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Iphone 13 Pro',342999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_13_Pro.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/iphone/I Phone 13 PRO.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 OppoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Oppo_F11_Pro.png" class="card-img-top p-3 proimg" alt="Oppo F11 Pro">
+        <div class="card-body">
+            <h4 class="card-title">Oppo F11 Pro</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">54,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Oppo F11 Pro',54999,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_F11_Pro.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/oppo/Oppo f11 pro.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 SamsungMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Samsung_Galaxy_A15.png" class="card-img-top p-3 proimg" alt="Samsung Galaxy Cortex-A510">
+        <div class="card-body">
+            <h4 class="card-title">Galaxy A15</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">52,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Samsung Galaxy A15',52999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_A15.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades','Resolution: 720 x 1600 Pixels (~262 PPI)')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy A15.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 VivoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Vivo_V40e.png" class="card-img-top p-3 proimg" alt="Vivo V40e">
+        <div class="card-body">
+            <h4 class="card-title">Vivo V40e</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">99,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Vivo V40e',99999,' Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675.','FILES/Smart Phones/Vivo_V40e.png','OS: Android 9.0 (Pie)','Storage: 128GB Built-in, 8GB RAM','Battery: (Li-Po Non removable), 4500 mAh','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/vivo/Vivo 40e.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 InfinixMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Infinix_Hot_50i.png" class="card-img-top p-3 proimg" alt="Hot 50i">
+        <div class="card-body">
+            <h4 class="card-title">HOT 50i</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">30,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Infinix Hot 50i',30999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_Hot_50i.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm  ','Weight: 194 g','Resolution:1080 x 2436 Pixels (~393 PPI) ')">
+                ✨ Explore More Specs</button>
+            <a href="PDFs/Smart Phones/infinx/infinix Hot 50i.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF</a>
+        </div>
+    </div>
+</div>
+<div class="col-4 XiaomiMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Xiaomi_Mi_11_Ultra.png" class="card-img-top p-3 proimg" alt="Xiaomi Mi 11 Ultra">
+        <div class="card-body">
+            <h4 class="card-title">Xiaomi Mi 11 Ultra</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">45,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Xiaomi Mi 11 Ultra',45999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_Mi_11_Ultra.png','Processor: Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)','Storage: 256GB Built-in, 12GB RAM, UFS 4.0, microSD slot','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Mi11 Ultra.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 Iphone">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Iphone_15.png" class="card-img-top p-3 proimg" alt="iPhone 15">
+        <div class="card-body">
+            <h4 class="card-title">iPhone 15</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">344,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('iPhone 15',344999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_13_Pro.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/iphone/I Phone 15.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 OppoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Oppo_Reno_13_Pro.png" class="card-img-top p-3 proimg" alt="Oppo Reno 13 Pro">
+        <div class="card-body">
+            <h4 class="card-title">Reno 13 Pro</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">219,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Oppo Reno 13 Pro',219999,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_Reno_13_Pro.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/oppo/Oppo reno 13 pro.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 SamsungMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Samsung_Galaxy_Flip_Z3.png" class="card-img-top p-3 proimg" alt="Samsung Galaxy Z Flip 3">
+        <div class="card-body">
+            <h4 class="card-title">Galaxy Z Flip 3</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">199,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Samsung Galaxy Z Flip 3',199999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_Flip_Z3.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades','Resolution: 720 x 1600 Pixels (~262 PPI)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy Flip Z3.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 VivoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Vivo_X200_Pro.png" class="card-img-top p-3 proimg" alt="Vivo X200 Pro">
+        <div class="card-body">
+            <h4 class="card-title">Vivo X200 Pro</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">329,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Vivo X200 Pro',329999,'Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675.','FILES/Smart Phones/Vivo_X200_Pro.png','OS: Android 9.0 (Pie)','Storage: 128GB Built-in, 8GB RAM','Battery: (Li-Po Non removable), 4500 mAh','Resolution: 1080 x 2340 Pixels (~404 PPI)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/vivo/Vivo X200 pro.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 InfinixMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Infinix_Note_12.png" class="card-img-top p-3 proimg" alt="Note 12">
+        <div class="card-body">
+            <h4 class="card-title">Note 12</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">54,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Infinix Note 12',54999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_Note_12.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm','Weight: 194 g','Resolution: 1080 x 2436 Pixels (~393 PPI)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/infinx/Infinix Note 12.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 XiaomiMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Xiaomi_Mix_Flip.png" class="card-img-top p-3 proimg" alt="Xiaomi Mix Flip">
+        <div class="card-body">
+            <h4 class="card-title">Xiaomi Mix Flip</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">399,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Xiaomi Mix Flip',399999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_Mix_Flip.png','Processor: Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)','Storage: 256GB Built-in, 12GB RAM, UFS 4.0, microSD slot','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Mix Flip.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 Iphone">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Iphone_7_Plus.png" class="card-img-top p-3 proimg" alt="iPhone 7 Plus">
+        <div class="card-body">
+            <h4 class="card-title">iPhone 7 Plus</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">79,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('iPhone 7 Plus',79999,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_7_Plus.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/iphone/I Phone 7 Plus.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 OppoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Oppo_Reno_2F.png" class="card-img-top p-3 proimg" alt="Oppo Reno 2F">
+        <div class="card-body">
+            <h4 class="card-title">Oppo Reno 2F</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">44,699</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Oppo Reno 2F',44699,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_Reno_2F.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/oppo/Oppo reno 2f.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 SamsungMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Samsung_Galaxy_S24.png" class="card-img-top p-3 proimg" alt="Samsung Galaxy S24">
+        <div class="card-body">
+            <h4 class="card-title">Galaxy S24</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">289,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Samsung Galaxy S24',289999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samsung_Galaxy_S24.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades','Resolution: 720 x 1600 Pixels (~262 PPI)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/Samsung/Samsung Galaxy S24.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 VivoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Vivo_Y18s.png" class="card-img-top p-3 proimg" alt="Vivo Y18s">
+        <div class="card-body">
+            <h4 class="card-title">Vivo Y18s</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">34,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Vivo Y18s',34999,'Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675.','FILES/Smart Phones/Vivo_Y18s.png','OS: Android 9.0 (Pie)','Storage: 128GB Built-in, 8GB RAM','Battery: (Li-Po Non removable), 4500 mAh','Resolution: 1080 x 2340 Pixels (~404 PPI)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/vivo/Vivo Y18 S.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 InfinixMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Infinix_Note_50_Pro_Plus.png" class="card-img-top p-3 proimg" alt="Note 50 Pro Plus">
+        <div class="card-body">
+            <h4 class="card-title">Note 50 Pro Plus</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">119,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Infinix Note 50 Pro Plus',119999,'The powerful MediaTek Dimensity 8200 chipset that will run the new infinix with the support of a 3.1 GHz Octa Core CPU to enhance the performance of the phone. In addition to that, you will have 12GB (+12GB Expandable) of RAM options with 256 GB of internal memory capacity and a dedicated memory card slot.','FILES/Smart Phones/Infinix_Note_50_Pro_Plus.png','OS: Android 14 OS','Dimensions: 164 x 75 x 8.2 mm','Weight: 194 g','Resolution:1080 x 2436 Pixels (~393 PPI)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/infinx/Infinix Note 50 Pro+.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 XiaomiMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Xiaomi_Poco_F7_Pro.png" class="card-img-top p-3 proimg" alt="Xiaomi Poco F7 Pro">
+        <div class="card-body">
+            <h4 class="card-title">Poco F7 Pro</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">185,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Xiaomi Poco F7 Pro',185999,'Xiaomi is a 6.67-inch AMOLED capacitive touchscreen display that allows you to enjoy the smoothest refresh rate of 144Hz and the HD+ resolution of 1220 x 2712 pixels. On the other hand, the powerful Mali G615-MC6 GPU fitted in the handset can easily handle high-quality graphics. The photography lovers are going to be crazy about the camera specifications of the latest Xiaomi. It offers you the triple sensors of 50 MP + 50 MP + 12 MP resolutions, and on the front you will get a 32 MP selfie snapper.','FILES/Smart Phones/Xiaomi_Poco_F7_Pro.png','Processor: Octa-core (1 x 3.35 GHz Cortex-A715 + 3 x 3.20 GHz Cortex-A715 + 4 x 2.20 GHz Cortex-A510)','Storage: 256GB Built-in, 12GB RAM, UFS 4.0, microSD slot','Battery: (Li-Po Non removable), 5000 mAh','Cameras: Triple Camera: 50 MP, f/1.7, 23mm (wide), 1/1.56')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/Xiaomi/Xiaomi Poco F7 Pro.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 Iphone">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Iphone_xs_max.png" class="card-img-top p-3 proimg" alt="iPhone XS Max">
+        <div class="card-body">
+            <h4 class="card-title">iPhone XS Max</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">167,499</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('iPhone XS Max',167499,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_xs_max.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/iphone/iphone xs max.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 OppoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Oppo_Reno_8.png" class="card-img-top p-3 proimg" alt="Oppo Reno 8">
+        <div class="card-body">
+            <h4 class="card-title">Oppo Reno 8</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">84,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Oppo Reno 8',84999,'OPPO (CPH2631) · Size and Weight. Height. 165.71mm · Storage. RAM and ROM Capacities. 8GB + 256GB · Display. Size. 6.67 inches (diagonal) · Camera. Rear','FILES/Smart Phones/Oppo_Reno_8.png','Water Resistance: IP54 (splash & dust resistant)','Build: Glass front, plastic body','OS: Android 14 (ColorOS 14)','Resolution: 720 x 1604 pixels (HD+)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/oppo/Oppo reno 8.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 SamsungMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Samung_S20_Ultra.png" class="card-img-top p-3 proimg" alt="Samsung S20 Ultra">
+        <div class="card-body">
+            <h4 class="card-title">S20 Ultra</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">226,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Samsung s20 Ultra',226999,'Maximize your view with the Samsung Galaxy 6.7” large display. Smooth 60Hz scrolling and the TFT U-Cut Display give you more room to enjoy your content. Experience the upgrade.','FILES/Smart Phones/Samung_S20_Ultra.png','Camera: Discover the power of the Galaxy is 50MP camera. Capture stunning, quality photos with the 2MP depth camera for added dimensions. The 8MP front camera completes your photography needs, ensuring flawless shots.','Secure access at your fingertips','OS: Android 14 OS or Android 14, up to 2 major Android upgrades  ','Resolution: 720 x 1600 Pixels (~262 PPI)')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/Samsung/Samsung S 20 ultra.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 VivoMob">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Vivo_Y28.png" class="card-img-top p-3 proimg" alt="Vivo Y28">
+        <div class="card-body">
+            <h4 class="card-title">Vivo Y28</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">44,999</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Vivo Y28',44999,' Vivo has got more powerful SoC, enough storage capacity, high-end RAM and more improved selfie shooter. The SoC of the new upcoming Vivo is Snapdragon 675. ','FILES/Smart Phones/Vivo_Y28.png','OS:	Android 9.0 (Pie) ','Storage: 128GB Built-in, 8GB RAM ','Battery:  (Li-Po Non removable), 4500 mAh ','Resolution: 1080 x 2340 Pixels (~404 PPI) ')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/vivo/Vivo Y28.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-4 Iphone">
+    <div class="card text-center rounded-4">
+        <img src="FILES/Smart Phones/Iphone_16_Pro_Max.png" class="card-img-top p-3 proimg" alt="Iphone 16 Pro Max">
+        <div class="card-body">
+            <h4 class="card-title">Iphone 16 Pro Max</h4>
+            <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">459,499</span> PKR</p>
+            <button class="btn probtn w-75 mb-3"
+                onclick="Info('Iphone 16 Pro Max',459499,'Display: 6.1″ Super Retina XDR OLED (1170 × 2532, ~460 ppi), HDR10 & Dolby Vision, Ceramic Shield protection','FILES/Smart Phones/Iphone_16_Pro_Max.png','Processor: Apple Bionic (6‑core, on 5 nm), with first‑generation neural engine','Storage Options: 64/128/256 GB, plus 4 GB RAM ','Cameras: Dual 12 MP rear (wide f/1.6 with OIS + ultrawide f/2.4), plus 12 MP front with Night Mode ','Battery & Charging: 2,815 mAh, ~17 hrs video playback, 18 W wired (50% in 30 min), 15 W MagSafe + Qi wireless ')">
+                ✨ Explore More Specs
+            </button>
+            <a href="PDFs/Smart Phones/iphone/I Phone 16 PRO MAX.pdf" download class="btn probtn w-75">
+                ⬇️ Download PDF
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-md-left">
+                <!-- LOGO & DESCRIPTION -->
+                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
+                    <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
+                    <p class="text-white-50 pe-5">
+                        <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
+                        smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
+                        unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
+                    </p>
+                </div>
+                <!-- WEBSITE LINKS -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
+                        <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
+                        <li class="mb-3"><a href="About Us.html" class="footer-link">BLOG</a></li>
+                        <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
+                    </ul>
+                </div>
+                <!-- CONTACT INFO -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
+                    </p>
+                    <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
+                </div>
+                <a href="Code Crafters.html"
+                    class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
+                    <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
+                </a>
+                <hr class="my-4 text-white-50">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-8">
+                        <p class="text-white-50 mb-0">
+                            © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-md-end">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="Main.JS"></script>
+    <script>function VisitorCounter() {
+            var count = parseInt(localStorage.getItem('counter')) || 0;
+            localStorage.setItem('counter', count)
+            document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
+        }
+        VisitorCounter()</script>
+<script>
+    // <!-- FOR DETAILS FUNCTIONALITY -->
+        function Info(ProductName, ProductPrice, ProductDescription, ProductImage, Spec1, Spec2, Spec3, Spec4) {
+            var obj = {
+                "ProductName": ProductName,
+                "ProductPrice": ProductPrice,
+                "ProductDescription": ProductDescription,
+                "ProductImage": ProductImage,
+                "Specifications": [Spec1, Spec2, Spec3, Spec4]
+            }
+            console.log(obj)
+            localStorage.setItem('Info', JSON.stringify(obj))
+            window.location.href = "Info.html"
+        }
+        // FOR FILTERING FUNCTIONALITY
+        function filtering() {
+            var list = document.getElementById('sorting').value;
+            var InfinixMob = document.getElementsByClassName('InfinixMob');
+            var VivoMob = document.getElementsByClassName('VivoMob');
+            var XiaomiMob = document.getElementsByClassName('XiaomiMob');
+            var SamsungMob = document.getElementsByClassName('SamsungMob');
+            var Iphone = document.getElementsByClassName('Iphone');
+            var OppoMob = document.getElementsByClassName('OppoMob');
+            if (list == 'All') {
+                for (let i = 0; i < InfinixMob.length; i++) {
+                    InfinixMob[i].style.display = 'block';
+                }
+                for (let j = 0; j < VivoMob.length; j++) {
+                    VivoMob[j].style.display = 'block';
+                }
+                for (let k = 0; k < XiaomiMob.length; k++) {
+                    XiaomiMob[k].style.display = 'block';
+                }
+                for (let l = 0; l < SamsungMob.length; l++) {
+                    SamsungMob[l].style.display = 'block';
+                }
+                for (let m = 0; m < Iphone.length; m++) {
+                    Iphone[m].style.display = 'block';
+                }
+                for (let n = 0; n < OppoMob.length; n++) {
+                    OppoMob[n].style.display = 'block';
+                }
+            }
+            else if (list == 'Infinix') {
+                for (let i = 0; i < InfinixMob.length; i++) {
+                    InfinixMob[i].style.display = 'block';
+                }
+                VivoHide(); XiaomiHide(); SamsungHide(); IphoneHide(); OppoHide();
+            }
+            else if (list == 'Vivo') {
+                for (let j = 0; j < VivoMob.length; j++) {
+                    VivoMob[j].style.display = 'block';
+                }
+                InfinixHide(); XiaomiHide(); SamsungHide(); IphoneHide(); OppoHide();
+            }
+            else if (list == 'Xiaomi') {
+                for (let k = 0; k < XiaomiMob.length; k++) {
+                    XiaomiMob[k].style.display = 'block';
+                }
+                InfinixHide(); VivoHide(); SamsungHide(); IphoneHide(); OppoHide();
+            }
+            else if (list == 'Samsung') {
+                for (let l = 0; l < SamsungMob.length; l++) {
+                    SamsungMob[l].style.display = 'block';
+                }
+                InfinixHide(); VivoHide(); XiaomiHide(); IphoneHide(); OppoHide();
+            }
+            else if (list == 'Apple') {
+                for (let m = 0; m < Iphone.length; m++) {
+                    Iphone[m].style.display = 'block';
+                }
+                InfinixHide(); VivoHide(); XiaomiHide(); SamsungHide(); OppoHide();
+            }
+            else if (list == 'Oppo') {
+                for (let n = 0; n < OppoMob.length; n++) {
+                    OppoMob[n].style.display = 'block';
+                }
+                InfinixHide(); VivoHide(); XiaomiHide(); SamsungHide(); IphoneHide();
+            }
+            else {
+                alert("⚠ Please select a valid category!");
+            }
+            // FOR HIDING FUNCTIONALITY
+            function InfinixHide() {
+                for (let i = 0; i < InfinixMob.length; i++) {
+                    InfinixMob[i].style.display = 'none';
+                }
+            }
+            function VivoHide() {
+                for (let j = 0; j < VivoMob.length; j++) {
+                    VivoMob[j].style.display = 'none';
+                }
+            }
+            function XiaomiHide() {
+                for (let k = 0; k < XiaomiMob.length; k++) {
+                    XiaomiMob[k].style.display = 'none';
+                }
+            }
+            function SamsungHide() {
+                for (let l = 0; l < SamsungMob.length; l++) {
+                    SamsungMob[l].style.display = 'none';
+                }
+            }
+            function IphoneHide() {
+                for (let m = 0; m < Iphone.length; m++) {
+                    Iphone[m].style.display = 'none';
+                }
+            }
+            function OppoHide() {
+                for (let n = 0; n < OppoMob.length; n++) {
+                    OppoMob[n].style.display = 'none';
+                }
+            }
+        }
+    // FOR SORTING PRICE FUNCTIONALITY
+        function sortCardsByPrice() {
+    const container = document.getElementById("productContainer");
+    const cards = Array.from(container.getElementsByClassName("col-4"));
+    const sortType = document.getElementById("priceFilter").value;
+    cards.sort((a, b) => {
+      const priceA = parseInt(a.querySelector("p span").innerText.replace(/,/g, ""));
+      const priceB = parseInt(b.querySelector("p span").innerText.replace(/,/g, ""));
+      return sortType === "low" ? priceA - priceB : priceB - priceA;
+    });
+    // Clear and re-append cards in sorted order
+    container.innerHTML = "";
+    cards.forEach(card => container.appendChild(card));
+  }    
+    </script>
+</body>
+
+</html>
