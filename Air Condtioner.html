@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>LIBERTY ELECTRONICS - Checkout</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+<!-- 
+    it's a final add to cart page 
+    required necessary changes -->
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        padding-bottom: 140px;
+      }
+      .addtocart {
+        background-color: #f8f9fa;
+        color: #000;
+        font-weight: 500;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+      .trash-icon {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+        font-size: 20px;
+        color: red;
+      }
+      .confirm-btn {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 16px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 20px;
+        background-color: #00fff7;
+        color: #000;
+        transition: 0.3s;
+      }
+      .confirm-btn:hover {
+        background: #fff;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container text-center">
+      <h3 class="my-4">Checkout Page</h3>
+      <p class="defaultmsg text-muted">😕 Oops! Your cart is currently empty.</p>
+      <p id="totalItems" class="fw-semibold fs-5 mb-4"></p>
+      <div id="parent"></div>
+      <h5 id="grandTotal" class="text-info fw-bold mt-4"></h5>
+    </div>
+
+    <button class="confirm-btn" onclick="confirmOrder()">✅ Confirm Order</button>
+
+    <!-- Toast for item removal -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="deleteToast" class="toast align-items-center text-bg-danger border-0" role="alert">
+        <div class="d-flex">
+          <div class="toast-body">🗑️ Item removed from cart.</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+          <div class="modal-header">
+            <h5 class="modal-title">Remove Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to remove this item from your cart?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Yes, Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      let list = JSON.parse(localStorage.getItem('Wishlist')) || [];
+      const parent = document.getElementById('parent');
+      const totalItems = document.getElementById('totalItems');
+      const grandTotalElem = document.getElementById('grandTotal');
+      const toastElement = new bootstrap.Toast(document.getElementById('deleteToast'));
+      const confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+      let deleteIndex = null; // temp storage for delete
+
+      function VisualizeCartItems() {
+        parent.innerHTML = '';
+        let count = 0;
+        let grandTotal = 0;
+
+        if (list.length > 0) {
+          list.forEach((item, index) => {
+            count += item.Quantity;
+            grandTotal += item.TotalAmount;
+
+            const div = document.createElement('div');
+            div.className = "addtocart";
+
+            div.innerHTML = `
+              <span class="trash-icon" onclick="askDelete(${index})">&times;</span>
+              <h5>${item.ProductName}</h5>
+              <img src="${item.ProductImage}" class="img-fluid my-2" style="max-height: 100px;" />
+              <div class="d-flex justify-content-center align-items-center gap-3 my-2">
+                <button class="btn btn-sm btn-outline-dark" onclick="decrement(${index})">-</button>
+                <span class="fw-semibold">Quantity: ${item.Quantity}</span>
+                <button class="btn btn-sm btn-outline-dark" onclick="increment(${index})">+</button>
+              </div>
+              <p class="fw-bold mb-1">Total: ${item.TotalAmount} PKR</p>
+            `;
+
+            parent.appendChild(div);
+          });
+
+          totalItems.innerText = `🛒 Total Products: ${count}`;
+          grandTotalElem.innerText = `💵 Grand Total: ${grandTotal} PKR`;
+        } else {
+          document.querySelector('.defaultmsg').style.display = 'block';
+          totalItems.innerText = '';
+          grandTotalElem.innerText = '';
+        }
+      }
+
+      function increment(index) {
+        list[index].Quantity += 1;
+        list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
+        localStorage.setItem('Wishlist', JSON.stringify(list));
+        VisualizeCartItems();
+      }
+
+      function decrement(index) {
+        if (list[index].Quantity > 1) {
+          list[index].Quantity -= 1;
+          list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
+        } else {
+          askDelete(index);
+          return;
+        }
+        localStorage.setItem('Wishlist', JSON.stringify(list));
+        VisualizeCartItems();
+      }
+
+      function askDelete(index) {
+        deleteIndex = index;
+        confirmDeleteModal.show();
+      }
+
+      document.getElementById('confirmDeleteBtn').addEventListener('click', () => {
+        if (deleteIndex !== null) {
+          list.splice(deleteIndex, 1);
+          localStorage.setItem('Wishlist', JSON.stringify(list));
+          VisualizeCartItems();
+          toastElement.show();
+          deleteIndex = null;
+          confirmDeleteModal.hide();
+        }
+      });
+
+      function confirmOrder() {
+        if (list.length === 0) {
+          alert("Your cart is empty!");
+          return;
+        }
+        alert("🎉 Order Confirmed! Thank you for shopping.");
+        localStorage.removeItem('Wishlist');
+        window.location.reload();
+      }
+
+      VisualizeCartItems();
+    </script>
+  </body>
+</html>

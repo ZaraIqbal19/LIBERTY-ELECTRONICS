@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>LIBERTY ELECTRONICS - Checkout</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+    .cart-item {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 8px rgba(0, 255, 247, 0.2);
+    }
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+    .quantity-controls button {
+      border: none;
+      background: #00fff7;
+      color: #000;
+      width: 32px;
+      height: 32px;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    .btn-trash {
+      color: #ff4d4d;
+      font-size: 20px;
+      border: none;
+      background: transparent;
+    }
+    .checkout-total {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 20px;
+      color: #00fff7;
+      font-size: 1.2rem;
+      text-align: end;
+      box-shadow: 0 0 8px rgba(0, 255, 247, 0.2);
+    }
+    .toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h3 class="text-center mb-4">🛒 Order Summary</h3>
+    <div id="cart-items"></div>
+    <div class="checkout-total mt-4">
+      Total: <span id="cart-total">0</span> PKR
+    </div>
+    <button class="btn btn-success w-100 fw-bold py-3 fs-5 mt-3" onclick="confirmOrder()">
+      ✅ Confirm Order
+    </button>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container">
+    <div class="toast align-items-center text-bg-success border-0" role="alert" id="removeToast" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">Item removed from cart!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('Wishlist')) || [];
+
+    function VisualizeCartItems() {
+      const container = document.getElementById("cart-items");
+      const totalElement = document.getElementById("cart-total");
+      container.innerHTML = "";
+
+      let grandTotal = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = `<p class="text-center">🛒 Your cart is empty.</p>`;
+        totalElement.textContent = "0";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const quantity = item.Quantity || 1;
+        const price = item.ProductPrice || item.TotalAmount || 0;
+        const totalPrice = price * quantity;
+        grandTotal += totalPrice;
+
+        const div = document.createElement("div");
+        div.className = "cart-item row align-items-center";
+
+        div.innerHTML = `
+          <div class="col-3 col-md-2">
+            <img src="${item.ProductImage}" alt="${item.ProductName}" class="img-fluid">
+          </div>
+          <div class="col-5 col-md-6">
+            <h6 class="mb-1">${item.ProductName}</h6>
+            <p class="mb-1"><b>${totalPrice.toLocaleString()} PKR</b></p>
+          </div>
+          <div class="col-4 col-md-2 d-flex align-items-center quantity-controls">
+            <button onclick="updateQty(${index}, -1)">−</button>
+            <span class="mx-2" id="qty-${index}">${quantity}</span>
+            <button onclick="updateQty(${index}, 1)">+</button>
+          </div>
+          <div class="col-12 col-md-2 mt-2 mt-md-0 text-end">
+            <button class="btn-trash" onclick="removeItem(${index})"><i class="fas fa-trash"></i></button>
+          </div>
+        `;
+
+        container.appendChild(div);
+      });
+
+      totalElement.textContent = grandTotal.toLocaleString();
+    }
+
+    function updateQty(index, change) {
+      cart[index].Quantity = (cart[index].Quantity || 1) + change;
+      if (cart[index].Quantity < 1) cart[index].Quantity = 1;
+      localStorage.setItem("Wishlist", JSON.stringify(cart));
+      VisualizeCartItems();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("Wishlist", JSON.stringify(cart));
+      VisualizeCartItems();
+      const toast = new bootstrap.Toast(document.getElementById('removeToast'));
+      toast.show();
+    }
+
+    function confirmOrder() {
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      localStorage.removeItem('Wishlist');
+      window.location.href = 'OrderPlaced.html';
+    }
+
+    // Initial call
+    VisualizeCartItems();
+  </script>
+</body>
+</html>
