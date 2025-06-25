@@ -11,25 +11,6 @@
     <link rel="stylesheet" href="Style.CSS">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-body {
-  margin: 0;
-  position: relative;
-  min-height: 100vh;
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('dummy_files/bg image.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.1; /* Lower value = more fade */
-  z-index: -1;
-}
         .footertext {
             color: #66fcf1;
         }
@@ -61,81 +42,38 @@ body::before {
             color: #66fcf1;
             text-shadow: 0 0 8px #66fcf1;
         }
-        .confirm-btn {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 35%;
-        padding: 14px;
-        font-size: 1.6rem;
-        font-weight: 600;
-               background-color: #080707;
-        color: hwb(0 94% 6%);
-        box-shadow: 0 0 15px #fff;
-      }
-      .confirm-btn:hover {
-         box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-        background-color: #00fff7;
-        color: #000;
-      }
-      .removeicon {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        cursor: pointer;
-        font-size: 30px;
-        color: red;
-      }
-      .cartcard {
-                width: 60%;
-        margin: 0 auto 20px auto;
-        background-color: #353434;
-        color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
-        position: relative;
-        transition: 0.3s ease-in-out;
-      }
-      .cartcard:hover {
-        box-shadow: 0 0 25px rgba(0, 255, 247, 0.6);
-        transform: scale(1.01);
-      }
-      .addsubbtn {
-        border: 2px solid #00fff7;
-        color: #00fff7;
-        background: transparent;
-        transition: all 0.3s ease-in-out;
-      }
-      .addsubbtn:hover {
-        background-color: #00fff7;
-        color: #000;
-        box-shadow: 0 0 10px #00fff7;
-      }
-       .proimg{
-    height: 150px;
-  object-fit: contain;
-  filter: brightness(1.3) drop-shadow(0 0 4px #070909);
-  transition: transform 0.4s ease, filter 0.4s ease;
-  padding: 10px;
-  margin: auto;
-}
-.proimg:hover{
-    transform: scale(1.05);
-  filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
-}
-      .modal-content {
-        background-color: #1c1c1c;
-      }
-      .toast-body {
-        font-weight: 500;
-      }
+            .checkout-card {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.1);
+    }
+    .btn-confirm {
+      background-color: #00fff7;
+      color: #000;
+      font-weight: bold;
+    }
+    .btn-confirm:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    .order-summary {
+      background-color: #1b1b1b;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 255, 247, 0.2);
+      margin-top: 20px;
+      color: white;
+    }
+    .order-summary h5 {
+      color: #00fff7;
+    }
+
     </style>
 </head>
 
 <body>
-    <!-- IT's A CHECKOUT PAGE -->
+    <!-- IT's AN ORDER CONFIRMATION PAGE -->
     <!-- HEADER SECTION -->
     <div class="header">
         <div class="container py-2">
@@ -168,41 +106,54 @@ body::before {
         </nav>
     </div>
     <!-- BODY SECTION -->
-<div class="container text-center">
-      <h3 class="my-4">✨🛒 Your Cart’s Loaded — Time to Ignite the Checkout! 🔥🚀</h3>
-      <p class="defaultmsg">😕 Oops! Your cart is currently empty.</p>
-      <p id="totalItems" class="fw-semibold fs-5 mb-4"></p>
-      <div id="parent"></div>
-      <h5 id="grandTotal" class="text-info fw-bold mt-4"></h5>
-    </div>
-    <button class="confirm-btn" onclick="confirmOrder()">✅ Confirm Order</button>
-    <!-- Toast for item removal -->
-    <div class="position-fixed top-10 end-0 p-3" style="z-index: 11">
-      <div id="deleteToast" class="toast align-items-center text-bg-danger border-0" role="alert">
-        <div class="d-flex">
-          <div class="toast-body">🗑️ Item removed from your cart.</div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+ <div class="container py-5">
+    <h2 class="text-center mb-4">🔐 Checkout with Confidence, Powered by Liberty Electronics</h2>
+    <div class="row g-4">
+      <!-- Form -->
+      <div class="col-md-7">
+        <div class="checkout-card">
+          <h5 class="mb-4">Customer Information</h5>
+          <form id="checkoutForm">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" required />
+            </div>
+            <div class="mb-3">
+              <label for="emailAddress" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="emailAddress" required />
+            </div>
+            <div class="mb-3">
+              <label for="contactNumber" class="form-label">Contact Number</label>
+              <input type="text" class="form-control" id="contactNumber" required />
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Shipping Address</label>
+              <input type="text" class="form-control" id="address" required />
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" required />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="zip" class="form-label">ZIP Code</label>
+                <input type="text" class="form-control" id="zip" required />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-confirm w-100 py-2 fs-5 mt-2">Order Dispatched</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="col-md-5">
+        <div class="order-summary">
+          <h5>📟 Order Summary</h5>
+          <div id="orderDetails" class="mt-3"></div>
         </div>
       </div>
     </div>
-    <!-- Confirmation Modal -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-white">
-          <div class="modal-header">
-            <h5 class="modal-title">⚠️ Delete This Product?</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            Are you sure you want to remove this item from your cart?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn addsubbtn" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Yes, Remove</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
     <!-- FOOTER SECTION -->
     <footer class="text-white pt-5 pb-4">
         <div class="container text-center text-md-start">
@@ -270,96 +221,76 @@ body::before {
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
     <script src="Main.JS"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
-    function 
-    VisitorCounter() {
+    function VisitorCounter() {
             var count = parseInt(localStorage.getItem('counter')) || 0;
             localStorage.setItem('counter', count)
             document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
         }
         VisitorCounter()
-    var list = JSON.parse(localStorage.getItem('Wishlist')) || [];
-var parent = document.getElementById('parent');
-var totalItems = document.getElementById('totalItems');
-var grandTotalElem = document.getElementById('grandTotal');
-var toastElement = new bootstrap.Toast(document.getElementById('deleteToast'));
-var confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-var deleteIndex = null;
-function VisualizeCartItems() {
-  parent.innerHTML = '';
-  var count = 0;
-  var grandTotal = 0;
-  if (list.length > 0) {
-    document.querySelector('.defaultmsg').style.display = 'none';
-    list.forEach(function (item, index) {
-      count += item.Quantity;
-      grandTotal += item.TotalAmount;
-      var div = document.createElement('div');
-      div.className = "cartcard";
-      div.innerHTML = `
-        <span class="removeicon" onclick="askDelete(${index})">&times;</span>
-        <h5>${item.ProductName}</h5>
-        <img src="${item.ProductImage}" class="img-fluid my-3 proimg" />
-        <div class="d-flex justify-content-center align-items-center gap-3 my-2">
-          <button class="btn btn-sm addsubbtn" onclick="decrement(${index})">-</button>
-          <span class="fw-semibold">Quantity: ${item.Quantity}</span>
-          <button class="btn btn-sm addsubbtn" onclick="increment(${index})">+</button>
-        </div>
-        <p class="fw-bold mb-1">Total: ${item.TotalAmount} PKR</p>
-      `;
-      parent.appendChild(div);
+     function calculateSummary() {
+      var grandTotal = parseFloat(localStorage.getItem("GrandTotal")) || 0;
+      var gst = +(grandTotal * 0.015).toFixed(2);
+      var finalAmount = grandTotal + gst;
+
+      var list = JSON.parse(localStorage.getItem("Wishlist")) || [];
+
+      var html = "";
+      $.each(list, function (i, item) {
+        html += `
+          <li class="list-group-item bg-transparent text-white">
+            <div class="d-flex justify-content-between">
+              <span><strong>${item.ProductName}</strong> x ${item.quantity || 1}</span>
+              <span>Rs. ${item.TotalAmount || item.ProductPrice}</span>
+            </div>
+          </li>`;
+      });
+
+      html += `
+        <li class="list-group-item bg-transparent d-flex justify-content-between text-white">
+          <span>Billing Amount</span><span>Rs. ${grandTotal}</span>
+        </li>
+        <li class="list-group-item bg-transparent d-flex justify-content-between text-white">
+          <span>Shipping</span><span>Free</span>
+        </li>
+        <li class="list-group-item bg-transparent d-flex justify-content-between text-white">
+          <span>GST (1.5%)</span><span>Rs. ${gst}</span>
+        </li>
+        <li class="list-group-item bg-transparent d-flex justify-content-between fw-bold text-white">
+          <span>Total Amount</span><span>Rs. ${finalAmount.toFixed(2)}</span>
+        </li>`;
+
+      $("#orderDetails").html(`<ul class="list-group list-group-flush">${html}</ul>`);
+    }
+
+    $(document).ready(function () {
+      calculateSummary();
+
+      $("#checkoutForm").submit(function (e) {
+        e.preventDefault();
+
+        var name = $("#fullName").val();
+        var contact = $("#contactNumber").val();
+        var address = $("#address").val();
+        var city = $("#city").val();
+        var zip = $("#zip").val();
+
+        var orderInfo = {
+          name: name,
+          contact: contact,
+          address: address + ", " + city + " - " + zip,
+          total: localStorage.getItem("GrandTotal")
+        };
+
+        localStorage.setItem("OrderInfo", JSON.stringify(orderInfo));
+
+        setTimeout(function () {
+          window.location.href = "HeartFelt Thanks.html";
+        }, 300);
+      });
     });
-    totalItems.innerText = `🛒 Total Products: ${count}`;
-    grandTotalElem.innerText = `💵 Grand Total: ${grandTotal} PKR`;
-    localStorage.setItem("GrandTotal", grandTotal); 
-  } else {
-    document.querySelector('.defaultmsg').style.display = 'block';
-    totalItems.innerText = '';
-    grandTotalElem.innerText = '';
-  }
-}
-function increment(index) {
-  list[index].Quantity += 1;
-  list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function decrement(index) {
-  if (list[index].Quantity > 1) {
-    list[index].Quantity -= 1;
-    list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  } else {
-    askDelete(index);
-    return;
-  }
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function askDelete(index) {
-  deleteIndex = index;
-  confirmDeleteModal.show();
-}
-document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-  if (deleteIndex != null) {
-    list.splice(deleteIndex, 1);
-    localStorage.setItem('Wishlist', JSON.stringify(list));
-    VisualizeCartItems();
-    toastElement.show();
-    deleteIndex = null;
-    confirmDeleteModal.hide();
-  }
-});
-function confirmOrder() {
-  if (list.length == 0) {
-    alert("Your cart is empty!");
-    // return;
-  }
-  else{
-  window.location.href = "Order Confirmation.html"; 
-  }  
-}
-VisualizeCartItems();
-    </script>
+  </script>
 </body>
 
 </html>

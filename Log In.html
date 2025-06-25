@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <title>LIBERTY ELECTRONICS</title>
     <!-- Required meta tags -->
@@ -11,131 +12,107 @@
     <link rel="stylesheet" href="Style.CSS">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-body {
-  margin: 0;
-  position: relative;
-  min-height: 100vh;
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('dummy_files/bg image.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.1; /* Lower value = more fade */
-  z-index: -1;
-}
         .footertext {
             color: #66fcf1;
         }
+
         .footer-link {
             color: #c5c6c7;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .nav-link:hover {
             color: #09f9e9;
             font-weight: bold;
             text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
         }
+
         .footer-link:hover {
             color: #66fcf1;
             text-shadow: 0 0 5px #66fcf1;
         }
+
         .social-icon {
             color: #c5c6c7;
             font-size: 1.2rem;
             margin-left: 15px;
             transition: color 0.3s ease, text-shadow 0.3s;
         }
+
         .social-icon:hover {
             color: #66fcf1;
             text-shadow: 0 0 8px #66fcf1;
         }
-      .personaldetails:hover {
+
+        .personaldetails:hover {
             color: #66fcf1;
             text-shadow: 0 0 8px #66fcf1;
         }
-        .confirm-btn {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 35%;
-        padding: 14px;
-        font-size: 1.6rem;
-        font-weight: 600;
-               background-color: #080707;
-        color: hwb(0 94% 6%);
-        box-shadow: 0 0 15px #fff;
-      }
-      .confirm-btn:hover {
-         box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-        background-color: #00fff7;
-        color: #000;
-      }
-      .removeicon {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        cursor: pointer;
-        font-size: 30px;
-        color: red;
-      }
-      .cartcard {
-                width: 60%;
-        margin: 0 auto 20px auto;
-        background-color: #353434;
-        color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
-        position: relative;
-        transition: 0.3s ease-in-out;
-      }
-      .cartcard:hover {
-        box-shadow: 0 0 25px rgba(0, 255, 247, 0.6);
-        transform: scale(1.01);
-      }
-      .addsubbtn {
-        border: 2px solid #00fff7;
-        color: #00fff7;
-        background: transparent;
-        transition: all 0.3s ease-in-out;
-      }
-      .addsubbtn:hover {
-        background-color: #00fff7;
-        color: #000;
-        box-shadow: 0 0 10px #00fff7;
-      }
-       .proimg{
-    height: 150px;
-  object-fit: contain;
-  filter: brightness(1.3) drop-shadow(0 0 4px #070909);
-  transition: transform 0.4s ease, filter 0.4s ease;
-  padding: 10px;
-  margin: auto;
-}
-.proimg:hover{
-    transform: scale(1.05);
-  filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
-}
-      .modal-content {
-        background-color: #1c1c1c;
-      }
-      .toast-body {
-        font-weight: 500;
-      }
+
+        .form-control,
+        .form-check-input {
+            background-color: #1a1a2e;
+            border: 1px solid #0ef;
+            color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #bbb;
+        }
+
+        .probtn {
+            background-color: transparent;
+            color: #00ffe5;
+            border: 2px solid #00ffe5;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px #101111;
+        }
+
+        .probtn:hover {
+            background-color: #00ffe5;
+            color: #0b0c1a;
+            box-shadow: 0 0 20px #00ffe5;
+        }
+
+        .btn-outline-light {
+            border-color: #0ef;
+            color: #0ef;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #0ef;
+            color: #000;
+        }
+
+        .card {
+            background: #1f2833;
+            color: #00ffe5;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .colheading {
+            color: #00ffff;
+            text-shadow: 0 0 10px #0cf3f3;
+        }
+
+        .text-glow {
+            color: #00ffe5;
+            text-shadow: 0 0 10px #0c0f0f;
+        }
+
+        .hover-glow:hover {
+            color: #66fcf1 !important;
+            text-shadow: 0 0 10px #66fcf1;
+        }
     </style>
 </head>
 
 <body>
-    <!-- IT's A CHECKOUT PAGE -->
+    <!-- IT's A REGISTERATION PAGE -->
     <!-- HEADER SECTION -->
     <div class="header">
         <div class="container py-2">
@@ -168,41 +145,43 @@ body::before {
         </nav>
     </div>
     <!-- BODY SECTION -->
-<div class="container text-center">
-      <h3 class="my-4">✨🛒 Your Cart’s Loaded — Time to Ignite the Checkout! 🔥🚀</h3>
-      <p class="defaultmsg">😕 Oops! Your cart is currently empty.</p>
-      <p id="totalItems" class="fw-semibold fs-5 mb-4"></p>
-      <div id="parent"></div>
-      <h5 id="grandTotal" class="text-info fw-bold mt-4"></h5>
-    </div>
-    <button class="confirm-btn" onclick="confirmOrder()">✅ Confirm Order</button>
-    <!-- Toast for item removal -->
-    <div class="position-fixed top-10 end-0 p-3" style="z-index: 11">
-      <div id="deleteToast" class="toast align-items-center text-bg-danger border-0" role="alert">
-        <div class="d-flex">
-          <div class="toast-body">🗑️ Item removed from your cart.</div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+<div class="container py-5">
+    <div class="card p-4">
+        <div class="row g-4">
+            <div class="col-md-6 d-none d-md-flex login-banner flex-column justify-content-center text-center">
+                <h2 class="text-glow">Welcome Back to Liberty Electronics</h2>
+                <p>Your trusted hub for premium electronics and tech deals.</p>
+                <ul class="list-unstyled text-start px-4">
+                    <li class="mb-3 hover-glow">⚡ Hassle-Free Login</li>
+                    <li class="mb-3 hover-glow">🔒 Secure & Encrypted</li>
+                    <li class="mb-3 hover-glow">💼 Access Your Orders Instantly</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center text-glow mb-4">Log In to Your Account</h3>
+                <form>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember Me</label>
+                    </div>
+                    <button type="submit" class="btn probtn w-100">Login</button>
+                    <div class="text-center mt-3">
+                        <a href="#" class="footer-link hover-glow">Forgot Password?</a>
+                        <br />
+                        <span class="text-white-50">Don't have an account? <a href="Register Yourself.html"
+                                class="footer-link hover-glow">Sign Up</a></span>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- Confirmation Modal -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-white">
-          <div class="modal-header">
-            <h5 class="modal-title">⚠️ Delete This Product?</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            Are you sure you want to remove this item from your cart?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn addsubbtn" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Yes, Remove</button>
-          </div>
-        </div>
-      </div>
-    </div>
+</div>
     <!-- FOOTER SECTION -->
     <footer class="text-white pt-5 pb-4">
         <div class="container text-center text-md-start">
@@ -270,95 +249,13 @@ body::before {
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
     <script src="Main.JS"></script>
-    <script>
-    function 
-    VisitorCounter() {
+    <script>function VisitorCounter() {
             var count = parseInt(localStorage.getItem('counter')) || 0;
             localStorage.setItem('counter', count)
             document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
         }
         VisitorCounter()
-    var list = JSON.parse(localStorage.getItem('Wishlist')) || [];
-var parent = document.getElementById('parent');
-var totalItems = document.getElementById('totalItems');
-var grandTotalElem = document.getElementById('grandTotal');
-var toastElement = new bootstrap.Toast(document.getElementById('deleteToast'));
-var confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-var deleteIndex = null;
-function VisualizeCartItems() {
-  parent.innerHTML = '';
-  var count = 0;
-  var grandTotal = 0;
-  if (list.length > 0) {
-    document.querySelector('.defaultmsg').style.display = 'none';
-    list.forEach(function (item, index) {
-      count += item.Quantity;
-      grandTotal += item.TotalAmount;
-      var div = document.createElement('div');
-      div.className = "cartcard";
-      div.innerHTML = `
-        <span class="removeicon" onclick="askDelete(${index})">&times;</span>
-        <h5>${item.ProductName}</h5>
-        <img src="${item.ProductImage}" class="img-fluid my-3 proimg" />
-        <div class="d-flex justify-content-center align-items-center gap-3 my-2">
-          <button class="btn btn-sm addsubbtn" onclick="decrement(${index})">-</button>
-          <span class="fw-semibold">Quantity: ${item.Quantity}</span>
-          <button class="btn btn-sm addsubbtn" onclick="increment(${index})">+</button>
-        </div>
-        <p class="fw-bold mb-1">Total: ${item.TotalAmount} PKR</p>
-      `;
-      parent.appendChild(div);
-    });
-    totalItems.innerText = `🛒 Total Products: ${count}`;
-    grandTotalElem.innerText = `💵 Grand Total: ${grandTotal} PKR`;
-    localStorage.setItem("GrandTotal", grandTotal); 
-  } else {
-    document.querySelector('.defaultmsg').style.display = 'block';
-    totalItems.innerText = '';
-    grandTotalElem.innerText = '';
-  }
-}
-function increment(index) {
-  list[index].Quantity += 1;
-  list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function decrement(index) {
-  if (list[index].Quantity > 1) {
-    list[index].Quantity -= 1;
-    list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  } else {
-    askDelete(index);
-    return;
-  }
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function askDelete(index) {
-  deleteIndex = index;
-  confirmDeleteModal.show();
-}
-document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-  if (deleteIndex != null) {
-    list.splice(deleteIndex, 1);
-    localStorage.setItem('Wishlist', JSON.stringify(list));
-    VisualizeCartItems();
-    toastElement.show();
-    deleteIndex = null;
-    confirmDeleteModal.hide();
-  }
-});
-function confirmOrder() {
-  if (list.length == 0) {
-    alert("Your cart is empty!");
-    // return;
-  }
-  else{
-  window.location.href = "Order Confirmation.html"; 
-  }  
-}
-VisualizeCartItems();
+
     </script>
 </body>
 
