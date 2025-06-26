@@ -1,163 +1,372 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>LIBERTY ELECTRONICS - Checkout</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-    }
-    .cart-item {
-      background-color: #111;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 8px rgba(0, 255, 247, 0.2);
-    }
-    .cart-item img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      background-color: #fff;
-      border-radius: 8px;
-    }
-    .quantity-controls button {
-      border: none;
-      background: #00fff7;
-      color: #000;
-      width: 32px;
-      height: 32px;
-      font-weight: bold;
-      border-radius: 6px;
-    }
-    .btn-trash {
-      color: #ff4d4d;
-      font-size: 20px;
-      border: none;
-      background: transparent;
-    }
-    .checkout-total {
-      background-color: #111;
-      border-radius: 12px;
-      padding: 20px;
-      color: #00fff7;
-      font-size: 1.2rem;
-      text-align: end;
-      box-shadow: 0 0 8px rgba(0, 255, 247, 0.2);
-    }
-    .toast-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
-  </style>
+    <title>LIBERTY ELECTRONICS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="Style.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      body{
+font-family: 'Montserrat', sans-serif;
+      }
+        .footertext {
+            color: #66fcf1;
+        }
+        .footer-link {
+            color: #c5c6c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #09f9e9;
+            font-weight: bold;
+            text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
+        }
+        .footer-link:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 5px #66fcf1;
+        }
+        .social-icon {
+            color: #c5c6c7;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: color 0.3s ease, text-shadow 0.3s;
+        }
+        .social-icon:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+      .personaldetails:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+             .neon-card {
+            background-color: #141c25;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            padding: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+        .neon-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px #00ffe5;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .profile-img {
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(1.3) drop-shadow(0 0 4px #070909);
+            transition: transform 0.4s ease, filter 0.4s ease;
+            padding: 10px;
+            margin: auto;
+            border-radius: 50%;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
+        }
+        .card-title {
+            color: #66fcf1;
+            text-shadow: 0 0 5px #66fcf1;
+        }
+        .skills {
+            font-size: 0.95rem;
+            color: #c5c6c7;
+        }
+        .social-icons a,
+        .social-icons span {
+            color: #c5c6c7;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: color 0.3s, text-shadow 0.3s;
+            cursor: pointer;
+        }
+        .social-icons a:hover,
+        .social-icons span:hover {
+            color: #00ffe5;
+            text-shadow: 0 0 8px #17f6df;
+        }
+        .neon-card p {
+  color: #c5c6c7; /* Light gray for readability */
+  font-size: 1rem;
+  line-height: 1.6;
+  text-shadow: 0 0 1px #00ffe5, 0 0 2px #060707;
+  margin-bottom: 10px;
+}
+
+.skills {
+  font-weight: 500;
+  color: #a1fcf1;
+  text-shadow: 0 0 2px #00ffe5;
+}
+
+    </style>
 </head>
+
 <body>
-  <div class="container py-4">
-    <h3 class="text-center mb-4">🛒 Order Summary</h3>
-    <div id="cart-items"></div>
-    <div class="checkout-total mt-4">
-      Total: <span id="cart-total">0</span> PKR
+    <!-- IT's A CODE CRAFTERS PAGE -->
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <div class="container py-2">
+            <!-- LIVE TIME & VISITOR COUNTER -->
+            <div class="row text-center align-items-center">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <p id="livetime" class="fs-2 mb-0">00:00:00</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
+                </div>
+            </div>
+        </div>
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i
+                                    class="fas fa-shopping-cart"></i>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-    <button class="btn btn-success w-100 fw-bold py-3 fs-5 mt-3" onclick="confirmOrder()">
-      ✅ Confirm Order
-    </button>
-  </div>
-
-  <!-- Toast -->
-  <div class="toast-container">
-    <div class="toast align-items-center text-bg-success border-0" role="alert" id="removeToast" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">Item removed from cart!</div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
+    <!-- BODY SECTION -->
+<div class="container py-5">
+        <div class="row g-4">
+            <!-- CARD 1 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title"></h4>
+                    <p>Front-end Developer passionate about sleek UI/UX and responsive design.</p>
+                    <p class="skills">Skills: HTML, CSS, JavaScript, React</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal1"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 2 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title"></h4>
+                    <p>Front-end Developer passionate about sleek UI/UX and responsive design.</p>
+                    <p class="skills">Skills: HTML, CSS, JavaScript, React</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal1"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 3 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title"></h4>
+                    <p>Front-end Developer passionate about sleek UI/UX and responsive design.</p>
+                    <p class="skills">Skills: HTML, CSS, JavaScript, React</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal1"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 4 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title"></h4>
+                    <p>Front-end Developer passionate about sleek UI/UX and responsive design.</p>
+                    <p class="skills">Skills: HTML, CSS, JavaScript, React</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal1"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <!-- MODAL 1 (ZARA IQBAL) -->
+    <div class="modal fade" id="phoneModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Ava Johnson</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 1234567
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 2 (MAAZ ALAM) -->
+    <div class="modal fade" id="phoneModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Liam Smith</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 9876543
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 3 (FAHEEM) -->
+    <div class="modal fade" id="phoneModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Liam Smith</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 9876543
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 4 (WALEED) -->
+    <div class="modal fade" id="phoneModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Liam Smith</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 9876543
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    let cart = JSON.parse(localStorage.getItem('Wishlist')) || [];
+    <!-- FOOTER SECTION -->
+    <footer class="text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-md-left">
+                <!-- LOGO & DESCRIPTION -->
+                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
+                    <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
+                    <p class="text-white-50 pe-5">
+                        <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
+                        smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
+                        unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
+                    </p>
+                </div>
+                <!-- WEBSITE LINKS -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
+                        <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
+                        <li class="mb-3"><a href="About Us.html" class="footer-link">INSIGHT</a></li>
+                        <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
+                    </ul>
+                </div>
+                <!-- CONTACT INFO -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
+                    </p>
+                    <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
+                </div>
+                <a href="Code Crafters.html"
+                    class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
+                    <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
+                </a>
 
-    function VisualizeCartItems() {
-      const container = document.getElementById("cart-items");
-      const totalElement = document.getElementById("cart-total");
-      container.innerHTML = "";
+                <hr class="my-4 text-white-50">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-8">
+                        <p class="text-white-50 mb-0">
+                            © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-md-end">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+    </footer>
 
-      let grandTotal = 0;
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
 
-      if (cart.length === 0) {
-        container.innerHTML = `<p class="text-center">🛒 Your cart is empty.</p>`;
-        totalElement.textContent = "0";
-        return;
-      }
-
-      cart.forEach((item, index) => {
-        const quantity = item.Quantity || 1;
-        const price = item.ProductPrice || item.TotalAmount || 0;
-        const totalPrice = price * quantity;
-        grandTotal += totalPrice;
-
-        const div = document.createElement("div");
-        div.className = "cart-item row align-items-center";
-
-        div.innerHTML = `
-          <div class="col-3 col-md-2">
-            <img src="${item.ProductImage}" alt="${item.ProductName}" class="img-fluid">
-          </div>
-          <div class="col-5 col-md-6">
-            <h6 class="mb-1">${item.ProductName}</h6>
-            <p class="mb-1"><b>${totalPrice.toLocaleString()} PKR</b></p>
-          </div>
-          <div class="col-4 col-md-2 d-flex align-items-center quantity-controls">
-            <button onclick="updateQty(${index}, -1)">−</button>
-            <span class="mx-2" id="qty-${index}">${quantity}</span>
-            <button onclick="updateQty(${index}, 1)">+</button>
-          </div>
-          <div class="col-12 col-md-2 mt-2 mt-md-0 text-end">
-            <button class="btn-trash" onclick="removeItem(${index})"><i class="fas fa-trash"></i></button>
-          </div>
-        `;
-
-        container.appendChild(div);
-      });
-
-      totalElement.textContent = grandTotal.toLocaleString();
-    }
-
-    function updateQty(index, change) {
-      cart[index].Quantity = (cart[index].Quantity || 1) + change;
-      if (cart[index].Quantity < 1) cart[index].Quantity = 1;
-      localStorage.setItem("Wishlist", JSON.stringify(cart));
-      VisualizeCartItems();
-    }
-
-    function removeItem(index) {
-      cart.splice(index, 1);
-      localStorage.setItem("Wishlist", JSON.stringify(cart));
-      VisualizeCartItems();
-      const toast = new bootstrap.Toast(document.getElementById('removeToast'));
-      toast.show();
-    }
-
-    function confirmOrder() {
-      if (cart.length === 0) {
-        alert("Your cart is empty!");
-        return;
-      }
-      localStorage.removeItem('Wishlist');
-      window.location.href = 'OrderPlaced.html';
-    }
-
-    // Initial call
-    VisualizeCartItems();
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="Main.JS"></script>
+    <script>function VisitorCounter() {
+            var count = parseInt(localStorage.getItem('counter')) || 0;
+            localStorage.setItem('counter', count)
+            document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
+        }
+        VisitorCounter()</script>
 </body>
+
 </html>

@@ -1,37 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>LIBERTY ELECTRONICS</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
 
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neon Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <body>
-        <!-- WE NEED TO MAKE THE COMPARISON FILE HERE -->
-         
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
+    <style>
+        body {
+            background-color: #0b0c1a;
+            color: #00ffe5;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .neon-card {
+            background-color: #1f2833;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            padding: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+        .neon-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px #00ffe5;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .profile-img {
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(1.3) drop-shadow(0 0 4px #070909);
+            transition: transform 0.4s ease, filter 0.4s ease;
+            padding: 10px;
+            margin: auto;
+            border-radius: 50%;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
+        }
+        .card-title {
+            color: #66fcf1;
+            text-shadow: 0 0 5px #66fcf1;
+        }
+        .skills {
+            font-size: 0.95rem;
+            color: #c5c6c7;
+        }
+        .social-icons a,
+        .social-icons span {
+            color: #c5c6c7;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: color 0.3s, text-shadow 0.3s;
+            cursor: pointer;
+        }
+        .social-icons a:hover,
+        .social-icons span:hover {
+            color: #00ffe5;
+            text-shadow: 0 0 8px #00ffe5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container py-5">
+        <div class="row g-4">
+            <!-- CARD 1 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="https://i.pravatar.cc/120?img=1" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title">Ava Johnson</h4>
+                    <p>Front-end Developer passionate about sleek UI/UX and responsive design.</p>
+                    <p class="skills">Skills: HTML, CSS, JavaScript, React</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal1"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 2 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="https://i.pravatar.cc/120?img=2" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title">Liam Smith</h4>
+                    <p>Back-end wizard who loves solving data-driven problems and building APIs.</p>
+                    <p class="skills">Skills: Node.js, Express, MongoDB, SQL</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal2"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923009876543" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 3 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="https://i.pravatar.cc/120?img=2" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title">Liam Smith</h4>
+                    <p>Back-end wizard who loves solving data-driven problems and building APIs.</p>
+                    <p class="skills">Skills: Node.js, Express, MongoDB, SQL</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal2"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923009876543" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD 4 -->
+            <div class="col-md-6">
+                <div class="neon-card text-center">
+                    <img src="https://i.pravatar.cc/120?img=2" class="profile-img" alt="Profile Picture">
+                    <h4 class="card-title">Liam Smith</h4>
+                    <p>Back-end wizard who loves solving data-driven problems and building APIs.</p>
+                    <p class="skills">Skills: Node.js, Express, MongoDB, SQL</p>
+                    <div class="social-icons">
+                        <span data-bs-toggle="modal" data-bs-target="#phoneModal2"><i class="fas fa-phone"></i></span>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923009876543" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 1 (ZARA IQBAL) -->
+    <div class="modal fade" id="phoneModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Ava Johnson</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 1234567
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 2 (MAAZ ALAM) -->
+    <div class="modal fade" id="phoneModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Liam Smith</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 9876543
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 3 (FAHEEM) -->
+    <div class="modal fade" id="phoneModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Liam Smith</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 9876543
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 4 (WALEED) -->
+    <div class="modal fade" id="phoneModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-info border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title">📱 Contact Liam Smith</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Mobile Number: +92 300 9876543
+                </div>
+                <div class="modal-footer border-info">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
