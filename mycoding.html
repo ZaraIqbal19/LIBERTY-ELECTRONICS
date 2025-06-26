@@ -3,14 +3,14 @@
 
 <head>
   <title>LIBERTY ELECTRONICS</title>
-  <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="Style.CSS">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="Style.CSS" />
   <style>
     .footertext {
       color: #66fcf1;
@@ -51,8 +51,6 @@
     }
 
     body {
-      /* background-color: #000;
-      color: #00fff7; */
       font-family: 'Poppins', sans-serif;
     }
 
@@ -118,11 +116,9 @@
 </head>
 
 <body>
-  <!-- IT's A THANK YOU PAGE -->
   <!-- HEADER SECTION -->
   <div class="header">
     <div class="container py-2">
-      <!-- LIVE TIME & VISITOR COUNTER -->
       <div class="row text-center align-items-center">
         <div class="col-12 col-md-6 mb-3 mb-md-0">
           <p id="livetime" class="fs-2 mb-0">00:00:00</p>
@@ -132,7 +128,6 @@
         </div>
       </div>
     </div>
-    <!-- NAV BAR -->
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
@@ -142,26 +137,23 @@
             <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
             <li class="nav-item"><a class="nav-link" href="About Us.html">BLOG</a></li>
             <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
-            <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i class="fas fa-shopping-cart"></i>
-              </a></li>
+            <li class="nav-item"><a class="nav-link" href="Add To Cart.html"><i class="fas fa-shopping-cart"></i></a></li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
-  <!-- BODY SECTION -->
-  <!-- Thank You Section -->
+
+  <!-- THANK YOU SECTION -->
   <div class="container text-center mt-5">
     <div class="p-5 bg-dark rounded textborder thank-you-box mx-auto w-100 w-md-75 w-lg-50">
       <h1 class="textglow mb-4">🎉 Thank You for Your Order!</h1>
-      <p class="mb-4">Your gadgets are getting ready to zoom your way. We appreciate your trust in <strong>Liberty
-          Electronics</strong>.</p>
-      <button class="btn btn-outline-info btn-lg" onclick="window.location.href='Collection.html'">🛒 Continue
-        Shopping</button>
+      <p class="mb-4">Your gadgets are getting ready to zoom your way. We appreciate your trust in <strong>Liberty Electronics</strong>.</p>
+      <button class="btn btn-outline-info btn-lg" onclick="window.location.href='Collection.html'">🛒 Continue Shopping</button>
     </div>
   </div>
 
-  <!-- Feedback Modal -->
+  <!-- FEEDBACK MODAL -->
   <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content textborder">
@@ -171,35 +163,26 @@
         </div>
         <div class="modal-body">
           <form id="feedbackForm">
-
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="name" placeholder="Your Name">
               <label for="name">Your Name</label>
             </div>
-
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="email" placeholder="name@example.com">
               <label for="email">Email address</label>
             </div>
-
             <div class="form-floating mb-3">
-              <textarea class="form-control" placeholder="Share your experience" id="experience"
-                style="height: 80px"></textarea>
+              <textarea class="form-control" placeholder="Share your experience" id="experience" style="height: 80px"></textarea>
               <label for="experience">Shopping Experience</label>
             </div>
-
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="likedMost" placeholder="What did you like most?">
               <label for="likedMost">What did you like most?</label>
             </div>
-
             <div class="form-floating mb-3">
-              <textarea class="form-control" placeholder="Any suggestions?" id="suggestions"
-                style="height: 80px"></textarea>
+              <textarea class="form-control" placeholder="Any suggestions?" id="suggestions" style="height: 80px"></textarea>
               <label for="suggestions">Suggestions</label>
             </div>
-
-            <!-- Star Rating -->
             <div class="mb-4 text-start">
               <label class="form-label textglow">Rate Your Experience:</label><br>
               <div id="starRating">
@@ -211,7 +194,6 @@
               </div>
               <input type="hidden" id="ratingValue" value="">
             </div>
-
             <button type="submit" class="btn btn-outline-info w-100 mt-2">✨ Submit Feedback</button>
           </form>
         </div>
@@ -219,20 +201,16 @@
     </div>
   </div>
 
-  <!-- FOOTER SECTION -->
+  <!-- FOOTER -->
   <footer class="text-white pt-5 pb-4">
     <div class="container text-center text-md-start">
       <div class="row text-md-left">
-        <!-- LOGO & DESCRIPTION -->
         <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
           <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
           <p class="text-white-50 pe-5">
-            <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
-            smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
-            unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
+            <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge smartphones, laptops, cameras, and accessories. Top tech brands and a neon-inspired experience.
           </p>
         </div>
-        <!-- WEBSITE LINKS -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
           <ul class="list-unstyled">
@@ -242,90 +220,69 @@
             <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
           </ul>
         </div>
-        <!-- CONTACT INFO -->
-        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
+        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 mb-2">
           <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
-          <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
-          <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
-          </p>
-          <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
+          <p class="text-white-50"><i class="fas fa-map-marker-alt me-2 mb-2"></i> Karachi, Pakistan</p>
+          <p class="text-white-50"><i class="fas fa-envelope me-2 mb-2"></i> support@libertyelectronics.pk</p>
+          <p class="text-white-50"><i class="fas fa-phone me-2 mb-2"></i> +92 300 1234567</p>
         </div>
-        <a href="Code Crafters.html"
-          class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
+        <a href="Code Crafters.html" class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
           <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
         </a>
-
         <hr class="my-4 text-white-50">
         <div class="row align-items-center">
           <div class="col-md-6 col-lg-8">
-            <p class="text-white-50 mb-0">
-              © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
-            </p>
+            <p class="text-white-50 mb-0">© 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.</p>
           </div>
           <div class="col-md-6 col-lg-4 text-md-end">
-            <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
-                class="fab fa-facebook-f"></i></a>
-            <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
-                class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.whatsapp.com/" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
           </div>
         </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
-  <script src="Main.JS"></script>
   <script>
     function VisitorCounter() {
       var count = parseInt(localStorage.getItem('counter')) || 0;
-      localStorage.setItem('counter', count)
+      localStorage.setItem('counter', count);
       document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
     }
-    VisitorCounter()
-    $(document).ready(function () {
-      var selectedRating = 0;
 
-      // Show modal after delay
+    VisitorCounter();
+
+    $(document).ready(function () {
+      let selectedRating = 0;
+
       setTimeout(function () {
         $('#feedbackModal').modal('show');
       }, 4000);
 
-      // Hover effect
       $('.rating-star').hover(function () {
-        var value = $(this).data('value');
+        let value = $(this).data('value');
         $('.rating-star').each(function () {
-          if ($(this).data('value') <= value) {
-            $(this).addClass('glow');
-          } else {
-            $(this).removeClass('glow');
-          }
+          $(this).toggleClass('glow', $(this).data('value') <= value);
         });
       }, function () {
         $('.rating-star').each(function () {
-          if ($(this).data('value') <= selectedRating) {
-            $(this).addClass('glow');
-          } else {
-            $(this).removeClass('glow');
-          }
+          $(this).toggleClass('glow', $(this).data('value') <= selectedRating);
         });
       });
 
-      // Click to select rating
       $('.rating-star').click(function () {
         selectedRating = $(this).data('value');
         $('#ratingValue').val(selectedRating);
       });
 
-      // Form submit
       $('#feedbackForm').on('submit', function (e) {
         e.preventDefault();
 
@@ -351,5 +308,4 @@
     });
   </script>
 </body>
-
 </html>

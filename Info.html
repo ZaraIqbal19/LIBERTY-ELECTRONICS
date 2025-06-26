@@ -316,12 +316,21 @@
   $('#ProductName').text("Product not found");
 }
     var list = JSON.parse(localStorage.getItem('Wishlist')) || [];
-    function generatebill() {
+function generatebill() {
+  // ✅ Step 1: Check if user is logged in
+  if (localStorage.getItem('Ticket') !== 'available') {
+    alert("⚠️ Please log in first to add items to the cart.");
+    window.location.href = 'Log In.html';
+    return;
+  }
+
+  // ✅ Step 2: Continue to add to cart if logged in
   var q = parseInt($('#quantity').val());
   if (q < 1 || isNaN(q)) {
     alert("Please enter a valid quantity.");
     return;
   }
+
   var total = Info.ProductPrice * q;
   var group = {
     "ProductName": Info.ProductName,
@@ -330,12 +339,37 @@
     "Quantity": q,
     "TotalAmount": total
   };
+
   list.push(group);
   $('#modalBillText').html('Your total is: <strong>' + total + ' PKR</strong>');
   let billModal = new bootstrap.Modal(document.getElementById('billModal'));
   billModal.show();
   localStorage.setItem('Wishlist', JSON.stringify(list));
 }
+
+
+
+
+//   function generatebill() {
+//   var q = parseInt($('#quantity').val());
+//   if (q < 1 || isNaN(q)) {
+//     alert("Please enter a valid quantity.");
+//     return;
+//   }
+//   var total = Info.ProductPrice * q;
+//   var group = {
+//     "ProductName": Info.ProductName,
+//     "ProductImage": Info.ProductImage,
+//     "ProductPrice": Info.ProductPrice,
+//     "Quantity": q,
+//     "TotalAmount": total
+//   };
+//   list.push(group);
+//   $('#modalBillText').html('Your total is: <strong>' + total + ' PKR</strong>');
+//   let billModal = new bootstrap.Modal(document.getElementById('billModal'));
+//   billModal.show();
+//   localStorage.setItem('Wishlist', JSON.stringify(list));
+// }
 
 //     function generatebill() {
 //       var q = parseInt($('#quantity').val());
@@ -357,6 +391,6 @@
 //       localStorage.setItem('Wishlist', JSON.stringify(list));
 //     }
   </script>
-</body>i
+</body>
 
 </html>

@@ -2,261 +2,374 @@
 <html lang="en">
 
 <head>
-    <title>LIBERTY ELECTRONICS</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="Style.CSS">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        .footertext {
-            color: #66fcf1;
-        }
+  <title>LIBERTY ELECTRONICS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        .footer-link {
-            color: #c5c6c7;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Style.CSS">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        .nav-link:hover {
-            color: #09f9e9;
-            font-weight: bold;
-            text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
-        }
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('FILES/More_Images/background 4.PNG');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.07;
+      z-index: -1;
+    }
 
-        .footer-link:hover {
-            color: #66fcf1;
-            text-shadow: 0 0 5px #66fcf1;
-        }
+    .text-glow {
+      color: #00ffe5;
+      text-shadow: 0 0 10px #0c0f0f;
+    }
 
-        .social-icon {
-            color: #c5c6c7;
-            font-size: 1.2rem;
-            margin-left: 15px;
-            transition: color 0.3s ease, text-shadow 0.3s;
-        }
+    .footertext {
+      color: #66fcf1;
+    }
 
-        .social-icon:hover {
-            color: #66fcf1;
-            text-shadow: 0 0 8px #66fcf1;
-        }
+    .footer-link {
+      color: #c5c6c7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        .personaldetails:hover {
-            color: #66fcf1;
-            text-shadow: 0 0 8px #66fcf1;
-        }
+    .footer-link:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 5px #66fcf1;
+    }
 
-        .form-control,
-        .form-check-input {
-            background-color: #1a1a2e;
-            border: 1px solid #0ef;
-            color: #fff;
-        }
+    .social-icon {
+      color: #c5c6c7;
+      font-size: 1.2rem;
+      margin-left: 15px;
+      transition: color 0.3s ease, text-shadow 0.3s;
+    }
 
-        .form-control::placeholder {
-            color: #bbb;
-        }
+    .social-icon:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 8px #66fcf1;
+    }
 
-        .probtn {
-            background-color: transparent;
-            color: #00ffe5;
-            border: 2px solid #00ffe5;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 5px #101111;
-        }
+    .form-control,
+    .form-check-input {
+      background-color: #1a1a2e;
+      border: 1px solid #0ef;
+      color: #fff;
+    }
 
-        .probtn:hover {
-            background-color: #00ffe5;
-            color: #0b0c1a;
-            box-shadow: 0 0 20px #00ffe5;
-        }
+    .form-control::placeholder {
+      color: #bbb;
+    }
 
-        .btn-outline-light {
-            border-color: #0ef;
-            color: #0ef;
-        }
+    .probtn {
+      background-color: transparent;
+      color: #00ffe5;
+      border: 2px solid #00ffe5;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px #101111;
+    }
 
-        .btn-outline-light:hover {
-            background-color: #0ef;
-            color: #000;
-        }
+    .probtn:hover {
+      background-color: #00ffe5;
+      color: #0b0c1a;
+      box-shadow: 0 0 20px #00ffe5;
+    }
 
-        .card {
-            background: #1f2833;
-            color: #00ffe5;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-            overflow: hidden;
-        }
+    .card {
+      background: #1f2833;
+      color: #00ffe5;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
 
-        .colheading {
-            color: #00ffff;
-            text-shadow: 0 0 10px #0cf3f3;
-        }
-
-        .text-glow {
-            color: #00ffe5;
-            text-shadow: 0 0 10px #0c0f0f;
-        }
-
-        .hover-glow:hover {
-            color: #66fcf1 !important;
-            text-shadow: 0 0 10px #66fcf1;
-        }
-    </style>
+    .hover-glow:hover {
+      color: #66fcf1 !important;
+      text-shadow: 0 0 10px #66fcf1;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- IT's A REGISTERATION PAGE -->
-    <!-- HEADER SECTION -->
-    <div class="header">
-        <div class="container py-2">
-            <!-- LIVE TIME & VISITOR COUNTER -->
-            <div class="row text-center align-items-center">
-                <div class="col-12 col-md-6 mb-3 mb-md-0">
-                    <p id="livetime" class="fs-2 mb-0">00:00:00</p>
-                </div>
-                <div class="col-12 col-md-6">
-                    <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
-                </div>
-            </div>
+  <!-- Header -->
+  <div class="header">
+    <div class="container py-2">
+      <div class="row text-center align-items-center">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p id="livetime" class="fs-2 mb-0">00:00:00</p>
         </div>
-        <!-- NAV BAR -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
-                        <li class="nav-item"><a class="nav-link" href="About Us.html">BLOG</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i
-                                    class="fas fa-shopping-cart"></i>
-                            </a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="col-12 col-md-6">
+          <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
+        </div>
+      </div>
     </div>
-    <!-- BODY SECTION -->
-<div class="container py-5">
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+            <li class="nav-item"><a class="nav-link" href="About Us.html">BLOG</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+            <li class="nav-item"><a class="nav-link" href="Add To Cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Login Section -->
+  <div class="container py-5">
     <div class="card p-4">
-        <div class="row g-4">
-            <div class="col-md-6 d-none d-md-flex login-banner flex-column justify-content-center text-center">
-                <h2 class="text-glow">Welcome Back to Liberty Electronics</h2>
-                <p>Your trusted hub for premium electronics and tech deals.</p>
-                <ul class="list-unstyled text-start px-4">
-                    <li class="mb-3 hover-glow">⚡ Hassle-Free Login</li>
-                    <li class="mb-3 hover-glow">🔒 Secure & Encrypted</li>
-                    <li class="mb-3 hover-glow">💼 Access Your Orders Instantly</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-center text-glow mb-4">Log In to Your Account</h3>
-                <form>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember Me</label>
-                    </div>
-                    <button type="submit" class="btn probtn w-100">Login</button>
-                    <div class="text-center mt-3">
-                        <a href="#" class="footer-link hover-glow">Forgot Password?</a>
-                        <br />
-                        <span class="text-white-50">Don't have an account? <a href="Register Yourself.html"
-                                class="footer-link hover-glow">Sign Up</a></span>
-                    </div>
-                </form>
-            </div>
+      <div class="row g-4">
+        <div class="col-md-6 d-none d-md-flex flex-column justify-content-center text-center">
+          <h2 class="text-glow">Welcome Back to Liberty Electronics</h2>
+          <p>Your trusted hub for premium electronics and tech deals.</p>
+          <ul class="list-unstyled text-start px-4">
+            <li class="mb-3 hover-glow">⚡ Hassle-Free Login</li>
+            <li class="mb-3 hover-glow">🔒 Secure & Encrypted</li>
+            <li class="mb-3 hover-glow">💼 Access Your Orders Instantly</li>
+          </ul>
         </div>
+        <div class="col-md-6">
+          <h3 class="text-center text-glow mb-4">Log In to Your Account</h3>
+          <form onsubmit="LoginInfo(); return false;">
+            <div class="mb-3">
+              <input type="email" id="Email" class="form-control" placeholder="Email">
+            </div>
+            <div class="mb-3">
+              <input type="password" id="Password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember Me</label>
+            </div>
+            <button type="submit" class="btn probtn w-100">Login</button>
+            <div class="text-center mt-3">
+              <a href="#" class="footer-link hover-glow">Forgot Password?</a><br>
+              <span class="text-white-50">Don't have an account? <a href="Register Yourself.html"
+                  class="footer-link hover-glow">Sign Up</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Incorrect Email & Password Modal -->
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-info border border-info">
+        <div class="modal-header border-info">
+          <h5 class="modal-title">⚠️ Login Failed</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Email & Password are incorrect.</div>
+        <div class="modal-footer border-info">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Incorrect Password Modal -->
+  <div class="modal fade" id="PassworderrorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-info border border-info">
+        <div class="modal-header border-info">
+          <h5 class="modal-title">⚠️ Incorrect Password</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Password is incorrect.</div>
+        <div class="modal-footer border-info">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Incorrect Email Modal -->
+  <div class="modal fade" id="EmailerrorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-info border border-info">
+        <div class="modal-header border-info">
+          <h5 class="modal-title">⚠️ Incorrect Email</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Email is incorrect.</div>
+        <div class="modal-footer border-info">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Registration Modal -->
+<div class="modal fade" id="notRegisteredModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-info border border-info">
+      <div class="modal-header border-info">
+        <h5 class="modal-title">🚫 User Not Found</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        This email is not registered with us. Please sign up first.
+      </div>
+      <div class="modal-footer border-info">
+        <a href="Register Yourself.html" class="btn btn-outline-info">Register Now</a>
+      </div>
+    </div>
+  </div>
 </div>
-    <!-- FOOTER SECTION -->
-    <footer class="text-white pt-5 pb-4">
-        <div class="container text-center text-md-start">
-            <div class="row text-md-left">
-                <!-- LOGO & DESCRIPTION -->
-                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
-                    <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
-                    <p class="text-white-50 pe-5">
-                        <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
-                        smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
-                        unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
-                    </p>
-                </div>
-                <!-- WEBSITE LINKS -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
-                        <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
-                        <li class="mb-3"><a href="About Us.html" class="footer-link">BLOG</a></li>
-                        <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
-                    </ul>
-                </div>
-                <!-- CONTACT INFO -->
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
-                    <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
-                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
-                    <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
-                    </p>
-                    <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
-                </div>
-                <a href="Code Crafters.html"
-                    class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
-                    <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
-                </a>
+<!-- Forgot Password Modal -->
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-info border border-info">
+      <div class="modal-header border-info">
+        <h5 class="modal-title">🔐 Forgot Password</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="verifyFirstName" class="form-control mb-3" placeholder="Enter First Name">
+        <input type="text" id="verifyLastName" class="form-control" placeholder="Enter Last Name">
+      </div>
+      <div class="modal-footer border-info">
+        <button class="btn btn-outline-info" onclick="verifyUser()">Verify</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-                <hr class="my-4 text-white-50">
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-lg-8">
-                        <p class="text-white-50 mb-0">
-                            © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
-                        </p>
-                    </div>
-                    <div class="col-md-6 col-lg-4 text-md-end">
-                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                </div>
-    </footer>
+<!-- Reset Password Modal -->
+<div class="modal fade" id="resetPasswordModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-info border border-info">
+      <div class="modal-header border-info">
+        <h5 class="modal-title">🔄 Reset Password</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="password" id="newPassword" class="form-control" placeholder="Enter New Password">
+      </div>
+      <div class="modal-footer border-info">
+        <button class="btn btn-outline-info" onclick="resetPassword()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+  <!-- Footer -->
+  <footer class="text-white pt-5 pb-4">
+    <div class="container text-center text-md-start">
+      <div class="row text-md-left">
+        <div class="col-md-5">
+          <h5 class="footertext">Liberty Electronics</h5>
+          <p class="text-white-50 pe-5">We deliver cutting-edge electronics and tech deals with neon style.</p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="footertext">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="Index.html" class="footer-link">HOME</a></li>
+            <li><a href="Collection.html" class="footer-link">COLLECTION</a></li>
+            <li><a href="About Us.html" class="footer-link">BLOG</a></li>
+            <li><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="footertext">Contact Us</h6>
+          <p class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i> Karachi, Pakistan</p>
+          <p class="text-white-50"><i class="fas fa-envelope me-2"></i> support@libertyelectronics.pk</p>
+          <p class="text-white-50"><i class="fas fa-phone me-2"></i> +92 300 1234567</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script src="Main.JS"></script>
-    <script>function VisitorCounter() {
-            var count = parseInt(localStorage.getItem('counter')) || 0;
-            localStorage.setItem('counter', count)
-            document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
-        }
-        VisitorCounter()
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    </script>
+  <!-- Login & Visitor Script -->
+  <script>
+  function VisitorCounter() {
+    let count = parseInt(localStorage.getItem('counter')) || 0;
+    localStorage.setItem('counter', count);
+    document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
+  }
+  VisitorCounter();
+// SIGNING IN FUNCTIONALITY
+  function LoginInfo() {
+    var email = document.getElementById('Email').value.trim();
+    var password = document.getElementById('Password').value.trim();
+    var storedEmail = localStorage.getItem('Email');
+    var storedPassword = localStorage.getItem('Password');
+    // Case 1: User is not Registered
+    if (storedEmail == null || storedPassword == null) {
+      var notRegModal = new bootstrap.Modal(document.getElementById('notRegisteredModal'));
+      notRegModal.show();
+      return;
+    }
+    // Case 2: Both email and password are correct
+    if (storedEmail == email && storedPassword == password) {
+      localStorage.setItem('Ticket', 'available');
+      window.location.href = 'Add To Cart.html';
+    }
+    // Case 3: Email correct, password wrong
+    else if (storedEmail == email && storedPassword != password) {
+      var passModal = new bootstrap.Modal(document.getElementById('PassworderrorModal'));
+      passModal.show();
+    }
+    // Case 4: Password correct, email wrong
+    else if (storedPassword == password && storedEmail != email) {
+      var emailModal = new bootstrap.Modal(document.getElementById('EmailerrorModal'));
+      emailModal.show();
+    }
+    // Case 5: Neither match
+    else {
+      var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+      errorModal.show();
+    }
+  }
+// Forgot Password Functonality
+document.querySelector(".footer-link[href='#']").addEventListener("click", function (e) {
+    e.preventDefault();
+    var forgotModal = new bootstrap.Modal(document.getElementById("forgotPasswordModal"));
+    forgotModal.show();
+  });
+// For Verification of User
+  function verifyUser() {
+    var verifiedFirstName = localStorage.getItem("FirstName");
+    var verifiedLastName = localStorage.getItem("LastName");
+    var inputFirst = document.getElementById("verifyFirstName").value.trim();
+    var inputLast = document.getElementById("verifyLastName").value.trim();
+    if (verifiedFirstName && storedLastName && verifiedFirstName.toLowerCase() == inputFirst.toLowerCase() && storedLastName.toLowerCase() == inputLast.toLowerCase()) {
+      bootstrap.Modal.getInstance(document.getElementById("forgotPasswordModal")).hide();
+      var resetModal = new bootstrap.Modal(document.getElementById("resetPasswordModal"));
+      resetModal.show();
+    } else {
+      alert("❌ First Name or Last Name does not match our records.");
+    }
+  }
+// For Reset Password 
+  function resetPassword() {
+    var newPassword = document.getElementById("newPassword").value.trim();
+    if (newPassword.length >= 4) {
+      localStorage.setItem("Password", newPassword);
+      bootstrap.Modal.getInstance(document.getElementById("resetPasswordModal")).hide();
+      alert("✅ Password has been updated successfully.");
+    } else {
+      alert("Password should be at least 4 characters long.");
+    }
+  }
+</script>
+
 </body>
 
 </html>
