@@ -1,74 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>LIBERTY ELECTRONICS - Checkout</title>
+<head>
+    <title>LIBERTY ELECTRONICS</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="Style.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-      /* body {
-        font-family: 'Poppins', sans-serif;
-        padding-bottom: 140px;
-      } */
-
-      .confirm-btn {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 35%;
-        padding: 14px;
-        font-size: 1.6rem;
-        font-weight: 600;
-               background-color: #080707;
-        color: hwb(0 94% 6%);
-        box-shadow: 0 0 15px #fff;
-      }
-      .confirm-btn:hover {
-         box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-        background-color: #00fff7;
-        color: #000;
-      }
-      .removeicon {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        cursor: pointer;
-        font-size: 30px;
-        color: red;
-      }
-      .cartcard {
-        width: 60%;
-        margin: 0 auto 20px auto;
-        background-color: #121212;
-        color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
-        position: relative;
-        transition: 0.3s ease-in-out;
-      }
-      .cartcard:hover {
-        box-shadow: 0 0 25px rgba(0, 255, 247, 0.6);
-        transform: scale(1.01);
-      }
-      .addsubbtn {
-        border: 2px solid #00fff7;
-        color: #00fff7;
-        background: transparent;
-        transition: all 0.3s ease-in-out;
-      }
-      .addsubbtn:hover {
-        background-color: #00fff7;
-        color: #000;
-        box-shadow: 0 0 10px #00fff7;
-      }
-       .proimg{
-    height: 150px;
+        body {
+        background-color: #0b0c1a; 
+        color: #ffffff;
+    }
+        .footertext {
+            color: #66fcf1;
+        }
+        .footer-link {
+            color: #c5c6c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #09f9e9;
+            font-weight: bold;
+            text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
+        }
+        .footer-link:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 5px #66fcf1;
+        }
+        .social-icon {
+            color: #c5c6c7;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: color 0.3s ease, text-shadow 0.3s;
+        }
+        .social-icon:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+      .personaldetails:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+        .proimg{
+    height: 200px;
   object-fit: contain;
   filter: brightness(1.3) drop-shadow(0 0 4px #070909);
   transition: transform 0.4s ease, filter 0.4s ease;
@@ -79,134 +58,429 @@
     transform: scale(1.05);
   filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
 }
-      .modal-content {
-        background-color: #1c1c1c;
-      }
-      .toast-body {
-        font-weight: 500;
-      }
+    .card {
+        background-color: #101426;
+        border: 1px solid #060707;
+        box-shadow: 0 0 5px #0d0e0e;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 25px #00ffe5;
+    }
+    .card-title {
+        color: #00ffe5;
+    }
+    .text-secondary {
+        color: #a6a6a6 !important;
+    }
+    .probtn {
+        background-color: transparent;
+        color: #00ffe5;
+        border: 2px solid #00ffe5;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 5px #101111;
+    }
+    .probtn:hover {
+        background-color: #00ffe5;
+        color: #0b0c1a;
+        box-shadow: 0 0 20px #00ffe5;
+    }
+    .form-select {
+        background-color: #101426;
+        color: #00ffe5;
+        border: 2px solid #00ffe5;
+    }
+    .form-select option {
+        background-color: #101426;
+        color: #00ffe5;
+    }
+    .DropDown select:hover {
+        box-shadow: 0 0 20px #00ffe5;
+    }
+       .colheading{
+color: #00ffff;
+text-shadow: 0 0 10px #0b0c0c;
+}
+.colpara{
+    color: #00ffff;
+}
     </style>
-  </head>
+</head>
 
-  <body class="bg-black text-white">
-    <div class="container text-center">
-      <h3 class="my-4">✨🛒 Your Cart’s Loaded — Time to Ignite the Checkout! 🔥🚀</h3>
-      <p class="defaultmsg">😕 Oops! Your cart is currently empty.</p>
-      <p id="totalItems" class="fw-semibold fs-5 mb-4"></p>
-      <div id="parent"></div>
-      <h5 id="grandTotal" class="text-info fw-bold mt-4"></h5>
-    </div>
-    <button class="confirm-btn" onclick="confirmOrder()">✅ Confirm Order</button>
-    <!-- Toast for item removal -->
-    <div class="position-fixed top-10 end-0 p-3" style="z-index: 11">
-      <div id="deleteToast" class="toast align-items-center text-bg-danger border-0" role="alert">
-        <div class="d-flex">
-          <div class="toast-body">🗑️ Item removed from your cart.</div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+<body>
+    <!-- FOR SPECIFYING CAMERA BRANDS -->
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <div class="container py-2">
+            <!-- LIVE TIME & VISITOR COUNTER -->
+            <div class="row text-center align-items-center">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <p id="livetime" class="fs-2 mb-0">00:00:00</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
+                </div>
+            </div>
         </div>
-      </div>
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i
+                                    class="fas fa-shopping-cart"></i>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-    <!-- Confirmation Modal -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-white">
-          <div class="modal-header">
-            <h5 class="modal-title">⚠️ Delete This Product?</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            Are you sure you want to remove this item from your cart?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn addsubbtn" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Yes, Remove</button>
-          </div>
+
+    <!-- BODY SECTION -->
+<div class="container py-5">
+<div class="row">
+    <h4 class="text-center mb-2 colheading p-3 fs-3">📸 Discover the World Through the Lens with Liberty Electronics Cameras</h4>
+<p class="text-center mb-5 colpara p-1 fs-6">Discover the latest cameras at Liberty Electronics — from beginner-friendly models to professional-grade gear, all delivering top-tier performance, style, and value.
+Compare features and find the perfect camera to suit your photography needs, all in one place.
+</p>
+</div>
+    <!-- DROPDOWN OPTIONS -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="DropDown text-center">
+                <select onchange="filtering()" id="sorting" class="form-select w-75 mx-auto">
+                    <option value="">Select Category</option>
+                    <option value="All">All</option>
+                    <option value="Sony">Sony</option>
+                    <option value="Casio">Casio</option>
+                    <option value="Panasonic">Panasonic</option>
+                    <option value="Olympus">Olympus</option>
+                    <option value="Pentax">Pentax</option>
+                    <option value="Nikon">Nikon</option>
+                </select>
+            </div>
         </div>
-      </div>
+        <div class="col-md-6">
+            <div class="DropDown text-center">
+                <select onchange="sortCardsByPrice()" id="priceFilter" class="form-select w-75 mx-auto">
+                    <option selected>Sort by Price</option>
+                    <option value="low">Lower to Higher</option>
+                    <option value="high">Higher to Lower</option>
+                </select>
+            </div>
+        </div>
     </div>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- PRODUCT SECTION -->
+    <div id="productContainer" class="row g-4">
+        <div class="col-4 CasioCam">
+            <div class="card text-center rounded-4">
+                <img src="FILES/Cameras/Casio_EX_Z60.png" class="card-img-top p-3 proimg" alt="Casio EX Z60">
+                <div class="card-body">
+                    <h4 class="card-title">Casio EX Z60</h4>
+                    <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">26,999</span> PKR</p>
+                    <button class="btn probtn w-75 mb-3"
+                        onclick="Info('Casio EX Z60',26999,'Casio Camera has high-speed continuous shooting, intelligent bracketing, various Best Shot modes for different scenarios, and unique features like Dynamic Photo and YouTube Capture Mode.','FILES/Cameras/Casio_EX_Z60.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                        ✨ Explore More Specs
+                    </button>
+                    <a href="PDFs/Cameras/Casio/Casio Exilim EX-Z60.pdf" download class="btn probtn w-75">
+                        ⬇️ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 PanasonicCam">
+            <div class="card text-center rounded-4">
+                <img src="FILES/Cameras/Panasonic_Lumix_S1R.png" class="card-img-top p-3 proimg" alt="LUMIX S1R">
+                <div class="card-body">
+                    <h4 class="card-title">LUMIX S1R</h4>
+                    <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">570,000</span> PKR</p>
+                    <button class="btn probtn w-75 mb-3"
+                        onclick="Info('Panasonic Lumix S1R',570000,'Panasonic cameras offer a range of features catering to both photography and videography, including high-resolution sensors, advanced autofocus systems, and robust image stabilization','FILES/Cameras/Panasonic_Lumix_S1R.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                        ✨ Explore More Specs
+                    </button>
+                    <a href="PDFs/Cameras/Panasonic/Panasonic_Lumix_S1R.pdf" download class="btn probtn w-75">
+                        ⬇️ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 SonyCam">
+            <div class="card text-center rounded-4">
+                <img src="FILES/Cameras/Sony_A6400.png" class="card-img-top p-3 proimg" alt="Sony A6400">
+                <div class="card-body">
+                    <h4 class="card-title">Sony A6400</h4>
+                    <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">255,000</span> PKR</p>
+                    <button class="btn probtn w-75 mb-3"
+                        onclick="Info('Sony A6400',255000,'Sony cameras, particularly their mirrorless line, are known for features like large sensors, advanced autofocus systems, 4K video recording capabilities, and compact designs.','FILES/Cameras/Sony_A6400.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                        ✨ Explore More Specs
+                    </button>
+                    <a href="PDFs/Cameras/Sony/Sony_A6400.pdf" download class="btn probtn w-75">
+                        ⬇️ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 NikonCam">
+            <div class="card text-center rounded-4">
+                <img src="FILES/Cameras/Nikon_D3500.png" class="card-img-top p-3 proimg" alt="Nikon D3500">
+                <div class="card-body">
+                    <h4 class="card-title">Nikon D3500</h4>
+                    <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">95,000</span> PKR</p>
+                    <button class="btn probtn w-75 mb-3"
+                        onclick="Info('Nikon D3500',95000,'Nikon cameras, both DSLR and mirrorless, offer a wide range of features including high-resolution sensors, advanced autofocus systems, 4K video recording, and various shooting modes.','FILES/Cameras/Nikon_D3500.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                        ✨ Explore More Specs
+                    </button>
+                    <a href="PDFs/Cameras/Nikon/Nikon D3500.pdf" download class="btn probtn w-75">
+                        ⬇️ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 OlympusCam">
+            <div class="card text-center rounded-4">
+                <img src="FILES/Cameras/Olympus_E_P5.png" class="card-img-top p-3 proimg" alt="Olympus PEN E-P5">
+                <div class="card-body">
+                    <h4 class="card-title">PEN E-P5</h4>
+                    <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">80,000</span> PKR</p>
+                    <button class="btn probtn w-75 mb-3"
+                        onclick="Info('Olympus PEN E-P5',80000,'Olympus (now OM System) cameras are known for their compact size, weather sealing, in-body image stabilization, and high-speed shooting capabilities.','FILES/Cameras/Olympus_E_P5.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                        ✨ Explore More Specs
+                    </button>
+                    <a href="PDFs/Cameras/Olympus/Olympus PEN E-P5.pdf" download class="btn probtn w-75">
+                        ⬇️ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 PentaxCam">
+            <div class="card text-center rounded-4">
+                <img src="FILES/Cameras/Pentax_645Z.png" class="card-img-top p-3 proimg" alt="Pentax 645Z">
+                <div class="card-body">
+                    <h4 class="card-title">Pentax 645Z</h4>
+                    <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">720,000</span> PKR</p>
+                    <button class="btn probtn w-75 mb-3"
+                        onclick="Info('Pentax 645Z',720000,'Pentax cameras are known for their durable, weather-resistant bodies, in-body image stabilization (Shake Reduction), and a range of features like Pixel Shift Resolution and Astrotracer. They also offer various shooting modes, including Auto Picture Mode and Multi Exposure, along with a selection of digital filters. ','FILES/Cameras/Pentax_645Z.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                        ✨ Explore More Specs
+                    </button>
+                    <a href="PDFs/Cameras/Pentax/Pentax_645Z.pdf" download class="btn probtn w-75">
+                        ⬇️ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-md-left">
+                <!-- LOGO & DESCRIPTION -->
+                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
+                    <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
+                    <p class="text-white-50 pe-5">
+                        <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
+                        smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
+                        unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
+                    </p>
+                </div>
+                <!-- WEBSITE LINKS -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
+                        <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
+                        <li class="mb-3"><a href="About Us.html" class="footer-link">INSIGHT</a></li>
+                        <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
+                    </ul>
+                </div>
+                <!-- CONTACT INFO -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
+                    </p>
+                    <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
+                </div>
+                <a href="Code Crafters.html"
+                    class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
+                    <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
+                </a>
+                <hr class="my-4 text-white-50">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-8">
+                        <p class="text-white-50 mb-0">
+                            © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-md-end">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>          
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="Main.JS"></script>
     <script>
-var list = JSON.parse(localStorage.getItem('Wishlist')) || [];
-var parent = document.getElementById('parent');
-var totalItems = document.getElementById('totalItems');
-var grandTotalElem = document.getElementById('grandTotal');
-var toastElement = new bootstrap.Toast(document.getElementById('deleteToast'));
-var confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-var deleteIndex = null;
-function VisualizeCartItems() {
-  parent.innerHTML = '';
-  var count = 0;
-  var grandTotal = 0;
-  if (list.length > 0) {
-    document.querySelector('.defaultmsg').style.display = 'none';
-    list.forEach(function (item, index) {
-      count += item.Quantity;
-      grandTotal += item.TotalAmount;
-      var div = document.createElement('div');
-      div.className = "cartcard";
-      div.innerHTML = `
-        <span class="removeicon" onclick="askDelete(${index})">&times;</span>
-        <h5>${item.ProductName}</h5>
-        <img src="${item.ProductImage}" class="img-fluid my-3 proimg" />
-        <div class="d-flex justify-content-center align-items-center gap-3 my-2">
-          <button class="btn btn-sm addsubbtn" onclick="decrement(${index})">-</button>
-          <span class="fw-semibold">Quantity: ${item.Quantity}</span>
-          <button class="btn btn-sm addsubbtn" onclick="increment(${index})">+</button>
-        </div>
-        <p class="fw-bold mb-1">Total: ${item.TotalAmount} PKR</p>
-      `;
-      parent.appendChild(div);
+    function VisitorCounter() {
+            var count = parseInt(localStorage.getItem('counter')) || 0;
+            localStorage.setItem('counter', count)
+            document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
+        }
+        VisitorCounter()
+    // <!-- FOR DETAILS FUNCTIONALITY -->
+        function Info(ProductName, ProductPrice, ProductDescription, ProductImage, Spec1, Spec2, Spec3, Spec4) {
+            var obj = {
+                "ProductName": ProductName,
+                "ProductPrice": ProductPrice,
+                "ProductDescription": ProductDescription,
+                "ProductImage": ProductImage,
+                "Specifications": [Spec1, Spec2, Spec3, Spec4]
+            }
+            console.log(obj)
+            localStorage.setItem('Info', JSON.stringify(obj))
+            window.location.href = "Info.html"
+        }
+        // FOR FILTERING FUNCTIONALITY
+      function filtering() {
+    var list = document.getElementById('sorting').value;
+    var SonyCam = document.getElementsByClassName('SonyCam');
+    var CasioCam = document.getElementsByClassName('CasioCam');
+    var PanasonicCam = document.getElementsByClassName('PanasonicCam');
+    var PentaxCam = document.getElementsByClassName('PentaxCam');
+    var OlympusCam = document.getElementsByClassName('OlympusCam');
+    var NikonCam = document.getElementsByClassName('NikonCam');
+
+    if (list == 'All') {
+        for (var i = 0; i < SonyCam.length; i++) {
+            SonyCam[i].style.display = 'block';
+        }
+        for (var j = 0; j < CasioCam.length; j++) {
+            CasioCam[j].style.display = 'block';
+        }
+        for (var k = 0; k < PanasonicCam.length; k++) {
+            PanasonicCam[k].style.display = 'block';
+        }
+        for (var l = 0; l < PentaxCam.length; l++) {
+            PentaxCam[l].style.display = 'block';
+        }
+        for (var m = 0; m < OlympusCam.length; m++) {
+            OlympusCam[m].style.display = 'block';
+        }
+        for (var n = 0; n < NikonCam.length; n++) {
+            NikonCam[n].style.display = 'block';
+        }
+    }
+    else if (list == 'Sony') {
+        for (var i = 0; i < SonyCam.length; i++) {
+            SonyCam[i].style.display = 'block';
+        }
+        CasioHide(); PanasonicHide(); PentaxHide(); OlympusHide(); NikonHide();
+    }
+    else if (list == 'Casio') {
+        for (var j = 0; j < CasioCam.length; j++) {
+            CasioCam[j].style.display = 'block';
+        }
+        SonyHide(); PanasonicHide(); PentaxHide(); OlympusHide(); NikonHide();
+    }
+    else if (list == 'Panasonic') {
+        for (var k = 0; k < PanasonicCam.length; k++) {
+            PanasonicCam[k].style.display = 'block';
+        }
+        SonyHide(); CasioHide(); PentaxHide(); OlympusHide(); NikonHide();
+    }
+    else if (list == 'Pentax') {
+        for (var l = 0; l < PentaxCam.length; l++) {
+            PentaxCam[l].style.display = 'block';
+        }
+        SonyHide(); CasioHide(); PanasonicHide(); OlympusHide(); NikonHide();
+    }
+    else if (list == 'Olympus') {
+        for (var m = 0; m < OlympusCam.length; m++) {
+            OlympusCam[m].style.display = 'block';
+        }
+        SonyHide(); CasioHide(); PanasonicHide(); PentaxHide(); NikonHide();
+    }
+    else if (list == 'Nikon') {
+        for (var n = 0; n < NikonCam.length; n++) {
+            NikonCam[n].style.display = 'block';
+        }
+        SonyHide(); CasioHide(); PanasonicHide(); PentaxHide(); OlympusHide();
+    }
+    else {
+        alert("⚠ Please select a valid category!");
+    }
+
+    // FOR HIDING FUNCTIONALITY
+    function SonyHide() {
+        for (var i = 0; i < SonyCam.length; i++) {
+            SonyCam[i].style.display = 'none';
+        }
+    }
+    function CasioHide() {
+        for (var j = 0; j < CasioCam.length; j++) {
+            CasioCam[j].style.display = 'none';
+        }
+    }
+    function PanasonicHide() {
+        for (var k = 0; k < PanasonicCam.length; k++) {
+            PanasonicCam[k].style.display = 'none';
+        }
+    }
+    function PentaxHide() {
+        for (var l = 0; l < PentaxCam.length; l++) {
+            PentaxCam[l].style.display = 'none';
+        }
+    }
+    function OlympusHide() {
+        for (var m = 0; m < OlympusCam.length; m++) {
+            OlympusCam[m].style.display = 'none';
+        }
+    }
+    function NikonHide() {
+        for (var n = 0; n < NikonCam.length; n++) {
+            NikonCam[n].style.display = 'none';
+        }
+    }
+}
+    // FOR SORTING PRICE FUNCTIONALITY
+        function sortCardsByPrice() {
+    const container = document.getElementById("productContainer");
+    const cards = Array.from(container.getElementsByClassName("col-4"));
+    const sortType = document.getElementById("priceFilter").value;
+    cards.sort((a, b) => {
+      const priceA = parseInt(a.querySelector("p span").innerText.replace(/,/g, ""));
+      const priceB = parseInt(b.querySelector("p span").innerText.replace(/,/g, ""));
+      return sortType === "low" ? priceA - priceB : priceB - priceA;
     });
-    totalItems.innerText = `🛒 Total Products: ${count}`;
-    grandTotalElem.innerText = `💵 Grand Total: ${grandTotal} PKR`;
-  } else {
-    document.querySelector('.defaultmsg').style.display = 'block';
-    totalItems.innerText = '';
-    grandTotalElem.innerText = '';
-  }
-}
-function increment(index) {
-  list[index].Quantity += 1;
-  list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function decrement(index) {
-  if (list[index].Quantity > 1) {
-    list[index].Quantity -= 1;
-    list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  } else {
-    askDelete(index);
-    return;
-  }
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function askDelete(index) {
-  deleteIndex = index;
-  confirmDeleteModal.show();
-}
-document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-  if (deleteIndex != null) {
-    list.splice(deleteIndex, 1);
-    localStorage.setItem('Wishlist', JSON.stringify(list));
-    VisualizeCartItems();
-    toastElement.show();
-    deleteIndex = null;
-    confirmDeleteModal.hide();
-  }
-});
-function confirmOrder() {
-  if (list.length == 0) {
-    alert("Your cart is empty!");
-    return;
-  }
-  alert("🎉 Order Confirmed! Thank you for shopping.");
-  localStorage.removeItem('Wishlist');
-  window.location.reload();
-}
-VisualizeCartItems();
+    // Clear and re-append cards in sorted order
+    container.innerHTML = "";
+    cards.forEach(card => container.appendChild(card));
+  }    
     </script>
-  </body>
+</body>
+
 </html>

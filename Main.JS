@@ -24,5 +24,4 @@ if(localStorage.getItem('Ticket') != null)
     button.style.backgroundColor = '#f44336'
     button.style.color = 'white'
     body[0].appendChild(button)
-
 }

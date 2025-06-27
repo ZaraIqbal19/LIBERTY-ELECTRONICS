@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>LIBERTY ELECTRONICS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="Style.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0b0c1a;
+            color: #ffffff;
+        }
+
+        .footertext {
+            color: #66fcf1;
+        }
+
+        .footer-link {
+            color: #c5c6c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #09f9e9;
+            font-weight: bold;
+            text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
+        }
+
+        .footer-link:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 5px #66fcf1;
+        }
+
+        .social-icon {
+            color: #c5c6c7;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: color 0.3s ease, text-shadow 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+
+        .personaldetails:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+
+        .proimg {
+            height: 200px;
+            object-fit: contain;
+            filter: brightness(1.3) drop-shadow(0 0 4px #070909);
+            transition: transform 0.4s ease, filter 0.4s ease;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .proimg:hover {
+            transform: scale(1.05);
+            filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
+        }
+
+        .card {
+            background-color: #101426;
+            border: 1px solid #060707;
+            box-shadow: 0 0 5px #0d0e0e;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px #00ffe5;
+        }
+
+        .card-title {
+            color: #00ffe5;
+        }
+
+        .text-secondary {
+            color: #a6a6a6 !important;
+        }
+
+        .probtn {
+            background-color: transparent;
+            color: #00ffe5;
+            border: 2px solid #00ffe5;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px #101111;
+        }
+
+        .probtn:hover {
+            background-color: #00ffe5;
+            color: #0b0c1a;
+            box-shadow: 0 0 20px #00ffe5;
+        }
+
+        .form-select {
+            background-color: #101426;
+            color: #00ffe5;
+            border: 2px solid #00ffe5;
+        }
+
+        .form-select option {
+            background-color: #101426;
+            color: #00ffe5;
+        }
+
+        .DropDown select:hover {
+            box-shadow: 0 0 20px #00ffe5;
+        }
+
+        .colheading {
+            color: #00ffff;
+            text-shadow: 0 0 10px #0b0c0c;
+        }
+
+        .colpara {
+            color: #00ffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- FOR SPECIFYING CAMERA BRANDS -->
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <div class="container py-2">
+            <!-- LIVE TIME & VISITOR COUNTER -->
+            <div class="row text-center align-items-center">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <p id="livetime" class="fs-2 mb-0">00:00:00</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
+                </div>
+            </div>
+        </div>
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i
+                                    class="fas fa-shopping-cart"></i>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- BODY SECTION -->
+    <div class="container py-5">
+        <div class="row">
+            <h4 class="text-center mb-2 colheading p-3 fs-3">🎙️ Experience the Power of AI at Home with Liberty
+                Electronics Smart Assistants!</h4>
+            <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest smart assistant devices at Liberty
+                Electronics — from user-friendly options to advanced AI-powered tech, all offering top-notch
+                performance, sleek design, and unbeatable value.
+                Compare features and find the perfect smart assistant to enhance your lifestyle — all in one convenient
+                place.
+            </p>
+        </div>
+        <!-- DROPDOWN OPTIONS -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="DropDown text-center">
+                    <select onchange="filtering()" id="sorting" class="form-select w-75 mx-auto">
+                        <option value="">Select Category</option>
+                        <option value="All">All</option>
+                        <option value="Amazon">Amazon</option>
+                        <option value="Google">Google</option>
+                        <option value="Sonos">Sonos</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="DropDown text-center">
+                    <select onchange="sortCardsByPrice()" id="priceFilter" class="form-select w-75 mx-auto">
+                        <option selected>Sort by Price</option>
+                        <option value="low">Lower to Higher</option>
+                        <option value="high">Higher to Lower</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- PRODUCT SECTION -->
+        <div id="productContainer" class="row g-4">
+            <div class="col-4 Amazon">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Alexa_Smart_Speaker.png" class="card-img-top p-3 proimg"
+                        alt="Alexa Smart Speaker">
+                    <div class="card-body">
+                        <h4 class="card-title">Alexa Smart Speaker</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">24,999</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Alexa Smart Speaker',24999,'Amazon Assistant Device include voice control, information retrieval, task management, and smart home control. Users can ask questions, play music, set reminders, control smart home devices, and much more, all through natural voice commands.','FILES/Smart_Assistant_Device/Alexa_Smart_Speaker.png','It understands and responds to natural, conversational language.','It can be personalized with Voice Match to recognize different users and provide tailored responses.','It provides updates on weather, traffic, sports scores, news, and more.','It can make calls, send texts, and check messages using their voice. ')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/Amazon/Amazon Echo Dot (4th Gen).pdf" download
+                            class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+<div class="col-4 Sonos">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Sonos_Roam.png" class="card-img-top p-3 proimg"
+                        alt="Sonos Roam">
+                    <div class="card-body">
+                        <h4 class="card-title">Sonos Roam</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">74,999</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Sonos Roam',74999,'Sonos smart assistant devices offer a range of features for controlling yRoammusic and smart home. These include voice control through Sonos Voice Control, Google Assistant, or Alexa, depending on your setup.','FILES/Smart_Assistant_Device/Sonos_Roam.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/sonos/Sonos Roam.pdf" download class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 Google">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Google_Assistant_Speaker.png" class="card-img-top p-3 proimg"
+                        alt="Home Smart Speaker">
+                    <div class="card-body">
+                        <h4 class="card-title">Home Smart Speaker</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">21,500</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Google Home Smart Speaker',21500,'Google Assistant Device include voice control, information retrieval, task management, and smart home control. Users can ask questions, play music, set reminders, control smart home devices, and much more, all through natural voice commands.','FILES/Smart_Assistant_Device/Google_Assistant_Speaker.png','It understands and responds to natural, conversational language.','It can be personalized with Voice Match to recognize different users and provide tailored responses.','It provides updates on weather, traffic, sports scores, news, and more.','It can make calls, send texts, and check messages using their voice. ')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/Google/Google Home Smart Speaker.pdf" download
+                            class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 Sonos">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Sonos_Beam_Gen_2.png" class="card-img-top p-3 proimg"
+                        alt="Sonos Beam (Gen 2)">
+                    <div class="card-body">
+                        <h4 class="card-title">Sonos Beam (Gen 2)</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">236,199</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Sonos Beam (Gen 2)',236199,'Sonos smart assistant devices offer a range of features for controlling your music and smart home. These include voice control through Sonos Voice Control, Google Assistant, or Alexa, depending on your setup.','FILES/Smart_Assistant_Device/Sonos_Beam_Gen_2.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/sonos/Sonos Beam (Gen 2).pdf" download
+                            class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 Amazon">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Amazon_Alexa_Echo.png" class="card-img-top p-3 proimg"
+                        alt="Alexa Echo">
+                    <div class="card-body">
+                        <h4 class="card-title">Alexa Echo</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">17,999</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Alexa Echo',17999,'Amazon Assistant Device include voice control, information retrieval, task management, and smart home control. Users can ask questions, play music, set reminders, control smart home devices, and much more, all through natural voice commands.','FILES/Smart_Assistant_Device/Amazon_Alexa_Echo.png','It understands and responds to natural, conversational language.','It can be personalized with Voice Match to recognize different users and provide tailored responses.','It provides updates on weather, traffic, sports scores, news, and more.','It can make calls, send texts, and check messages using their voice. ')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/Amazon/Amazon Echo Dot (4th Gen) with Clock.pdf" download
+                            class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 Sonos">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Sonos_Move.png" class="card-img-top p-3 proimg"
+                        alt="Sonos Move">
+                    <div class="card-body">
+                        <h4 class="card-title">Sonos Move</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">124,999</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Sonos Move',124999,'Sonos smart assistant devices offer a range of features for controlling your music and smart home. These include voice control through Sonos Voice Control, Google Assistant, or Alexa, depending on your setup.','FILES/Smart_Assistant_Device/Sonos_Move.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/sonos/Sonos Move.pdf" download class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 Google">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Google_Nest_Audio.png" class="card-img-top p-3 proimg"
+                        alt="Google Nest Audio">
+                    <div class="card-body">
+                        <h4 class="card-title">Google Nest Audio</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">25,999</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Google Nest Audio',25999,'Google Assistant Device include voice control, information retrieval, task management, and smart home control. Users can ask questions, play music, set reminders, control smart home devices, and much more, all through natural voice commands.','FILES/Smart_Assistant_Device/Google_Nest_Audio.png','It understands and responds to natural, conversational language.','It can be personalized with Voice Match to recognize different users and provide tailored responses.','It provides updates on weather, traffic, sports scores, news, and more.','It can make calls, send texts, and check messages using their voice. ')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/Google/Google Nest Audio.pdf" download
+                            class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 Sonos">
+                <div class="card text-center rounded-4">
+                    <img src="FILES/Smart_Assistant_Device/Sonos_Era_100.png" class="card-img-top p-3 proimg"
+                        alt="Sonos Era 100">
+                    <div class="card-body">
+                        <h4 class="card-title">Sonos Era 100</h4>
+                        <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">105,899</span> PKR</p>
+                        <button class="btn probtn w-75 mb-3"
+                            onclick="Info('Sonos Era 100',105899,'Sonos smart assistant devices offer a range of features for controlling your music and smart home. These include voice control through Sonos Voice Control, Google Assistant, or Alexa, depending on your setup.','FILES/Smart_Assistant_Device/Sonos_Era_100.png','Capture high-definition videos with smooth motion and quality audio.','Create creative time-lapse sequences directly from the camera.','Efficient power management for extended photo sessions.','Versatile optical zoom (e.g., 10x to 25x) and wide-angle capabilities for landscapes or group photos.')">
+                            ✨ Explore More Specs
+                        </button>
+                        <a href="PDFs/Smart_Assistant_Device/sonos/Sonos Era 100.pdf" download class="btn probtn w-75">
+                            ⬇️ Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-md-left">
+                <!-- LOGO & DESCRIPTION -->
+                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
+                    <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
+                    <p class="text-white-50 pe-5">
+                        <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
+                        smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
+                        unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
+                    </p>
+                </div>
+                <!-- WEBSITE LINKS -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
+                        <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
+                        <li class="mb-3"><a href="About Us.html" class="footer-link">INSIGHT</a></li>
+                        <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
+                    </ul>
+                </div>
+                <!-- CONTACT INFO -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
+                    </p>
+                    <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
+                </div>
+                <a href="Code Crafters.html"
+                    class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
+                    <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
+                </a>
+                <hr class="my-4 text-white-50">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-8">
+                        <p class="text-white-50 mb-0">
+                            © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-md-end">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="Main.JS"></script>
+    <script>
+        function VisitorCounter() {
+            var count = parseInt(localStorage.getItem('counter')) || 0;
+            localStorage.setItem('counter', count)
+            document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
+        }
+        VisitorCounter()
+        // <!-- FOR DETAILS FUNCTIONALITY -->
+        function Info(ProductName, ProductPrice, ProductDescription, ProductImage, Spec1, Spec2, Spec3, Spec4) {
+            var obj = {
+                "ProductName": ProductName,
+                "ProductPrice": ProductPrice,
+                "ProductDescription": ProductDescription,
+                "ProductImage": ProductImage,
+                "Specifications": [Spec1, Spec2, Spec3, Spec4]
+            }
+            console.log(obj)
+            localStorage.setItem('Info', JSON.stringify(obj))
+            window.location.href = "Info.html"
+        }
+        // FOR FILTERING FUNCTIONALITY
+        function filtering() {
+            var list = document.getElementById('sorting').value;
+            var Amazon = document.getElementsByClassName('Amazon');
+            var Google = document.getElementsByClassName('Google');
+            var Sonos = document.getElementsByClassName('Sonos');
+            if (list == 'All') {
+                for (var i = 0; i < Amazon.length; i++) {
+                    Amazon[i].style.display = 'block';
+                }
+                for (var j = 0; j < Google.length; j++) {
+                    Google[j].style.display = 'block';
+                }
+                for (var k = 0; k < Sonos.length; k++) {
+                    Sonos[k].style.display = 'block';
+                }
+            }
+            else if (list == 'Amazon') {
+                for (var i = 0; i < Amazon.length; i++) {
+                    Amazon[i].style.display = 'block';
+                }
+                GoogleHide(); SonosHide();
+            }
+            else if (list == 'Google') {
+                for (var j = 0; j < Google.length; j++) {
+                    Google[j].style.display = 'block';
+                }
+                AmazonHide(); SonosHide();
+            }
+            else if (list == 'Sonos') {
+                for (var k = 0; k < Sonos.length; k++) {
+                    Sonos[k].style.display = 'block';
+                }
+                AmazonHide(); GoogleHide();
+            }
+            else {
+                alert("⚠ Please select a valid category!");
+            }
+            // Hiding Functions
+            function AmazonHide() {
+                for (var i = 0; i < Amazon.length; i++) {
+                    Amazon[i].style.display = 'none';
+                }
+            }
+            function GoogleHide() {
+                for (var j = 0; j < Google.length; j++) {
+                    Google[j].style.display = 'none';
+                }
+            }
+            function SonosHide() {
+                for (var k = 0; k < Sonos.length; k++) {
+                    Sonos[k].style.display = 'none';
+                }
+            }
+        }
+
+        // FOR SORTING PRICE FUNCTIONALITY
+        function sortCardsByPrice() {
+            const container = document.getElementById("productContainer");
+            const cards = Array.from(container.getElementsByClassName("col-4"));
+            const sortType = document.getElementById("priceFilter").value;
+            cards.sort((a, b) => {
+                const priceA = parseInt(a.querySelector("p span").innerText.replace(/,/g, ""));
+                const priceB = parseInt(b.querySelector("p span").innerText.replace(/,/g, ""));
+                return sortType === "low" ? priceA - priceB : priceB - priceA;
+            });
+            // Clear and re-append cards in sorted order
+            container.innerHTML = "";
+            cards.forEach(card => container.appendChild(card));
+        }    
+    </script>
+</body>
+
+</html>
