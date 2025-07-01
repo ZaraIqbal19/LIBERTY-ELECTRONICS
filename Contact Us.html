@@ -1,37 +1,323 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>LIBERTY ELECTRONICS</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+<head>
+    <title>LIBERTY ELECTRONICS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="Style.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .footertext {
+            color: #66fcf1;
+        }
+        .footer-link {
+            color: #c5c6c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #09f9e9;
+            font-weight: bold;
+            text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
+        }
+        .footer-link:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 5px #66fcf1;
+        }
+        .social-icon {
+            color: #c5c6c7;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: color 0.3s ease, text-shadow 0.3s;
+        }
+        .social-icon:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+      .personaldetails:hover {
+            color: #66fcf1;
+            text-shadow: 0 0 8px #66fcf1;
+        }
+        .mycontactus{
+            background-image: url(FILES/More_Images/Contact\ Us.PNG);
+            height: 80vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+        }
+        .myform {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #0ff;
+            animation: fadeInUp 1s ease;
+        }
+        .form-control {
+            background-color: #000;
+            color: #0ff;
+            border: 1px solid #0ff;
+        }
+        .form-control::placeholder {
+            color: #0ff;
+            opacity: 0.6;
+        }
+        .msgbtn {
+            background-color: transparent;
+            color: #0ff;
+            border: 1px solid #0ff;
+            transition: all 0.3s ease;
+        }
+        .msgbtn:hover {
+            background-color: #0ff;
+            color: #000;
+            box-shadow: 0 0 15px #0ff;
+        }
+        .fileupload {
+            cursor: pointer;
+            color: #0ff;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%) invert(90%) contrast(120%);
+        }
+        .mybtn {
+            color: #0ff;
+            text-shadow: 0 0 5px #0ff, 0 0 10px rgb(19, 20, 20);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fileupload {
+    display: inline-block;
+    padding: 20px;
+    border: 2px dashed #00f0ff;
+    border-radius: 12px;
+    background-color: #0a0a0a;
+    color: #00f0ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+       animation: pulseGlow 2s infinite;
+}
+.fileupload:hover {
+    background-color: #00f0ff;
+    color: #0a0a0a;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f0ff88;
+}
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px #00f0ff;
+    }
+    50% {
+        box-shadow: 0 0 20px #00f0ff;
+    }
+    100% {
+        box-shadow: 0 0 10px #00f0ff;
+    }
+}
+    </style>
+</head>
 
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-    </head>
+<body>
+    <!-- IT's A CONTACT US PAGE -->
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <div class="container py-2">
+            <!-- LIVE TIME & VISITOR COUNTER -->
+            <div class="row text-center align-items-center">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <p id="livetime" class="fs-2 mb-0">00:00:00</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
+                </div>
+            </div>
+        </div>
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i
+                                    class="fas fa-shopping-cart"></i>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mycontactus"></div>
+    </div>
+    <br>
+    <hr>
+    <!-- BODY SECTION -->
+<div class="container">
+    <div class="row">
+        <h4 class="text-center mybtn">DROP US A MESSAGE!</h4>
+        <p>🌟 Crafted with passion and precision, I proudly present Liberty Electronics — a one-stop destination for the latest in technology and innovation. As the creative mind behind this dynamic e-commerce platform, I’ve designed each section to deliver a smooth, modern shopping experience where users can explore premium gadgets, smart devices, and trusted electronics with ease. From concept to code, every detail reflects my dedication to quality, style, and user satisfaction. 💻⚡📱</p>
+        <hr>
+        <!-- Map Section -->
+        <div class="col-md-6">
+            <h2 class="mb-4 mybtn text-center">WHERE TO FIND US??</h2>
+            <div class="map-container" style="height: 300px;">
+                <iframe src="https://www.google.com/maps?q=Shahrah-e-Faisal,%20Karachi,%20Pakistan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            </div>
 
-    <body>
-        <!-- FOR REGISTRATION -->
-         
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
+            <div class="mt-4">
+                <h5>Address</h5>
+                <p>Shahrah-e-Faisal, Karachi, Pakistan</p>
+                <h5>Email</h5>
+                <p>support@libertyelectronics.pk</p>
+                <h5>Phone</h5>
+                <p>+92 300 1234567</p>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+                <div class="social-icon mt-3">
+                    <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <h2 class="mb-4 mybtn">WE'D LOVE TO HEAR FROM YOU</h2>
+            <form id="contactForm" class="mymyform" novalidate>
+                
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Your Name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Your Email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Phone</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Your Phone">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea name="message" class="form-control" rows="4" placeholder="Your Message"></textarea>
+                </div>
+
+                <div class="mb-3 text-center">
+                    <label class="fileupload">
+                        <i class="fas fa-upload"></i> DROP YOUR ATTACHMENT HERE
+                        <input type="file" name="file" class="d-none">
+                    </label>
+                </div>
+
+                <button type="submit" class="btn msgbtn w-100">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+    <!-- FOOTER SECTION -->
+    <footer class="text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-md-left">
+                <!-- LOGO & DESCRIPTION -->
+                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
+                    <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
+                    <p class="text-white-50 pe-5">
+                        <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
+                        smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
+                        unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
+                    </p>
+                </div>
+                <!-- WEBSITE LINKS -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
+                        <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
+                        <li class="mb-3"><a href="About Us.html" class="footer-link">INSIGHT</a></li>
+                        <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
+                    </ul>
+                </div>
+                <!-- CONTACT INFO -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
+                    <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
+                    </p>
+                    <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
+                </div>
+                <a href="Code Crafters.html"
+                    class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
+                    <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
+                </a>
+
+                <hr class="my-4 text-white-50">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-8">
+                        <p class="text-white-50 mb-0">
+                            © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-md-end">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/" target="_blank" class="social-icon"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="Main.JS"></script>
+    <script>function VisitorCounter() {
+            var count = parseInt(localStorage.getItem('counter')) || 0;
+            localStorage.setItem('counter', count)
+            document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
+        }
+        VisitorCounter()</script>
+</body>
+
 </html>

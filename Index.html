@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <title>LIBERTY ELECTRONICS</title>
   <!-- Required meta tags -->
@@ -10,40 +11,198 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="stylesheet" href="Style.CSS">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
     .footertext {
       color: #66fcf1;
     }
+
     .footer-link {
       color: #c5c6c7;
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     .nav-link:hover {
       color: #09f9e9;
       font-weight: bold;
       text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
     }
-   .footer-link:hover {
+
+    .footer-link:hover {
       color: #66fcf1;
       text-shadow: 0 0 5px #66fcf1;
     }
+
     .social-icon {
       color: #c5c6c7;
       font-size: 1.2rem;
       margin-left: 15px;
       transition: color 0.3s ease, text-shadow 0.3s;
     }
+
     .social-icon:hover {
       color: #66fcf1;
       text-shadow: 0 0 8px #66fcf1;
     }
+
     .personaldetails:hover {
       color: #66fcf1;
       text-shadow: 0 0 8px #66fcf1;
     }
+
+    .text-shadow {
+      text-shadow: 0 0 5px #00ffe5;
+    }
+
+    .text-shadow-sm {
+      text-shadow: 0 0 2px #00ffe5;
+    }
+
+    .text-glow {
+      color: #00ffe5;
+      text-shadow: 0 0 5px #66fcf1, 0 0 10px #121515;
+    }
+
+    .neon-glow {
+      box-shadow: 0 0 5px #00ffe5;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .neon-glow:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px #00ffe5, 0 0 20px #111111;
+    }
+
+    .neon-button {
+      border: 2px solid #00ffe5;
+      color: #00ffe5;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .neon-button:hover {
+      background-color: #00ffe5;
+      color: #0b0c10;
+      box-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5;
+    }
+
+    .proimg {
+      height: 200px;
+      object-fit: contain;
+      filter: brightness(1.3) drop-shadow(0 0 4px #070909);
+      transition: transform 0.4s ease, filter 0.4s ease;
+      padding: 10px;
+      margin: auto;
+    }
+
+    .proimg:hover {
+      transform: scale(1.05);
+      filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
+    }
+
+    .card {
+      background-color: #101426;
+      border: 1px solid #060707;
+      box-shadow: 0 0 5px #0d0e0e;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px #00ffe5;
+    }
+
+    .card-title {
+      color: #00ffe5;
+    }
+
+    .service-icon {
+      font-size: 40px;
+      color: #66FCF1;
+      margin-bottom: 15px;
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .marquee-content {
+      display: flex;
+      animation: scroll-left 25s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .testimonial {
+      width: 320px;
+      margin: 0 -2px;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    /* Odd-numbered testimonials rotate -3deg */
+    .testimonial:nth-child(odd) {
+      transform: rotate(-3deg);
+    }
+
+    /* Even-numbered testimonials rotate 3deg */
+    .testimonial:nth-child(even) {
+      transform: rotate(3deg);
+    }
+
+    .testimonial:hover {
+      transform: rotate(0deg) scale(1.07);
+      z-index: 2;
+    }
+
+    .inner-card {
+      background: #fff;
+      padding: 35px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .inner-card h3 {
+      font-size: 20px;
+      margin: 0 0 10px 0;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .inner-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .stars {
+      color: #ffcc00;
+      font-size: 16px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+    }
   </style>
 </head>
+
 <body>
   <!-- IT's A HOME PAGE -->
   <!-- HEADER SECTION -->
@@ -64,30 +223,30 @@
       data-bs-pause="hover">
       <!-- NAV BAR -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+        <div class="container">
+          <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
 
-    <!-- Toggler Button for Mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+          <!-- Toggler Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-    <!-- Navbar Links -->
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
-        <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
-        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
-        <li class="nav-item">
-          <a class="nav-link" href="Add To Cart.html">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>   
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+              <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+              <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
+              <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="Add To Cart.html">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <div class="carousel-inner">
         <div class="carousel-item">
           <img src="FILES/More_Images/background 1.PNG" class="d-block w-100" alt="...">
@@ -114,9 +273,660 @@
       </button>
     </div>
   </div>
+  <br>
   <!-- BODY SECTION -->
-  <h1>BODY SECTION</h1>
-  <h1>ABHI KAM KARNA HAI YAHA PER</h1>
+  <div class="container homebody">
+    <div class="row mb-4">
+      <div class="col text-center">
+        <h2 class="display-5 fw-bold fs-1 text-shadow" style="color: #66FCF1 !important;">Your Ultimate Destination for
+          Electronics – Liberty Electronics</h2>
+        <hr>
+        <p class="lead text-light text-shadow-sm">Welcome to Liberty Electronics – your ultimate destination for
+          top-quality gadgets and the latest in smart technology. Whether you're searching for powerful smartphones,
+          sleek laptops, high-performance cameras, or smart home devices, we bring you the best brands at unbeatable
+          prices. Our platform is designed for a smooth and futuristic shopping experience, combining style, innovation,
+          and convenience. At Liberty Electronics, we don’t just sell electronics — we power lifestyles, inspire
+          tech-savvy living, and deliver satisfaction with every click.</p>
+      </div>
+    </div>
+    <hr>
+    <!-- CATEGORY SECTION -->
+    <div class="container my-5">
+      <h3 class="text-center fw-bold mb-4 text-shadow text-glow">🌀 BROWSE OUR CATEGORIES</h3>
+      <!-- SMART ASSISTANT DEVICES -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">🎙️ Experience the Power of AI at Home with Liberty
+          Electronics Smart Assistants!</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest smart assistant devices at Liberty
+          Electronics — from user-friendly options to advanced AI-powered tech, all offering top-notch
+          performance, sleek design, and unbeatable value.
+          Compare features and find the perfect smart assistant to enhance your lifestyle — all in one convenient
+          place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_Assistant_Device/Google_Nest_Audio.png" class="card-img-top p-3 proimg"
+              alt="Google Nest Audio">
+            <div class="card-body">
+              <h4 class="card-title text-white">Google Nest Audio</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">25,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_Assistant_Device/Amazon_Alexa_Echo.png" class="card-img-top p-3 proimg"
+              alt="Alexa Echo">
+            <div class="card-body">
+              <h4 class="card-title text-white">Alexa Echo</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">17,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_Assistant_Device/Sonos_Beam_Gen_2.png" class="card-img-top p-3 proimg"
+              alt="Sonos Beam (Gen 2)">
+            <div class="card-body">
+              <h4 class="card-title text-white">Sonos Beam (Gen 2)</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">236,199</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Smart Assistant Device.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- AIR CONDITIONER -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">❄️ Discover Ultimate Cooling Comfort with Liberty Electronics
+          Air Conditioners</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest air conditioners at Liberty Electronics — from
+          energy-efficient models to high-performance cooling systems, all offering superior comfort, style, and value.
+          Compare features and find the perfect AC to match your cooling needs, all in one place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img
+              src="FILES/Air_Conditioner/Haier_1.5_Ton_Thunder_Inverter_Air_Conditioner_HSU-18HFTCAWSDC-T3_Silver-removebg-preview.png"
+              class="card-img-top p-3 proimg" alt="Haier HSU-18HFTCAWSDC">
+            <div class="card-body">
+              <h4 class="card-title">HSU-18HFTCAWSDC</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">215,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Air_Conditioner/haier-12cf-non-inverter-ac-removebg-preview.png"
+              class="card-img-top p-3 proimg" alt="Haier 12-CF">
+            <div class="card-body">
+              <h4 class="card-title">Haier 12-CF</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">115,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Air_Conditioner/Kenwood_Eco_Ultra_2_ton-removebg-preview.png"
+              class="card-img-top p-3 proimg" alt="Eco Ultra">
+            <div class="card-body">
+              <h4 class="card-title">Eco Ultra</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">493,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Air Condtioner.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- WASHING MACHINES -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">🧺 Experience the Power of Clean with Liberty Electronics
+          Washing Machines</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest washing machines at Liberty Electronics — from
+          user-friendly models to high-end, feature-packed machines, all offering exceptional performance, design, and
+          value.
+          Compare features and find the perfect washing machine to meet your laundry needs, all in one place.</p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Washing_Machine/Bosch_WAJ2018SGC.png" class="card-img-top p-3 proimg"
+              alt="Bosch WAJ2018SGC">
+            <div class="card-body">
+              <h4 class="card-title">WAJ2018SGC</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">205,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Washing_Machine/Dawlance__DWD_85400_S.png" class="card-img-top p-3 proimg"
+              alt="Dawlance DWD 85400-S">
+            <div class="card-body">
+              <h4 class="card-title">DWD 85400-S</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">216,400</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Washing_Machine/Haier_HWM_120-826.png" class="card-img-top p-3 proimg"
+              alt="Haier HWM 120-826">
+            <div class="card-body">
+              <h4 class="card-title">HWM 120-826</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">295,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Washing Machine.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- LAPTOPS -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">💻 Discover the World of Innovation with Liberty
+          Electronics Laptops – Where Power Meets Portability</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest laptops at Liberty Electronics — from
+          user-friendly options for everyday tasks to high-performance machines for professionals, all delivering
+          top-tier performance, style, and value.
+          Compare features and find the perfect laptop to match your computing needs, all in one place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Laptops/HP_Spectrex360-removebg-preview.png" class="card-img-top p-3 proimg"
+              alt="HP Spectrex-360">
+            <div class="card-body">
+              <h4 class="card-title">HP Spectrex-360</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">495,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Laptops/Apple_MacBook_Pro_13-removebg-preview.png" class="card-img-top p-3 proimg"
+              alt="Apple MacBook Pro 13">
+            <div class="card-body">
+              <h4 class="card-title">Apple MacBook Pro 13</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">476,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Laptops/Lenovo_IdeaPad_Slim_5-removebg-preview.png" class="card-img-top p-3 proimg"
+              alt="Lenovo IdeaPad Slim 5">
+            <div class="card-body">
+              <h4 class="card-title">Lenovo IdeaPad Slim 5</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">316,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Laptops.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- SMART PHONES -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">📱 Explore the World of Smartphones at Liberty Electronics</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest smartphones at Liberty Electronics — from
+          budget-friendly picks to premium flagships, all packed with performance, style, and value.
+          Compare features and find the perfect phone to match your lifestyle, all in one place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_Phones/Iphone_13_Pro.png" class="card-img-top p-3 proimg" alt="Iphone 13 Pro">
+            <div class="card-body">
+              <h4 class="card-title">Iphone 13 Pro</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">342,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_Phones/Xiaomi_Mix_Flip.png" class="card-img-top p-3 proimg" alt="Xiaomi Mix Flip">
+            <div class="card-body">
+              <h4 class="card-title">Xiaomi Mix Flip</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">399,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_Phones/Vivo_V40e.png" class="card-img-top p-3 proimg" alt="Vivo V40e">
+            <div class="card-body">
+              <h4 class="card-title">Vivo V40e</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">99,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Smart Phones.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- AIR PURIFIER -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">🌬️ Breathe Cleaner, Live Better with Liberty Electronics Air
+          Purifiers</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest air purifiers at Liberty Electronics — from
+          compact options for small spaces to advanced models for whole-home filtration, all offering top-notch
+          performance, sleek design, and great value.
+          Compare features and find the perfect air purifier to match your lifestyle and breathing needs, all in one
+          place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Air_Purifier/Philips__AC0920_60.png" class="card-img-top p-3 proimg"
+              alt="Philips AC0920-60">
+            <div class="card-body">
+              <h4 class="card-title">AC0920-60</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">79,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Air_Purifier/Levoit_Core_600S.png" class="card-img-top p-3 proimg" alt="Levoit Core 600S">
+            <div class="card-body">
+              <h4 class="card-title">Core 600S</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">129,500</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Air_Purifier/Samsung_AX60T5080WD_SA.png" class="card-img-top p-3 proimg"
+              alt="Samsung AX-60t">
+            <div class="card-body">
+              <h4 class="card-title">AX-60t</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">190,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Air Purifier.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- CAMERA -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">📸 Discover the World Through the Lens with Liberty Electronics
+          Cameras</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest cameras at Liberty Electronics — from
+          beginner-friendly models to professional-grade gear, all delivering top-tier performance, style, and value.
+          Compare features and find the perfect camera to suit your photography needs, all in one place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Cameras/Nikon_Z5.png" class="card-img-top p-3 proimg" alt="Nikon Z 5">
+            <div class="card-body">
+              <h4 class="card-title">Nikon Z 5</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">310,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Cameras/Sony_Evil_Alpha_CR.png" class="card-img-top p-3 proimg" alt="Sony Evil Alpha CR">
+            <div class="card-body">
+              <h4 class="card-title">Evil Alpha 7CR</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">43,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Cameras/Pentax_K30.png" class="card-img-top p-3 proimg" alt="Pentax K30">
+            <div class="card-body">
+              <h4 class="card-title">Pentax K30</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">33,500</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Camera.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- MICROWAVE OVEN -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">📸 Discover the World Through the Lens with Liberty Electronics
+          Cameras</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest cameras at Liberty Electronics — from
+          beginner-friendly models to professional-grade gear, all delivering top-tier performance, style, and value.
+          Compare features and find the perfect camera to suit your photography needs, all in one place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img
+              src="FILES/Microwave_Oven/LG_32_L_Convection_Microwave_Oven_with_Stainless_Steel_Cavity__301_Auto_Cook_Menu__Diet_Fry__360__Rotisserie__Black-removebg-preview.png"
+              class="card-img-top p-3 proimg" alt="LG-32">
+            <div class="card-body">
+              <h4 class="card-title">LG-32</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">125,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Microwave_Oven/PEL_Microwave_Oven_Convection_PMO_25L-removebg-preview.png"
+              class="card-img-top p-3 proimg" alt="PEL PMO-25L">
+            <div class="card-body">
+              <h4 class="card-title">PMO-25L</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">95,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Microwave_Oven/Samsung_Shine_Grill_Microwave_Oven_MG402MADXBB_40_Ltr-removebg-preview.png"
+              class="card-img-top p-3 proimg" alt="Samsung MG503MADXBB-40">
+            <div class="card-body">
+              <h4 class="card-title">MG503MADXBB-40</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">135,599</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Microwave Oven.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+      <br>
+      <!-- SMART TV -->
+      <div class="row">
+        <h4 class="text-center mb-2 colheading p-3 fs-3">📺 Experience Entertainment Like Never Before with Liberty
+          Electronics Smart TVs</h4>
+        <p class="text-center mb-5 colpara p-1 fs-6">Discover the latest Smart TVs at Liberty Electronics — from
+          entry‑level models to flagship displays, all delivering stunning picture quality, smart connectivity, and
+          sleek design.
+          Compare features and find the perfect TV to transform your viewing experience, all in one place.
+        </p>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_TV/LG_UT7570.png" class="card-img-top p-3 proimg" alt="LG UT7570">
+            <div class="card-body">
+              <h4 class="card-title">LG UT7570</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">205,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_TV/Samsung_QN990F_85.png" class="card-img-top p-3 proimg" alt="Samsung QN990F-85">
+            <div class="card-body">
+              <h4 class="card-title">Samsung QN990F-85</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">245,000</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center rounded-4"
+            style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+            <img src="FILES/Smart_TV/LG_QNED85T.png" class="card-img-top p-3 proimg" alt="LG QNED85T">
+            <div class="card-body">
+              <h4 class="card-title">LG QNED85T</h4>
+              <p class="fw-bold fs-5 text-secondary">Price: <span class="text-light">115,999</span> PKR</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="Smart TV.html" class="btn btn-outline-info px-4 fw-bold neon-button">BROWSE MORE</a>
+        </div>
+      </div>
+    </div>
+    <!-- PROMO BANNER -->
+    <div class="row">
+      <div class="col">
+        <div class="p-4 rounded border text-center neon-glow" style="background-color: #0b0c10;">
+          <h3 class="fw-bold p-5 mb-2 text-glow">💥 LIMITED TIME OFFER!</h3>
+          <p class="text-light mb-3">Get up to <strong class="text-info">30% OFF</strong> on selected electronics. Shop
+            now and upgrade your tech game.</p>
+          <a href="Collection.html" class="btn btn-outline-info fw-semibold neon-button">START SHOPPING</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <!-- SERVICES SECTION -->
+    <div class="row">
+      <h3 class="text-center fw-bold mb-4 text-shadow text-glow">SMART SERVICES - SEAMLESS SUPPORT</h3>
+      <p class="text-center mb-5 colpara p-1 fs-6">At Liberty Electronics, we’re committed to delivering more than just
+        the latest gadgets. Our services include fast nationwide delivery, 24/7 customer support, easy returns, and
+        expert product guidance — all designed to make your shopping experience smooth, secure, and satisfying. From
+        first click to final delivery, we’ve got you covered.
+      </p>
+      <div class="col-3">
+        <div class="card text-center rounded-4"
+          style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+          <div class="card-body">
+            <div class="service-icon"><i class="bi bi-truck"></i></div>
+            <h4 class="card-title">FREE SHIPPING - NO HASSLE</h4>
+            <p class="fw-bold fs-auto text-white">Shop your favorite gadgets at Liberty Electronics and enjoy free
+              delivery across Pakistan — no hidden fees, no minimum spend. Fast, easy, and straight to your doorstep!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card text-center rounded-4"
+          style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+          <div class="card-body">
+            <div class="service-icon"><i class="bi bi-arrow-repeat"></i></div>
+            <h4 class="card-title">RETURN & REFUND POLICY</h4>
+            <p class="fw-bold fs-auto text-white">Changed your mind? Return any item within 7 days in original condition
+              for a quick refund or exchange. Simple, fast, and hassle-free — that’s Liberty Electronics.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card text-center rounded-4"
+          style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+          <div class="card-body">
+            <div class="service-icon"><i class="bi bi-bag-plus"></i></div>
+            <h4 class="card-title">SAVE MORE - SHOP SMARTER</h4>
+            <p class="fw-bold fs-auto text-white">Get the best and reliable gadgets according to your comfort at
+              unbeatable prices with exclusive deals and unbelievable discounts — only at Liberty Electronics.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card text-center rounded-4"
+          style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid #66FCF1;">
+          <div class="card-body">
+            <div class="service-icon"><i class="bi bi-headset"></i></div>
+            <h4 class="card-title">24/7 - CUSTOMER SUPPORT</h4>
+            <p class="fw-bold fs-auto text-white">Our support team is available 24/7 to assist you — whether it's a
+              quick question or full guidance. At Liberty Electronics, help is just a click away, anytime you need it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+  </div>
+  <!-- RATING CARDS -->
+  <div class="row">
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">⚡</span>
+            <h3>HASAN RASHID</h3>
+            <p>Liberty Electronics provided exceptional customer service and delivered high-quality components on time.
+              Highly recommended!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">🔧</span>
+            <h3>TechWorld Solutions</h3>
+            <p>We've partnered with Liberty Electronics for over 3 years. Their precision and reliability have been
+              outstanding for our projects.</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">💡</span>
+            <h3>AHMED SIDDIQUI</h3>
+            <p>Very satisfied with the quality of electronics we received. The team is knowledgeable and always ready to
+              assist. Great experience!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">✅</span>
+            <h3>TALHA LTD & CO.</h3>
+            <p>Liberty Electronics consistently delivers precision components that meet our high standards. Excellent
+              support team!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">⚡</span>
+            <h3>FAISAL KHAN</h3>
+            <p>Liberty Electronics provided exceptional customer service and delivered high-quality components on time.
+              Highly recommended!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">🔧</span>
+            <h3>Dyson Software House</h3>
+            <p>We've partnered with Liberty Electronics for over 3 years. Their precision and reliability have been
+              outstanding for our projects.</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">💡</span>
+            <h3>Yahya Pvt Ltd.</h3>
+            <p>Very satisfied with the quality of electronics we received. The team is knowledgeable and always ready to
+              assist. Great experience!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">✅</span>
+            <h3>Advanced Circuits Inc.</h3>
+            <p>Liberty Electronics consistently delivers precision components that meet our high standards. Excellent
+              support team!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">⚡</span>
+            <h3>HASAN SIDDIQUI</h3>
+            <p>Liberty Electronics provided exceptional customer service and delivered high-quality components on time.
+              Highly recommended!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">🔧</span>
+            <h3>Razi</h3>
+            <p>We've partnered with Liberty Electronics for over 3 years. Their precision and reliability have been
+              outstanding for our projects.</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">💡</span>
+            <h3>Minaal Enterprises</h3>
+            <p>Very satisfied with the quality of electronics we received. The team is knowledgeable and always ready to
+              assist. Great experience!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">✅</span>
+            <h3>Serena Mobiles</h3>
+            <p>Liberty Electronics consistently delivers precision components that meet our high standards. Excellent
+              support team!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">⚡</span>
+            <h3>Ayan Commincation Shop</h3>
+            <p>Liberty Electronics provided exceptional customer service and delivered high-quality components on time.
+              Highly recommended!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">🔧</span>
+            <h3>Unique Software Co.</h3>
+            <p>We've partnered with Liberty Electronics for over 3 years. Their precision and reliability have been
+              outstanding for our projects.</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">💡</span>
+            <h3>Hassan TechWorld</h3>
+            <p>Very satisfied with the quality of electronics we received. The team is knowledgeable and always ready to
+              assist. Great experience!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="inner-card">
+            <span class="badge">✅</span>
+            <h3>Ramis Agency</h3>
+            <p>Liberty Electronics consistently delivers precision components that meet our high standards. Excellent
+              support team!</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- FOOTER SECTION -->
   <footer class="text-white pt-5 pb-4">
