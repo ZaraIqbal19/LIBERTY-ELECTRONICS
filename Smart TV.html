@@ -198,7 +198,7 @@
         </div>
         <!-- PRODUCT SECTION -->
         <div id="productContainer" class="row g-4">
-            <div class="col-4 Samsung">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Samsung">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_TV/Samsung_Q80D.png" class="card-img-top p-3 proimg" alt="Samsung Q80D">
                     <div class="card-body">
@@ -214,7 +214,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 LG">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 LG">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_TV/LG_B4_OLED.png" class="card-img-top p-3 proimg" alt="LG B4-OLED">
                     <div class="card-body">
@@ -230,7 +230,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Samsung">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Samsung">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_TV/Samsung_QN85D_59.png" class="card-img-top p-3 proimg"
                         alt="Samsung QN85D-59">
@@ -247,7 +247,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 LG">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 LG">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_TV/LG_QNED85T.png" class="card-img-top p-3 proimg" alt="LG QNED85T">
                     <div class="card-body">
@@ -263,7 +263,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Samsung">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Samsung">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_TV/Samsung_QN990F_85.png" class="card-img-top p-3 proimg"
                         alt="Samsung QN990F-85">
@@ -280,7 +280,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 LG">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 LG">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_TV/LG_UT7570.png" class="card-img-top p-3 proimg" alt="LG UT7570">
                     <div class="card-body">
@@ -296,7 +296,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Samsung">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Samsung">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_TV/Samsung_S90D_OLED_551.png" class="card-img-top p-3 proimg"
                         alt="Samsung S90D OLED">
@@ -449,7 +449,7 @@
         // FOR SORTING PRICE FUNCTIONALITY
         function sortCardsByPrice() {
             const container = document.getElementById("productContainer");
-            const cards = Array.from(container.getElementsByClassName("col-4"));
+            const cards = Array.from(container.getElementsByClassName("col-lg-4"));
             const sortType = document.getElementById("priceFilter").value;
             cards.sort((a, b) => {
                 const priceA = parseInt(a.querySelector("p span").innerText.replace(/,/g, ""));

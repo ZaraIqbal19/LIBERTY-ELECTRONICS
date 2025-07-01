@@ -200,7 +200,7 @@
         </div>
         <!-- PRODUCT SECTION -->
         <div id="productContainer" class="row g-4">
-            <div class="col-4 Amazon">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Amazon">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Alexa_Smart_Speaker.png" class="card-img-top p-3 proimg"
                         alt="Alexa Smart Speaker">
@@ -218,7 +218,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Sonos">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Sonos">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Sonos_Roam.png" class="card-img-top p-3 proimg"
                         alt="Sonos Roam">
@@ -235,7 +235,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Google">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Google">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Google_Assistant_Speaker.png" class="card-img-top p-3 proimg"
                         alt="Home Smart Speaker">
@@ -253,7 +253,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Sonos">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Sonos">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Sonos_Beam_Gen_2.png" class="card-img-top p-3 proimg"
                         alt="Sonos Beam (Gen 2)">
@@ -271,7 +271,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Amazon">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Amazon">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Amazon_Alexa_Echo.png" class="card-img-top p-3 proimg"
                         alt="Alexa Echo">
@@ -289,7 +289,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Sonos">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Sonos">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Sonos_Move.png" class="card-img-top p-3 proimg"
                         alt="Sonos Move">
@@ -306,7 +306,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Google">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Google">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Google_Nest_Audio.png" class="card-img-top p-3 proimg"
                         alt="Google Nest Audio">
@@ -324,7 +324,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 Sonos">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 Sonos">
                 <div class="card text-center rounded-4">
                     <img src="FILES/Smart_Assistant_Device/Sonos_Era_100.png" class="card-img-top p-3 proimg"
                         alt="Sonos Era 100">
@@ -490,7 +490,7 @@
         // FOR SORTING PRICE FUNCTIONALITY
         function sortCardsByPrice() {
             const container = document.getElementById("productContainer");
-            const cards = Array.from(container.getElementsByClassName("col-4"));
+            const cards = Array.from(container.getElementsByClassName("col-lg-4"));
             const sortType = document.getElementById("priceFilter").value;
             cards.sort((a, b) => {
                 const priceA = parseInt(a.querySelector("p span").innerText.replace(/,/g, ""));
