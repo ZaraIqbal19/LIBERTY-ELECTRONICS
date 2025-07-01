@@ -1,17 +1,16 @@
-function livetime(){
+function livetime() {
     var livetime = new Date()
-document.getElementById('livetime').innerText = livetime.toLocaleTimeString()
+    document.getElementById('livetime').innerText = livetime.toLocaleTimeString()
 }
-setInterval(livetime,1000)
+setInterval(livetime, 1000)
 var count = localStorage.getItem('counter')
 
 var body = document.getElementsByTagName('body');
 
-if(localStorage.getItem('Ticket') != null)
-{
+if (localStorage.getItem('Ticket') != null) {
     var button = document.createElement('button')
     button.innerText = 'Log out '
-    button.onclick = function() {
+    button.onclick = function () {
         localStorage.removeItem('Ticket')
         localStorage.removeItem('counter')
         location.reload()

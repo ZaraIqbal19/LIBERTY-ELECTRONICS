@@ -69,6 +69,7 @@
         transform: translateY(0);
       }
     }
+
     .info-card {
       background: linear-gradient(145deg, #101820, #0c0c0c);
       border: 1px solid #00fff7;
@@ -80,11 +81,13 @@
       text-align: center;
       animation: fadeInCard 0.8s ease-in-out;
     }
+
     .info-card:hover {
       background-color: #00ffe5;
       color: #0b0c1a;
       box-shadow: 0 0 20px #00ffe5;
     }
+
     .proimg {
       height: 250px;
       object-fit: contain;
@@ -93,34 +96,41 @@
       padding: 10px;
       margin: auto;
     }
+
     .proimg:hover {
       transform: scale(1.05);
       filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
     }
+
     h3 {
       font-weight: 700;
       margin-top: 20px;
       color: #00fff7;
     }
+
     p {
       color: #c1f9f6;
     }
+
     .form-control {
       background-color: #1a1a1a;
       color: #00fff7;
       border: 1px solid #00fff7;
       text-align: center;
     }
+
     .form-label {
       font-weight: 700;
       color: #00fff7;
     }
+
     .button-group {
       display: flex;
       justify-content: space-between;
       gap: 10px;
       margin-top: 20px;
     }
+
     .back-button {
       position: absolute;
       top: 15px;
@@ -140,9 +150,11 @@
       z-index: 10;
       transition: transform 0.2s ease;
     }
+
     .back-button:hover {
       transform: scale(1.1);
     }
+
     .probtn {
       background-color: transparent;
       color: #00ffe5;
@@ -150,6 +162,7 @@
       transition: all 0.3s ease;
       box-shadow: 0 0 5px #101111;
     }
+
     .probtn:hover {
       background-color: #00ffe5;
       color: #0b0c1a;
@@ -213,22 +226,23 @@
     </div>
   </div>
   <!-- TOTAL BILL MODAL -->
-<div class="modal fade" id="billModal" tabindex="-1" aria-labelledby="billModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background: linear-gradient(145deg, #5e6062, #504949); border: 1px solid #00fff7; color: #00fff7;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="billModalLabel">🧾 Total Bill</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <p id="modalBillText" class="fs-5">Your total is: <strong>0 PKR</strong></p>
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button type="button" class="btn probtn px-4" data-bs-dismiss="modal">OK</button>
+  <div class="modal fade" id="billModal" tabindex="-1" aria-labelledby="billModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content"
+        style="background: linear-gradient(145deg, #5e6062, #504949); border: 1px solid #00fff7; color: #00fff7;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="billModalLabel">🧾 Total Bill</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p id="modalBillText" class="fs-5">Your total is: <strong>0 PKR</strong></p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn probtn px-4" data-bs-dismiss="modal">OK</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <!-- FOOTER SECTION -->
   <footer class="text-white pt-5 pb-4">
     <div class="container text-center text-md-start">
@@ -293,10 +307,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="Main.JS"></script>
   <script>
-  function VisitorCounter() {
+    function VisitorCounter() {
       var count = parseInt(localStorage.getItem('counter')) || 0;
       localStorage.setItem('counter', count)
       document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
@@ -313,83 +327,39 @@
       $('#ProductImage').attr('alt', Info.ProductName);
     }
     else {
-  $('#ProductName').text("Product not found");
-}
+      $('#ProductName').text("Product not found");
+    }
     var list = JSON.parse(localStorage.getItem('Wishlist')) || [];
-function generatebill() {
-  // ✅ Step 1: Check if user is logged in
-  if (localStorage.getItem('Ticket') !== 'available') {
-    alert("⚠️ Please log in first to add items to the cart.");
-    window.location.href = 'Log In.html';
-    return;
-  }
+    function generatebill() {
+      // ✅ Step 1: Check if user is logged in
+      if (localStorage.getItem('Ticket') !== 'available') {
+        alert("⚠️ Please log in first to add items to the cart.");
+        window.location.href = 'Log In.html';
+        return;
+      }
 
-  // ✅ Step 2: Continue to add to cart if logged in
-  var q = parseInt($('#quantity').val());
-  if (q < 1 || isNaN(q)) {
-    alert("Please enter a valid quantity.");
-    return;
-  }
+      // ✅ Step 2: Continue to add to cart if logged in
+      var q = parseInt($('#quantity').val());
+      if (q < 1 || isNaN(q)) {
+        alert("Please enter a valid quantity.");
+        return;
+      }
 
-  var total = Info.ProductPrice * q;
-  var group = {
-    "ProductName": Info.ProductName,
-    "ProductImage": Info.ProductImage,
-    "ProductPrice": Info.ProductPrice,
-    "Quantity": q,
-    "TotalAmount": total
-  };
+      var total = Info.ProductPrice * q;
+      var group = {
+        "ProductName": Info.ProductName,
+        "ProductImage": Info.ProductImage,
+        "ProductPrice": Info.ProductPrice,
+        "Quantity": q,
+        "TotalAmount": total
+      };
 
-  list.push(group);
-  $('#modalBillText').html('Your total is: <strong>' + total + ' PKR</strong>');
-  let billModal = new bootstrap.Modal(document.getElementById('billModal'));
-  billModal.show();
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-}
-
-
-
-
-//   function generatebill() {
-//   var q = parseInt($('#quantity').val());
-//   if (q < 1 || isNaN(q)) {
-//     alert("Please enter a valid quantity.");
-//     return;
-//   }
-//   var total = Info.ProductPrice * q;
-//   var group = {
-//     "ProductName": Info.ProductName,
-//     "ProductImage": Info.ProductImage,
-//     "ProductPrice": Info.ProductPrice,
-//     "Quantity": q,
-//     "TotalAmount": total
-//   };
-//   list.push(group);
-//   $('#modalBillText').html('Your total is: <strong>' + total + ' PKR</strong>');
-//   let billModal = new bootstrap.Modal(document.getElementById('billModal'));
-//   billModal.show();
-//   localStorage.setItem('Wishlist', JSON.stringify(list));
-// }
-
-//     function generatebill() {
-//       var q = parseInt($('#quantity').val());
-//       if (q < 1 || isNaN(q)) {
-//         alert("Please enter a valid quantity.");
-//         return;
-//       }
-//       var total = Info.ProductPrice * q;
-//       var group = {
-//         "ProductName": Info.ProductName,
-//         "ProductImage": Info.ProductImage,
-//         "TotalAmount": total
-//       };
-//       list.push(group);
-//       $('#modalBillText').html('Your total is: <strong>' + total + ' PKR</strong>');
-// let billModal = new bootstrap.Modal(document.getElementById('billModal'));
-// billModal.show();
-//       // alert('Your total amount for this product is ' + total + ' PKR');
-//       localStorage.setItem('Wishlist', JSON.stringify(list));
-//     }
+      list.push(group);
+      $('#modalBillText').html('Your total is: <strong>' + total + ' PKR</strong>');
+      let billModal = new bootstrap.Modal(document.getElementById('billModal'));
+      billModal.show();
+      localStorage.setItem('Wishlist', JSON.stringify(list));
+    }
   </script>
 </body>
 

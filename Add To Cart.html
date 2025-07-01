@@ -1,304 +1,323 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>LIBERTY ELECTRONICS</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="Style.CSS">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-body {
-  margin: 0;
-  position: relative;
-  min-height: 100vh;
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('FILES/More_Images/bg\ image.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.1; /* Lower value = more fade */
-  z-index: -1;
-}
-        .footertext {
-            color: #66fcf1;
-        }
-        .footer-link {
-            color: #c5c6c7;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #09f9e9;
-            font-weight: bold;
-            text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
-        }
-        .footer-link:hover {
-            color: #66fcf1;
-            text-shadow: 0 0 5px #66fcf1;
-        }
-        .social-icon {
-            color: #c5c6c7;
-            font-size: 1.2rem;
-            margin-left: 15px;
-            transition: color 0.3s ease, text-shadow 0.3s;
-        }
-        .social-icon:hover {
-            color: #66fcf1;
-            text-shadow: 0 0 8px #66fcf1;
-        }
-      .personaldetails:hover {
-            color: #66fcf1;
-            text-shadow: 0 0 8px #66fcf1;
-        }
-        .confirm-btn {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        padding: 14px;
-        font-size: 1.6rem;
-        font-weight: 600;
-               background-color: #080707;
-        color: hwb(0 94% 6%);
-        box-shadow: 0 0 15px #fff;
-      }
-      .confirm-btn:hover {
-         box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-        background-color: #00fff7;
-        color: #000;
-      }
-      .removeicon {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        cursor: pointer;
-        font-size: 30px;
-        color: red;
-      }
-      .cartcard {
-                width: 60%;
-        margin: 0 auto 20px auto;
-        /* background-color: #353434; */
-  background-color: rgba(53, 52, 52, 0.6); /* 0.0 = fully transparent, 1.0 = fully opaque */
 
-        color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
-        position: relative;
-        transition: 0.3s ease-in-out;
-      }
-      .cartcard:hover {
-        box-shadow: 0 0 25px rgba(0, 255, 247, 0.6);
-        transform: scale(1.01);
-      }
-      .addsubbtn {
-        border: 2px solid #00fff7;
-        color: #00fff7;
-        background: transparent;
-        transition: all 0.3s ease-in-out;
-      }
-      .addsubbtn:hover {
-        background-color: #00fff7;
-        color: #000;
-        box-shadow: 0 0 10px #00fff7;
-      }
-       .proimg{
-    height: 150px;
-  object-fit: contain;
-  filter: brightness(1.3) drop-shadow(0 0 4px #070909);
-  transition: transform 0.4s ease, filter 0.4s ease;
-  padding: 10px;
-  margin: auto;
-}
-.proimg:hover{
-    transform: scale(1.05);
-  filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
-}
-      .modal-content {
-        background-color: #1c1c1c;
-      }
-      .toast-body {
-        font-weight: 500;
-      }
-    </style>
+<head>
+  <title>LIBERTY ELECTRONICS</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="Style.CSS">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('FILES/More_Images/bg\ image.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.1;
+      /* Lower value = more fade */
+      z-index: -1;
+    }
+
+    .footertext {
+      color: #66fcf1;
+    }
+
+    .footer-link {
+      color: #c5c6c7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #09f9e9;
+      font-weight: bold;
+      text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e, 0 0 15px #45a29e;
+    }
+
+    .footer-link:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 5px #66fcf1;
+    }
+
+    .social-icon {
+      color: #c5c6c7;
+      font-size: 1.2rem;
+      margin-left: 15px;
+      transition: color 0.3s ease, text-shadow 0.3s;
+    }
+
+    .social-icon:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 8px #66fcf1;
+    }
+
+    .personaldetails:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 8px #66fcf1;
+    }
+
+    .confirm-btn {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      padding: 14px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      background-color: #080707;
+      color: hwb(0 94% 6%);
+      box-shadow: 0 0 15px #fff;
+    }
+
+    .confirm-btn:hover {
+      box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      background-color: #00fff7;
+      color: #000;
+    }
+
+    .removeicon {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 30px;
+      color: red;
+    }
+
+    .cartcard {
+      width: 60%;
+      margin: 0 auto 20px auto;
+      /* background-color: #353434; */
+      background-color: rgba(53, 52, 52, 0.6);
+      /* 0.0 = fully transparent, 1.0 = fully opaque */
+
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
+      position: relative;
+      transition: 0.3s ease-in-out;
+    }
+
+    .cartcard:hover {
+      box-shadow: 0 0 25px rgba(0, 255, 247, 0.6);
+      transform: scale(1.01);
+    }
+
+    .addsubbtn {
+      border: 2px solid #00fff7;
+      color: #00fff7;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .addsubbtn:hover {
+      background-color: #00fff7;
+      color: #000;
+      box-shadow: 0 0 10px #00fff7;
+    }
+
+    .proimg {
+      height: 150px;
+      object-fit: contain;
+      filter: brightness(1.3) drop-shadow(0 0 4px #070909);
+      transition: transform 0.4s ease, filter 0.4s ease;
+      padding: 10px;
+      margin: auto;
+    }
+
+    .proimg:hover {
+      transform: scale(1.05);
+      filter: brightness(1.6) drop-shadow(0 0 20px #0a0a0a);
+    }
+
+    .modal-content {
+      background-color: #1c1c1c;
+    }
+
+    .toast-body {
+      font-weight: 500;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- IT's A CHECKOUT PAGE -->
-    <!-- HEADER SECTION -->
-    <div class="header">
-        <div class="container py-2">
-            <!-- LIVE TIME & VISITOR COUNTER -->
-            <div class="row text-center align-items-center">
-                <div class="col-12 col-md-6 mb-3 mb-md-0">
-                    <p id="livetime" class="fs-2 mb-0">00:00:00</p>
-                </div>
-                <div class="col-12 col-md-6">
-                    <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
-                </div>
-            </div>
+  <!-- IT's A CHECKOUT PAGE -->
+  <!-- HEADER SECTION -->
+  <div class="header">
+    <div class="container py-2">
+      <!-- LIVE TIME & VISITOR COUNTER -->
+      <div class="row text-center align-items-center">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p id="livetime" class="fs-2 mb-0">00:00:00</p>
         </div>
-        <!-- NAV BAR -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
-                        <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i
-                                    class="fas fa-shopping-cart"></i>
-                            </a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- BODY SECTION -->
-<div class="container text-center">
-      <h3 class="my-4">✨🛒 Your Cart’s Loaded — Time to Ignite the Checkout! 🔥🚀</h3>
-      <p class="defaultmsg">😕 Oops! Your cart is currently empty.</p>
-      <p id="totalItems" class="fw-semibold fs-5 mb-4"></p>
-      <div id="parent"></div>
-      <h5 id="grandTotal" class="text-info fw-bold mt-4"></h5>
-    </div>
-    <button class="confirm-btn" onclick="confirmOrder()">✅ Confirm Order</button>
-    <!-- Toast for item removal -->
-    <div class="position-fixed top-10 end-0 p-3" style="z-index: 11">
-      <div id="deleteToast" class="toast align-items-center text-bg-danger border-0" role="alert">
-        <div class="d-flex">
-          <div class="toast-body">🗑️ Item removed from your cart.</div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        <div class="col-12 col-md-6">
+          <p id="VisitorCounter" class="fs-2 mb-0">Visitor Counter: </p>
         </div>
       </div>
     </div>
-    <!-- Confirmation Modal -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-white">
-          <div class="modal-header">
-            <h5 class="modal-title">⚠️ Delete This Product?</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            Are you sure you want to remove this item from your cart?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn addsubbtn" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Yes, Remove</button>
-          </div>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
+            <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
+            <li class="nav-item"><a class="nav-link" href="Add To Cart.html"> <i class="fas fa-shopping-cart"></i>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- BODY SECTION -->
+  <div class="container text-center">
+    <h3 class="my-4">✨🛒 Your Cart’s Loaded — Time to Ignite the Checkout! 🔥🚀</h3>
+    <p class="defaultmsg">😕 Oops! Your cart is currently empty.</p>
+    <p id="totalItems" class="fw-semibold fs-5 mb-4"></p>
+    <div id="parent"></div>
+    <h5 id="grandTotal" class="text-info fw-bold mt-4"></h5>
+  </div>
+  <button class="confirm-btn" onclick="confirmOrder()">✅ Confirm Order</button>
+  <!-- Toast for item removal -->
+  <div class="position-fixed top-10 end-0 p-3" style="z-index: 11">
+    <div id="deleteToast" class="toast align-items-center text-bg-danger border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body">🗑️ Item removed from your cart.</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+  <!-- Confirmation Modal -->
+  <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">⚠️ Delete This Product?</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to remove this item from your cart?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn addsubbtn" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Yes, Remove</button>
         </div>
       </div>
     </div>
-    <!-- FOOTER SECTION -->
-    <footer class="text-white pt-5 pb-4">
-        <div class="container text-center text-md-start">
-            <div class="row text-md-left">
-                <!-- LOGO & DESCRIPTION -->
-                <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
-                    <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
-                    <p class="text-white-50 pe-5">
-                        <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
-                        smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
-                        unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
-                    </p>
-                </div>
-                <!-- WEBSITE LINKS -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
-                        <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
-                        <li class="mb-3"><a href="About Us.html" class="footer-link">INSIGHT</a></li>
-                        <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
-                    </ul>
-                </div>
-                <!-- CONTACT INFO -->
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
-                    <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
-                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
-                    <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
-                    </p>
-                    <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
-                </div>
-                <a href="Code Crafters.html"
-                    class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
-                    <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
-                </a>
+  </div>
+  <!-- FOOTER SECTION -->
+  <footer class="text-white pt-5 pb-4">
+    <div class="container text-center text-md-start">
+      <div class="row text-md-left">
+        <!-- LOGO & DESCRIPTION -->
+        <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
+          <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
+          <p class="text-white-50 pe-5">
+            <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
+            smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
+            unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
+          </p>
+        </div>
+        <!-- WEBSITE LINKS -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
+            <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
+            <li class="mb-3"><a href="About Us.html" class="footer-link">INSIGHT</a></li>
+            <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
+          </ul>
+        </div>
+        <!-- CONTACT INFO -->
+        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3  mb-2">
+          <h6 class="text-uppercase fw-bold mb-3 footertext">Contact Us</h6>
+          <p class="text-white-50"><i class="fas fa-map-marker-alt me-2  mb-2"></i> Karachi, Pakistan</p>
+          <p class="text-white-50"><i class="fas fa-envelope me-2  mb-2"></i> support@libertyelectronics.pk
+          </p>
+          <p class="text-white-50"><i class="fas fa-phone me-2  mb-2"></i> +92 300 1234567</p>
+        </div>
+        <a href="Code Crafters.html"
+          class="text-uppercase fw-bold text-center d-block mt-3 mb-3 fs-5 footertext text-decoration-none personaldetails">
+          <span class="border-top border-bottom border-info py-2 d-inline-block">code crafters</span>
+        </a>
 
-                <hr class="my-4 text-white-50">
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-lg-8">
-                        <p class="text-white-50 mb-0">
-                            © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
-                        </p>
-                    </div>
-                    <div class="col-md-6 col-lg-4 text-md-end">
-                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/" target="_blank" class="social-icon"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                </div>
-    </footer>
+        <hr class="my-4 text-white-50">
+        <div class="row align-items-center">
+          <div class="col-md-6 col-lg-8">
+            <p class="text-white-50 mb-0">
+              © 2025 <span class="footertext">Liberty Electronics</span>. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-4 text-md-end">
+            <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+  </footer>
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script src="Main.JS"></script>
-    <script>
-    function 
-    VisitorCounter() {
-            var count = parseInt(localStorage.getItem('counter')) || 0;
-            localStorage.setItem('counter', count)
-            document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
-        }
-        VisitorCounter()
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="Main.JS"></script>
+  <script>
+    function
+      VisitorCounter() {
+      var count = parseInt(localStorage.getItem('counter')) || 0;
+      localStorage.setItem('counter', count)
+      document.getElementById('VisitorCounter').innerText = "Visitor Counter: " + count;
+    }
+    VisitorCounter()
     var list = JSON.parse(localStorage.getItem('Wishlist')) || [];
-var parent = document.getElementById('parent');
-var totalItems = document.getElementById('totalItems');
-var grandTotalElem = document.getElementById('grandTotal');
-var toastElement = new bootstrap.Toast(document.getElementById('deleteToast'));
-var confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-var deleteIndex = null;
-function VisualizeCartItems() {
-  parent.innerHTML = '';
-  var count = 0;
-  var grandTotal = 0;
-  if (list.length > 0) {
-    document.querySelector('.defaultmsg').style.display = 'none';
-    list.forEach(function (item, index) {
-      count += item.Quantity;
-      grandTotal += item.TotalAmount;
-      var div = document.createElement('div');
-      div.className = "cartcard";
-      div.innerHTML = `
+    var parent = document.getElementById('parent');
+    var totalItems = document.getElementById('totalItems');
+    var grandTotalElem = document.getElementById('grandTotal');
+    var toastElement = new bootstrap.Toast(document.getElementById('deleteToast'));
+    var confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+    var deleteIndex = null;
+    function VisualizeCartItems() {
+      parent.innerHTML = '';
+      var count = 0;
+      var grandTotal = 0;
+      if (list.length > 0) {
+        document.querySelector('.defaultmsg').style.display = 'none';
+        list.forEach(function (item, index) {
+          count += item.Quantity;
+          grandTotal += item.TotalAmount;
+          var div = document.createElement('div');
+          div.className = "cartcard";
+          div.innerHTML = `
         <span class="removeicon" onclick="askDelete(${index})">&times;</span>
         <h5>${item.ProductName}</h5>
         <img src="${item.ProductImage}" class="img-fluid my-3 proimg" />
@@ -309,65 +328,65 @@ function VisualizeCartItems() {
         </div>
         <p class="fw-bold mb-1">Total: ${item.TotalAmount} PKR</p>
       `;
-      parent.appendChild(div);
+          parent.appendChild(div);
+        });
+        totalItems.innerText = `🛒 Total Products: ${count}`;
+        grandTotalElem.innerText = `💵 Grand Total: ${grandTotal} PKR`;
+        localStorage.setItem("GrandTotal", grandTotal);
+      } else {
+        document.querySelector('.defaultmsg').style.display = 'block';
+        totalItems.innerText = '';
+        grandTotalElem.innerText = '';
+      }
+    }
+    function increment(index) {
+      list[index].Quantity += 1;
+      list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
+      localStorage.setItem('Wishlist', JSON.stringify(list));
+      VisualizeCartItems();
+    }
+    function decrement(index) {
+      if (list[index].Quantity > 1) {
+        list[index].Quantity -= 1;
+        list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
+      } else {
+        askDelete(index);
+        return;
+      }
+      localStorage.setItem('Wishlist', JSON.stringify(list));
+      VisualizeCartItems();
+    }
+    function askDelete(index) {
+      deleteIndex = index;
+      confirmDeleteModal.show();
+    }
+    document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
+      if (deleteIndex != null) {
+        list.splice(deleteIndex, 1);
+        localStorage.setItem('Wishlist', JSON.stringify(list));
+        VisualizeCartItems();
+        toastElement.show();
+        deleteIndex = null;
+        confirmDeleteModal.hide();
+      }
     });
-    totalItems.innerText = `🛒 Total Products: ${count}`;
-    grandTotalElem.innerText = `💵 Grand Total: ${grandTotal} PKR`;
-    localStorage.setItem("GrandTotal", grandTotal); 
-  } else {
-    document.querySelector('.defaultmsg').style.display = 'block';
-    totalItems.innerText = '';
-    grandTotalElem.innerText = '';
-  }
-}
-function increment(index) {
-  list[index].Quantity += 1;
-  list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function decrement(index) {
-  if (list[index].Quantity > 1) {
-    list[index].Quantity -= 1;
-    list[index].TotalAmount = list[index].ProductPrice * list[index].Quantity;
-  } else {
-    askDelete(index);
-    return;
-  }
-  localStorage.setItem('Wishlist', JSON.stringify(list));
-  VisualizeCartItems();
-}
-function askDelete(index) {
-  deleteIndex = index;
-  confirmDeleteModal.show();
-}
-document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-  if (deleteIndex != null) {
-    list.splice(deleteIndex, 1);
-    localStorage.setItem('Wishlist', JSON.stringify(list));
+    function confirmOrder() {
+      if (list.length == 0) {
+        alert("Your cart is empty!");
+        // return;
+      }
+      else {
+        window.location.href = "Order Confirmation.html";
+      }
+    }
     VisualizeCartItems();
-    toastElement.show();
-    deleteIndex = null;
-    confirmDeleteModal.hide();
-  }
-});
-function confirmOrder() {
-  if (list.length == 0) {
-    alert("Your cart is empty!");
-    // return;
-  }
-  else{
-  window.location.href = "Order Confirmation.html"; 
-  }  
-}
-VisualizeCartItems();
-if(localStorage.getItem('Ticket') == available){
-window.location.href = 'Add To Cart.html'
-}
-else{
- window.location.href = 'Log In.html';
-}
-    </script>
+    if (localStorage.getItem('Ticket') == available) {
+      window.location.href = 'Add To Cart.html'
+    }
+    else {
+      window.location.href = 'Log In.html';
+    }
+  </script>
 </body>
 
 </html>
