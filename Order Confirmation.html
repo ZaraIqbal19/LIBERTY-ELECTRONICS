@@ -139,7 +139,7 @@
       <div class="col-md-7">
         <div class="checkout-card">
           <h5 class="mb-4">Customer Information</h5>
-          <form id="checkoutForm">
+          <form id="checkoutForm" onsubmit="gotocheckout(event)">
             <div class="mb-3">
               <label for="fullName" class="form-label">Full Name</label>
               <input type="text" class="form-control" id="fullName" required />
@@ -166,7 +166,7 @@
                 <input type="text" class="form-control" id="zip" required />
               </div>
             </div>
-            <button type="submit" class="btn btn-confirm w-100 py-2 fs-5 mt-2">Order Dispatched</button>
+            <button type="submit" onclick="gotocheckout()" class="btn btn-confirm w-100 py-2 fs-5 mt-2" >Order Dispatched</button>
           </form>
         </div>
       </div>
@@ -241,12 +241,31 @@
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
 
+<<<<<<< HEAD
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
   <script src="Main.JS"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "e-dw6FcmcgQfqI_rn",
+      });
+   })();
+</script>
+    <script src="Main.JS"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+>>>>>>> 4a94da905bba49809e817dacc0e3624f73dd3f06
     function VisitorCounter() {
       var count = parseInt(localStorage.getItem('counter')) || 0;
       localStorage.setItem('counter', count)
@@ -291,29 +310,47 @@
     $(document).ready(function () {
       calculateSummary();
 
-      $("#checkoutForm").submit(function (e) {
-        e.preventDefault();
+      
+    });
+  </script>
+  <script>
+   function gotocheckout(event) {
+    event.preventDefault(); // stop form submission
 
-        var name = $("#fullName").val();
-        var contact = $("#contactNumber").val();
-        var address = $("#address").val();
-        var city = $("#city").val();
-        var zip = $("#zip").val();
+    var name = document.getElementById("fullName").value;
+    var email = document.getElementById("emailAddress").value;
+    var contact = document.getElementById("contactNumber").value;
+    var address = document.getElementById("address").value;
+    var city = document.getElementById("city").value;
+    var zip = document.getElementById("zip").value;
+    var productList = JSON.parse(localStorage.getItem("Wishlist")) || [];
 
-        var orderInfo = {
-          name: name,
-          contact: contact,
-          address: address + ", " + city + " - " + zip,
-          total: localStorage.getItem("GrandTotal")
+    if (name && email && contact && address && city && zip) {
+        let orderdetails = {
+            name: name,
+            email: email,
+            contact: contact,
+            address: address,
+            city: city,
+            zip: zip,
+            total: localStorage.getItem("GrandTotal"),
+            product_summary: productList.map(p => `${p.ProductName} x${p.quantity || 1} (Rs.${p.TotalAmount || p.ProductPrice})`).join(', ')
         };
 
-        localStorage.setItem("OrderInfo", JSON.stringify(orderInfo));
+        emailjs.send('service_snkask9', 'template_uahdw6p', orderdetails)
+        .then(function(response) {
+            alert("Order sent successfully!");
+            console.log("SUCCESS!", response.status, response.text);
+        }, function(error) {
+            alert("Failed to send order. Check console for details.");
+            console.error("FAILED...", error);
+        });
 
-        setTimeout(function () {
-          window.location.href = "HeartFelt Thanks.html";
-        }, 300);
-      });
-    });
+    } else {
+        alert("Please fill in all fields.");
+    }
+}
+
   </script>
 </body>
 
