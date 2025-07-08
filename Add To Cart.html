@@ -177,10 +177,10 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <img src="FILES/More_Images/logo-removebg-preview.png" width="100px" alt="Logo">
-        <a class="navbar-brand fs-2" href="Index.html">LIBERTY ELECTRONICS</a>
+        <a class="navbar-brand fs-2" href="index.html">LIBERTY ELECTRONICS</a>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="Index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="Collection.html">COLLECTION</a></li>
             <li class="nav-item"><a class="nav-link" href="About Us.html">INSIGHT</a></li>
             <li class="nav-item"><a class="nav-link" href="Contact Us.html">CONTACT</a></li>
@@ -235,7 +235,7 @@
         <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3 px-2">
           <h5 class="text-uppercase fw-bold mb-3 footertext">Liberty Electronics</h5>
           <p class="text-white-50 pe-5">
-            <a class="footer-link" href="Index.html">Liberty Electronics</a> delivers cutting-edge
+            <a class="footer-link" href="index.html">Liberty Electronics</a> delivers cutting-edge
             smartphones, laptops, cameras, and accessories right to your doorstep. We bring top tech brands,
             unbeatable deals, and a sleek shopping experience powered by innovation and neon-inspired style.
           </p>
@@ -244,7 +244,7 @@
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase fw-bold mb-3 footertext">Quick Links</h6>
           <ul class="list-unstyled">
-            <li class="mb-3"><a href="Index.html" class="footer-link">HOME</a></li>
+            <li class="mb-3"><a href="index.html" class="footer-link">HOME</a></li>
             <li class="mb-3"><a href="Collection.html" class="footer-link">COLLECTION</a></li>
             <li class="mb-3"><a href="About Us.html" class="footer-link">INSIGHT</a></li>
             <li class="mb-3"><a href="Contact Us.html" class="footer-link">CONTACT</a></li>
@@ -306,7 +306,7 @@
     var grandTotalElem = document.getElementById('grandTotal');
     var toastElement = new bootstrap.Toast(document.getElementById('deleteToast'));
     var confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-    var deleteIndex = null;
+    var deleteindex = null;
     function VisualizeCartItems() {
       parent.innerHTML = '';
       var count = 0;
@@ -358,16 +358,16 @@
       VisualizeCartItems();
     }
     function askDelete(index) {
-      deleteIndex = index;
+      deleteindex = index;
       confirmDeleteModal.show();
     }
     document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-      if (deleteIndex != null) {
-        list.splice(deleteIndex, 1);
+      if (deleteindex != null) {
+        list.splice(deleteindex, 1);
         localStorage.setItem('Wishlist', JSON.stringify(list));
         VisualizeCartItems();
         toastElement.show();
-        deleteIndex = null;
+        deleteindex = null;
         confirmDeleteModal.hide();
       }
     });
